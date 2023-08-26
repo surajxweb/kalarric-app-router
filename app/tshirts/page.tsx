@@ -13,6 +13,7 @@ interface Product {
   offerPrice: number;
   imageURL: string[];
   mrp: number;
+  
 }
 
 const TshirtsPage: NextPage = () => {

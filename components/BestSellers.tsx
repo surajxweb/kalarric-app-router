@@ -8,7 +8,6 @@ interface Product {
   offerPrice: number;
   imageURL: string[];
   mrp: number;
-  id: number;
   category: string;
 }
 
