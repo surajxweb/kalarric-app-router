@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { database } from "@/resources/Database";
-import styles from "./Tshirts.module.css";
+import styles from "./TshirtProduct.module.css";
 import Image from "next/image";
 import Offers from "@/components/Offers";
 
