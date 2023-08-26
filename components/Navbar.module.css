@@ -1,0 +1,148 @@
+.nav1 {
+  background-color: rgb(55, 55, 55);
+  color: #b3b3b3;
+  padding: 2px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.imageContainer {
+  position: relative;
+  width: 32px; /* Adjust the width to match your image size */
+  height: 32px; /* Adjust the height to match your image size */
+  background-image: url("../resources/logo/smalllogo.png"); /* Replace with the path to your default image */
+  background-size: cover;
+}
+
+.imageContainer:hover {
+  background-image: url("../resources/logo/smalllogo_white.png"); /* Replace with the path to your hover image */
+}
+
+.logo {
+  width: 10%;
+}
+
+.pages {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pages li {
+  list-style: none;
+  margin: 0 20px;
+}
+
+.pages li:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.pages a {
+  text-decoration: none;
+  color: #b3b3b3;
+}
+
+.tools {
+  position: relative;
+  top: 2px;
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon,
+.carts {
+  cursor: pointer;
+  color: #b3b3b3;
+}
+
+.icon:hover {
+  color: #ffffff;
+}
+
+.cartno {
+  position: absolute;
+  bottom: -4px;
+  right: -1px;
+  padding: 2px 6px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.mpages {
+  display: none;
+}
+
+.ham,
+.cross {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .nav1 {
+    position: relative;
+  }
+
+  .mpages {
+    position: absolute;
+    background-color: rgb(136, 133, 133);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    padding: 20px 10px;
+  }
+  .mpages li {
+    list-style: none;
+  }
+
+  .mpages a {
+    text-decoration: none;
+    color: #b3b3b3;
+  }
+
+  .mpage {
+    border: 3px solid rgb(198, 197, 197);
+    padding: 10px;
+    margin: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .mpages {
+    display: block;
+  }
+
+  .ham,
+  .cross {
+    display: block;
+  }
+
+  .search,
+  .user {
+    display: none;
+  }
+
+  .cartno {
+    font-size: 8px;
+    padding: 1px 4px;
+  }
+}

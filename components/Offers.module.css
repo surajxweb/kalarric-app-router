@@ -1,0 +1,54 @@
+/* Common styles for the .nav2 container and .text */
+.nav2 {
+  background-color: rgba(0, 0, 0, 0.15);
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  padding: 5px;
+  margin-top: 35px;
+}
+
+.text {
+  padding: 5px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .nav2 {
+    margin-top: 0;
+  }
+
+  .text {
+    font-size: 12px;
+  }
+}
+
+/* Adjust the font size for smaller screens */
+@media screen and (max-width: 480px) {
+  .text {
+    font-size: 11px;
+  }
+}
+
+.vibratingSpan {
+  animation: vibrate 0.3s infinite;
+  display: inline-block;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

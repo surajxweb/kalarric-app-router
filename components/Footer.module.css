@@ -1,0 +1,119 @@
+/* Common styles for the footer */
+.footer {
+  background-color: rgb(55, 55, 55);
+  color: white;
+  padding: 20px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+}
+
+.links li {
+  list-style: none;
+  margin: 8px;
+}
+
+.links li:hover {
+  text-decoration: underline;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.return {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.return a {
+  text-decoration: none;
+  color: white;
+}
+
+.return a:hover {
+  text-decoration: underline;
+}
+
+.returnicon {
+  margin-right: 10px;
+}
+
+.insta,
+.twitter {
+  color: white;
+  transition: transform 0.2s;
+  margin-left: 20px;
+}
+
+.twitter:hover,
+.insta:hover {
+  transform: translateY(-5px);
+}
+
+.credit {
+  border-top: 1px solid white;
+  margin: auto;
+  font-size: 12px;
+  width: 90%;
+  text-align: center;
+  padding: 20px 0 0px 0;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .info {
+    /* Additional style for the logo container on smaller screens */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoContainer {
+    /* Additional style for the logo container on smaller screens */
+    height: 150px; /* Adjust the height as needed for mobile screens */
+  }
+  .links {
+    margin: 10px 0;
+  }
+
+  .links a:hover {
+    text-decoration: underline;
+  }
+
+  .socials {
+    margin-left: 0;
+    margin: 10px 0 20px 0;
+  }
+
+  .return {
+    margin-bottom: 30px;
+  }
+}
+
+/* Adjust the font size for smaller screens */
+@media screen and (max-width: 480px) {
+  .credit {
+    font-size: 10px;
+  }
+}
