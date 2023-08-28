@@ -21,10 +21,22 @@ export default function Home() {
     <main className={styles.main}>
       <Offers />
       <div className={styles.headerImage}>
-        <Image src={headerImage} alt='header mage' height={600} width={1536} />
+        <Image
+          placeholder='blur'
+          src={headerImage}
+          alt='header image'
+          height={600}
+          width={1536}
+        />
       </div>
       <div className={styles.headerImage_mobile}>
-        <Image src={header_mobile} alt='header mage' height={400} width={350} />
+        <Image
+          placeholder='blur'
+          src={header_mobile}
+          alt='header image'
+          height={400}
+          width={350}
+        />
       </div>
       <div className={styles.info}>
         <div className={styles.sec}>
@@ -71,12 +83,19 @@ export default function Home() {
       <BestSellers products={database.products} />
       <div className={styles.sale}>
         <Link href={"/wallets"}>
-          <Image src={sale} alt='wallet banner' height={600} width={1536} />
+          <Image
+            placeholder='blur'
+            src={sale}
+            alt='wallet banner'
+            height={600}
+            width={1536}
+          />
         </Link>
       </div>
       <div className={styles.sale_mobile}>
         <Link href={"/wallets"}>
           <Image
+            placeholder='blur'
             src={sale_mobile}
             alt='wallet banner'
             height={400}

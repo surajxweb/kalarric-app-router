@@ -1,10 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const bodyfont = Montserrat({ subsets: ["latin"], weight: "400" });
+const bodyfont = Poppins({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title:

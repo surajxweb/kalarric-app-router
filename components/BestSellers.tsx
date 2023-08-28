@@ -5,7 +5,7 @@ import styles from "./BestSellers.module.css";
 interface Product {
   productId: number;
   productName: string;
-  offerPrice: number;
+  price: number;
   imageURL: string[];
   mrp: number;
   category: string;
@@ -24,7 +24,7 @@ const BestSellers: React.FC<BestSellersProps> = ({ products }) => {
           <ProductCard
             key={product.productId}
             name={product.productName}
-            price={product.offerPrice}
+            price={product.price}
             imageURL1={product.imageURL[0]}
             imageURL2={product.imageURL[1]}
             mrp={product.mrp}

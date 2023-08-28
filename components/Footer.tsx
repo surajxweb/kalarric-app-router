@@ -21,9 +21,8 @@ export default function Footer() {
             <Link href='/wallets'>
               <li>Wallets</li>
             </Link>
-            <Link href='/caps'>
-              <li>Caps</li>
-            </Link>
+
+            <li>Caps (Coming Soon!)</li>
           </ul>
         </div>
         <div className={styles.company}>

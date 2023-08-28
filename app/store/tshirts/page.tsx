@@ -10,10 +10,9 @@ interface Product {
   productId: number;
   productName: string;
   category: string; // Assuming category is a string
-  offerPrice: number;
+  price: number;
   imageURL: string[];
   mrp: number;
-  
 }
 
 const TshirtsPage: NextPage = () => {
@@ -24,14 +23,22 @@ const TshirtsPage: NextPage = () => {
   return (
     <div className={styles.container}>
       <Offers />
-      <div className={styles.banner}><Image src={banner} height={480} width={1600} alt="tshirts banner" /></div>
+      <div className={styles.banner}>
+        <Image
+          placeholder='blur'
+          src={banner}
+          height={480}
+          width={1600}
+          alt='tshirts banner'
+        />
+      </div>
       <h1 className={styles.heading}>Oversized Tshirts</h1>
       <div className={styles.list}>
         {tshirts.map((tshirt) => (
           <ProductCard
             key={tshirt.productId}
             name={tshirt.productName}
-            price={tshirt.offerPrice}
+            price={tshirt.price}
             imageURL1={tshirt.imageURL[0]}
             imageURL2={tshirt.imageURL[1]}
             mrp={tshirt.mrp}

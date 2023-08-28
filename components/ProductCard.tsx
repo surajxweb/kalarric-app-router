@@ -39,7 +39,7 @@ export default function ProductCard({
 
   return (
     <>
-      <Link href={`/product/${category}/${id}`}>
+      <Link href={`/store/${category}/${id}`}>
         <div className={styles.container}>
           <div
             className='image-container'

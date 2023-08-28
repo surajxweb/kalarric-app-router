@@ -52,13 +52,13 @@ export default function Navbar() {
 
           {/* Navigation links */}
           <ul className={styles.pages}>
-            <Link href={"/tshirts"}>
+            <Link href={"/store/tshirts"}>
               <li className={styles.page}>T-Shirt</li>
             </Link>
-            <Link href={"/caps"}>
+            {/* <Link href={"/caps"}>
               <li className={styles.page}>Caps</li>
-            </Link>
-            <Link href={"/wallets"}>
+            </Link> */}
+            <Link href={"/store/wallets"}>
               <li className={styles.page}>Wallets</li>
             </Link>
             <Link href={"/blog"}>
@@ -102,13 +102,13 @@ export default function Navbar() {
       {/* List for mobile screens */}
       {listVisibility && (
         <ul onClick={changelistVisibility} className={styles.mpages}>
-          <Link href={"/tshirts"}>
+          <Link href={"/store/tshirts"}>
             <li className={styles.mpage}>T-Shirt</li>
           </Link>
-          <Link href={"/caps"}>
+          {/* <Link href={"/caps"}>
             <li className={styles.mpage}>Caps</li>
-          </Link>
-          <Link href={"/wallets"}>
+          </Link> */}
+          <Link href={"/store/wallets"}>
             <li className={styles.mpage}>Wallets </li>
           </Link>
           <Link href={"/blog"}>

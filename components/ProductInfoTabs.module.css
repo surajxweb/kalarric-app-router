@@ -1,0 +1,22 @@
+.productInfo {
+  height: 130px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+.question {
+  margin-top: 10px;
+  font-weight: bold;
+  display: block;
+}
+
+.shippingInfo {
+  font-size: 14px;
+}
+
+.shippingInfo .question {
+  display: flex;
+  margin-top: 20px;
+}
