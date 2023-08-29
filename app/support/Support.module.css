@@ -5,7 +5,16 @@
   background-color: #f5f5f5;
 }
 
+.titleBox {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
 .title {
+  margin-right: 20px;
+  flex: 1;
+  order: -1;
   font-size: 35px;
   margin-bottom: 20px;
 }
