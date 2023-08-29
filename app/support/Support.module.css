@@ -1,0 +1,49 @@
+.container {
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.title {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.icons {
+  margin: 20px 0;
+  color: rgb(0, 96, 99);
+  cursor: pointer;
+}
+
+.icons:hover {
+  color: rgb(47, 143, 146);
+}
+
+.container h2,
+.container h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.container h3 {
+  text-decoration: underline;
+  cursor: pointer;
+  width: 220px;
+}
+
+.description {
+  font-style: italic;
+  color: rgb(73, 73, 73);
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid rgb(73, 73, 73);
+}
