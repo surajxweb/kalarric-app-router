@@ -12,7 +12,6 @@ import Image from "next/image";
 import helpImage from "@/resources/help.svg";
 
 const SupportPage = () => {
-
   const handleOpenWidget = () => {
     if (typeof window.FreshworksWidget === "function") {
       window.FreshworksWidget("open");
@@ -38,10 +37,10 @@ const SupportPage = () => {
       <Offers />
       <div className={styles.container}>
         <div className={styles.titleBox}>
-        <Image src={helpImage} height={250} width={250} alt='help header' />
-        <h1 className={styles.title}>
-          Welcome to Kalarric Support. How may we assist you today?
-        </h1>
+          <Image src={helpImage} height={250} width={250} alt='help header' />
+          <h1 className={styles.title}>
+            Welcome to Kalarric Support. How may we assist you today?
+          </h1>
         </div>
 
         <div className={styles.info}>
@@ -71,7 +70,8 @@ const SupportPage = () => {
             size='3em'
           />
           <Link href={""}>
-          <h3>2. WhatsApp Support</h3></Link>
+            <h3>2. WhatsApp Support</h3>
+          </Link>
           <p>
             We&#39;re bringing support to your fingertips! Connect with us
             through WhatsApp. Whether you&#39;re on the go or prefer a quick
@@ -84,22 +84,27 @@ const SupportPage = () => {
           <p>Note: This is not a calling number.</p>
           <h3>3. Email Support</h3>
           <p>
-            For a more personalized touch, you can always email us directly at {" "}
+            For a more personalized touch, you can always email us directly at{" "}
             <Link
               target='_blank'
               href={"https://kalarric.freshdesk.com/support/home"}
-            ><span style={{color: "red"}} >support@kalarric.freshdesk.com</span></Link>. Our support
-            executives are standing by to respond to your emails and address
-            your concerns, ensuring you get the help you need.
+            >
+              <span style={{ color: "red" }}>
+                support@kalarric.freshdesk.com
+              </span>
+            </Link>
+            . Our support executives are standing by to respond to your emails
+            and address your concerns, ensuring you get the help you need.
           </p>
           <Link href={"mailto:support@kalarric.freshdesk.com"}>
             <AiFillMail className={styles.icons} size='3em' />
           </Link>
           <Link
-              target='_blank'
-              href={"https://kalarric.freshdesk.com/support/home"}
-            >
-          <h3>4. FreshDesk Portal</h3></Link>
+            target='_blank'
+            href={"https://kalarric.freshdesk.com/support/home"}
+          >
+            <h3>4. FreshDesk Portal</h3>
+          </Link>
           <p>
             Our Freshdesk portal is designed to streamline your support
             experience. Easily raise tickets, track their status, and engage in
@@ -112,12 +117,14 @@ const SupportPage = () => {
               target='_blank'
               href={"https://kalarric.freshdesk.com/support/home"}
             >
-              <span style={{color: "red"}} >www.kalarric.freshdesk.com</span>
+              <span style={{ color: "red" }}>www.kalarric.freshdesk.com</span>
             </Link>{" "}
             and get started.
           </p>
-          <Link target='_blank'
-              href={"https://kalarric.freshdesk.com/support/home"}>
+          <Link
+            target='_blank'
+            href={"https://kalarric.freshdesk.com/support/home"}
+          >
             <RiCustomerService2Fill className={styles.icons} size='3em' />
           </Link>
         </div>

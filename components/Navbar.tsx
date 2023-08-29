@@ -1,6 +1,6 @@
 // Import required libraries and modules
 "use client";
-
+import { UserButton, useAuth } from "@clerk/nextjs";
 import styles from "./Navbar.module.css";
 import { BsSearch } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
@@ -21,6 +21,9 @@ export default function Navbar() {
     setListVisibility(!listVisibility);
     console.log(listVisibility);
   };
+
+  const { userId } = useAuth();
+  console.log(userId);
 
   return (
     <>
@@ -80,12 +83,15 @@ export default function Navbar() {
                 size='1.8em'
               />
             </Link>
-            <Link href={"/user"}>
-              <AiOutlineUser
-                className={`${styles.icon} ${styles.search}`}
-                size='1.8em'
-              />
-            </Link>
+            {!userId && (
+              <Link href={"/user"}>
+                <AiOutlineUser
+                  className={`${styles.icon} ${styles.search}`}
+                  size='1.8em'
+                />
+              </Link>
+            )}
+            <UserButton afterSignOutUrl='/' />
             <Link href={"/cart"}>
               <div className={styles.carts}>
                 <BsFillBagFill
