@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -40,15 +38,26 @@ function a11yProps(index: number) {
   };
 }
 
-export default function InfoTabs({ info }) {
-  const [value, setValue] = React.useState(0);
+interface ProductInfo {
+  material: string;
+  origin: string;
+  weight: string;
+  dimension: string;
+}
+
+interface InfoTabsProps {
+  info: ProductInfo;
+}
+
+const InfoTabs: React.FC<InfoTabsProps> = ({ info }) => {
+  const [value, setValue] = React.useState<number>(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: "52.5%" }}>
+    <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "spanider" }}>
         <Tabs
           value={value}
@@ -123,4 +132,6 @@ export default function InfoTabs({ info }) {
       </CustomTabPanel>
     </Box>
   );
-}
+};
+
+export default InfoTabs;

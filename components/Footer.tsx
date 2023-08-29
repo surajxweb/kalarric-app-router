@@ -15,10 +15,10 @@ export default function Footer() {
         </div>
         <div className={styles.shop}>
           <ul className={styles.links}>
-            <Link href='/tshirts'>
+            <Link href='/store/tshirts'>
               <li>T-Shirts</li>
             </Link>
-            <Link href='/wallets'>
+            <Link href='/store/wallets'>
               <li>Wallets</li>
             </Link>
 
@@ -36,7 +36,7 @@ export default function Footer() {
             <Link href='/privacypolicy'>
               <li>Privacy Policy</li>
             </Link>
-            <Link href='/jobsatkalarric'>
+            <Link href='/jobs'>
               <li>We are Hiring</li>
             </Link>
           </ul>

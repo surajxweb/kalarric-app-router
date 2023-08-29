@@ -7,33 +7,34 @@ import Image from "next/image";
 
 type ProductPageProps = {
   imageURLs: string[];
+  thumbnails: string;
 };
 
-const ProductImage: FC<ProductPageProps> = ({ imageURLs }) => {
+const ProductImage: FC<ProductPageProps> = ({ imageURLs, thumbnails }) => {
   const images = imageURLs.map((url) => ({
     original: url,
     thumbnail: url,
   }));
 
+  const position = thumbnails === "left" ? "left" : "bottom";
+
   return (
-    <div className=''>
-      <ImageGallery
-        showNav={false}
-        thumbnailPosition='left'
-        items={images}
-        showPlayButton={false}
-        renderItem={(image) => (
-          <div className='image-gallery-image'>
-            <Image
-              src={image.original}
-              alt='product image'
-              width={580}
-              height={580}
-            />
-          </div>
-        )}
-      />
-    </div>
+    <ImageGallery
+      showNav={false}
+      thumbnailPosition={position}
+      items={images}
+      showPlayButton={false}
+      renderItem={(image) => (
+        <div className='image-gallery-image'>
+          <Image
+            src={image.original}
+            alt='product image'
+            width={580}
+            height={580}
+          />
+        </div>
+      )}
+    />
   );
 };
 

@@ -14,7 +14,25 @@ import headerImage from "@/resources/Header/one.png";
 import header_mobile from "@/resources/Header/one_mobile.png";
 import sale from "@/resources/Header/sale.png";
 import sale_mobile from "@/resources/Header/sale_mobile.png";
+
 const titlefont = Cormorant({ subsets: ["latin"], weight: "400" });
+
+interface Product {
+  productId: number;
+  productName: string;
+  category: string;
+  description: string;
+  productInfo: {
+    material: string;
+    origin: string;
+    weight: string;
+    dimension: string;
+  };
+  quantity: { name: string; number: number }[];
+  mrp: number;
+  price: number;
+  imageURL: string[];
+}
 
 export default function Home() {
   return (
@@ -53,7 +71,7 @@ export default function Home() {
           <div className={styles.text}>
             <div className={styles.question}>24X7 CUSTOMER SUPPORT</div>
             <div className={styles.answer}>
-              We offer 24x7 costumer support becasue we care.
+              We offer 24x7 costumer support because we care.
             </div>
           </div>
         </div>
@@ -80,7 +98,7 @@ export default function Home() {
       <div className={`${styles.homegrown} ${styles.tricolorBackground}`}>
         HOMEGROWN INDIAN BRAND
       </div>
-      <BestSellers products={database.products} />
+      <BestSellers products={database.products as Product[]} />
       <div className={styles.sale}>
         <Link href={"/wallets"}>
           <Image
