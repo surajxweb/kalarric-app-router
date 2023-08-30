@@ -65,6 +65,7 @@
 .carts {
   cursor: pointer;
   color: #b3b3b3;
+  margin: 0 5px;
 }
 
 .icon:hover {
@@ -81,10 +82,52 @@
   color: white;
   font-weight: bold;
   font-size: 12px;
+  z-index: 201;
 }
 
 .mpages {
   display: none;
+  position: absolute;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  padding: 20px 10px;
+}
+
+.msection {
+  margin: 10px 10px 20px 10px;
+}
+
+.mheading {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mlists {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 10px 10px 20px 10px;
+}
+
+.mlist {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(55, 55, 55);
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 10px;
+  padding: 5px 10px 5px 10px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  cursor: pointer;
+}
+
+.mtext {
+  margin-left: 5px;
 }
 
 .ham,
@@ -92,35 +135,40 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+.slideIn {
+  animation: slide-in 0.3s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slideOut {
+  animation: slide-out 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 800px) {
   .nav1 {
     position: relative;
-  }
-
-  .mpages {
-    position: absolute;
-    background-color: rgb(136, 133, 133);
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    padding: 20px 10px;
-  }
-  .mpages li {
-    list-style: none;
   }
 
   .mpages a {
     text-decoration: none;
     color: #b3b3b3;
-  }
-
-  .mpage {
-    border: 3px solid rgb(198, 197, 197);
-    padding: 10px;
-    margin: 20px 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   .pages {

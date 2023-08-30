@@ -6,8 +6,8 @@ export default authMiddleware({
     "/store",
     "/store/tshirts", // Make the parent route public
     "/store/tshirts/:id", // Make each product route public
-    "/store/tshirts/:id",
-    // ... add more product routes as needed
+    "/store/wallets/:id",
+    "/store/wallets",
     "/support",
     "/blog",
     "/ourstory",

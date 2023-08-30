@@ -1,0 +1,15 @@
+.icon {
+  cursor: pointer;
+  color: #b3b3b3;
+  margin: 0 5px;
+}
+
+.icon:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 800px) {
+  .container {
+    display: none;
+  }
+}

@@ -22,8 +22,6 @@
 .info {
   font-size: 16px;
   line-height: 1.5;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 .icons {
@@ -38,7 +36,6 @@
 
 .container h2,
 .container h3 {
-  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -55,4 +52,19 @@
   margin-top: 20px;
   padding-top: 20px;
   border-top: 2px solid rgb(73, 73, 73);
+}
+
+.sections {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  margin: 20px 10px;
+}
+
+.section {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 400px;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  border-radius: 10px;
 }
