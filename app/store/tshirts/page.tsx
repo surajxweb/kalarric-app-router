@@ -5,20 +5,44 @@ import Image from "next/image";
 import banner from "@/resources/banner/1.png";
 import Offers from "@/components/Offers";
 import ProductCard from "@/components/ProductCard";
+const { request } = require("graphql-request");
 
-interface Product {
-  productId: number;
-  productName: string;
-  category: string; // Assuming category is a string
-  price: number;
-  imageURL: string[];
-  mrp: number;
-}
+const fetchTshirts = async () => {
+  const endpoint = process.env.GPAPHQL_KA_CHAABI;
+  const query = `
+    query best_selling {
+      products(where: {category: {id: "cllyd3aeb0prh0aphuiym7aae"}}) {
+        id
+        productName
+        category {
+          id
+          categoryName
+        }
+        price
+        mrp
+        quantities {
+          size
+          number
+        }
+        images {
+          id
+          imageUrl
+        }
+      }
+    }
+  `;
 
-const TshirtsPage: NextPage = () => {
-  const tshirts: Product[] = database.products.filter(
-    (product) => product.category === "tshirts"
-  );
+  try {
+    const tshirtResponse = await request(endpoint, query);
+    return tshirtResponse.products;
+  } catch (e) {
+    console.log("Failed to fetch Tshirts - ", e);
+    return null;
+  }
+};
+
+const TshirtsPage: NextPage = async () => {
+  const tshirts = await fetchTshirts();
 
   return (
     <div className={styles.container}>
@@ -34,16 +58,22 @@ const TshirtsPage: NextPage = () => {
       </div>
       <h1 className={styles.heading}>Oversized Tshirts</h1>
       <div className={styles.list}>
-        {tshirts.map((tshirt) => (
+        {tshirts.map((product: any) => (
           <ProductCard
-            key={tshirt.productId}
-            name={tshirt.productName}
-            price={tshirt.price}
-            imageURL1={tshirt.imageURL[0]}
-            imageURL2={tshirt.imageURL[1]}
-            mrp={tshirt.mrp}
-            id={tshirt.productId}
-            category={tshirt.category}
+            key={product.id}
+            name={product.productName}
+            price={product.price}
+            imageURL1={
+              product.images[0]?.imageUrl ||
+              "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
+            }
+            imageURL2={
+              product.images[1]?.imageUrl ||
+              "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
+            }
+            mrp={product.mrp}
+            id={product.id}
+            category={product.category.categoryName}
           />
         ))}
       </div>

@@ -1,0 +1,71 @@
+.container {
+  min-height: 500px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-top: 44px; /* Initially off-screen above the container */
+  background-color: #222;
+  animation: slide-in 0.5s ease-in-out; /* Apply the animation */
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 4px solid #b3b3b3;
+  font-family: inherit;
+  color: #f3f3f3;
+  font-size: 20px;
+  margin-left: 20px;
+  padding: 5px 10px;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.results {
+  padding: 30px 20px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+}
+
+.headerImage {
+  width: 400px;
+  margin: auto;
+}
+
+/* .reactIcons {
+  animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(
+      0
+    ); 
+  }
+  50% {
+    transform: translateY(
+      -3px
+    ); 
+  }
+} */

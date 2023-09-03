@@ -19,7 +19,7 @@ import { RxCross1 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useAuth } from "@clerk/nextjs";
 import { useClerk } from "@clerk/clerk-react";
-import {MdLogin} from "react-icons/md";
+import { MdLogin } from "react-icons/md";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -76,9 +76,9 @@ export default function Navbar() {
             <Link href={"/store"}>
               <li className={styles.page}>Store</li>
             </Link>
-             <Link href={"/store/tshirts"}>
+            <Link href={"/store/tshirts"}>
               <li className={styles.page}>T-Shirt</li>
-            </Link> 
+            </Link>
             <Link href={"/store/wallets"}>
               <li className={styles.page}>Wallets</li>
             </Link>
@@ -101,16 +101,17 @@ export default function Navbar() {
                 size='2em'
               />
             </Link>
-            { userId && <UserButton />}
-            {!userId  && <Link href={"/sign-in"}>
-            <MdLogin className={styles.signIn} size='2em' type="login" />
-                </Link>}
-             <Link href={"/cart"}>
+            {userId && <UserButton />}
+            {!userId && (
+              <Link href={"/sign-in"}>
+                <MdLogin className={styles.signIn} size='2em' type='login' />
+              </Link>
+            )}
+            <Link href={"/cart"}>
               <div className={styles.carts}>
-              <Cart />
+                <Cart />
               </div>
-            </Link> 
-            
+            </Link>
           </div>
         </div>
       </div>
@@ -126,7 +127,7 @@ export default function Navbar() {
           <div className={styles.msection}>
             <div className={styles.mheading}>Kalarric</div>
             <div className={styles.mlists}>
-            <Link href={"/store/tshirts"}>
+              <Link href={"/store/tshirts"}>
                 <div className={styles.mlist}>
                   <LiaTshirtSolid />
                   <div className={styles.mtext}>Store</div>

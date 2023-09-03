@@ -1,9 +1,9 @@
 import { request } from "graphql-request";
-import { Product } from '@/types/types'; 
+import { Product } from "@/types/types";
 
 const fetchAllProducts = async () => {
-    const endpoint = process.env.GPAPHQL_KA_CHAABI || "";
-    const query = `
+  const endpoint = process.env.GPAPHQL_KA_CHAABI || "";
+  const query = `
     query all_products {
         products {
           productName
@@ -21,22 +21,24 @@ const fetchAllProducts = async () => {
         }
       }
       
-    `
-    try {
-        const allProductsResponse: { products: Product[] } = await request(endpoint, query);
-        return allProductsResponse.products;
-      } catch (e) {
-        console.log('Failed to fetch product data - ', e);
-        return null;
-      }
-}
+    `;
+  try {
+    const allProductsResponse: { products: Product[] } = await request(
+      endpoint,
+      query
+    );
+    return allProductsResponse.products;
+  } catch (e) {
+    console.log("Failed to fetch product data - ", e);
+    return null;
+  }
+};
 
-const StorePage = async() => {
-    const allProducts = await fetchAllProducts();
-    console.log(allProducts);
-    
-    return <div>x`</div>
-}
+const StorePage = async () => {
+  const allProducts = await fetchAllProducts();
+  console.log(allProducts);
 
+  return <div>x`</div>;
+};
 
 export default StorePage;

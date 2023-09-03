@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./ProductCard.module.css";
@@ -31,21 +31,21 @@ export default function ProductCard({
       <Link href={`/store/${category}/${id}`}>
         <div className={styles.container}>
           <div
-            className="image-container"
+            className='image-container'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             {hover ? (
               <Image
                 src={imageURL2}
-                alt="cover picture 1"
+                alt='cover picture 1'
                 width={400}
                 height={400}
               />
             ) : (
               <Image
                 src={imageURL1}
-                alt="cover picture 2"
+                alt='cover picture 2'
                 width={400}
                 height={400}
               />
@@ -55,7 +55,9 @@ export default function ProductCard({
           <div className={styles.info}>
             <div className={styles.price}>{`₹ ${price}`}</div>
             <div className={styles.mrp}>{`MRP ${mrp}`}</div>
-            <div className={styles.discount}>{`(${discountPercentage}% off)`}</div>
+            <div
+              className={styles.discount}
+            >{`(${discountPercentage}% off)`}</div>
           </div>
         </div>
       </Link>

@@ -13,15 +13,11 @@ import headerImage from "@/resources/Header/one.png";
 import header_mobile from "@/resources/Header/one_mobile.png";
 import sale from "@/resources/Header/sale.png";
 import sale_mobile from "@/resources/Header/sale_mobile.png";
-const { request } = require('graphql-request');
-
+const { request } = require("graphql-request");
 
 const titlefont = Cormorant({ subsets: ["latin"], weight: "400" });
 
-
-
-
-const fetchBestSellingProducts = async() => {
+const fetchBestSellingProducts = async () => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI;
   const query = `
     query best_selling {
@@ -46,43 +42,43 @@ const fetchBestSellingProducts = async() => {
     }
   `;
 
-
   try {
     const bestSellingResponse = await request(endpoint, query);
     return bestSellingResponse.products;
   } catch (e) {
-    console.log('Failed to fetch Best Selling Products - ', e);
+    console.log("Failed to fetch Best Selling Products - ", e);
     return null;
   }
-}
-
+};
 
 const Home = async () => {
   const bestSellingProducts = await fetchBestSellingProducts();
- 
+
   return (
     <main className={styles.main}>
       <Offers />
       <Link href={"/store"}>
-      <div className={styles.headerImage}>
-        <Image
-          placeholder='blur'
-          src={headerImage}
-          alt='header image'
-          height={600}
-          width={1536}
-        />
-      </div></Link>
+        <div className={styles.headerImage}>
+          <Image
+            placeholder='blur'
+            src={headerImage}
+            alt='header image'
+            height={600}
+            width={1536}
+          />
+        </div>
+      </Link>
       <Link href={"/store"}>
-      <div className={styles.headerImage_mobile}>
-        <Image
-          placeholder='blur'
-          src={header_mobile}
-          alt='header image'
-          height={400}
-          width={350}
-        />
-      </div></Link>
+        <div className={styles.headerImage_mobile}>
+          <Image
+            placeholder='blur'
+            src={header_mobile}
+            alt='header image'
+            height={400}
+            width={350}
+          />
+        </div>
+      </Link>
       <div className={styles.info}>
         <div className={styles.sec}>
           <BsTruck size='4em' color='#b3b3b3' />
@@ -149,11 +145,9 @@ const Home = async () => {
         </Link>
       </div>
 
-
       <JoinTribe />
     </main>
   );
-}
-
+};
 
 export default Home;
