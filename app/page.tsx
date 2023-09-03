@@ -5,7 +5,6 @@ import { BsTruck } from "react-icons/bs";
 import { BsFillChatFill } from "react-icons/bs";
 import { BsCurrencyRupee } from "react-icons/bs";
 import { AiOutlineLock } from "react-icons/ai";
-import { database } from "@/resources/Database";
 import BestSellers from "@/components/BestSellers";
 import { Cormorant } from "next/font/google";
 import JoinTribe from "@/components/JoinTribe";
@@ -14,30 +13,57 @@ import headerImage from "@/resources/Header/one.png";
 import header_mobile from "@/resources/Header/one_mobile.png";
 import sale from "@/resources/Header/sale.png";
 import sale_mobile from "@/resources/Header/sale_mobile.png";
+const { request } = require('graphql-request');
+
 
 const titlefont = Cormorant({ subsets: ["latin"], weight: "400" });
 
-interface Product {
-  productId: number;
-  productName: string;
-  category: string;
-  description: string;
-  productInfo: {
-    material: string;
-    origin: string;
-    weight: string;
-    dimension: string;
-  };
-  quantity: { name: string; number: number }[];
-  mrp: number;
-  price: number;
-  imageURL: string[];
+
+
+
+const fetchBestSellingProducts = async() => {
+  const endpoint = process.env.GPAPHQL_KA_CHAABI;
+  const query = `
+    query best_selling {
+      products(where: {collection: {id: "cllyd4h110p8o0bodcn7zti6f"}}) {
+        id
+        productName
+        category {
+          id
+          categoryName
+        }
+        price
+        mrp
+        quantities {
+          size
+          number
+        }
+        images {
+          id
+          imageUrl
+        }
+      }
+    }
+  `;
+
+
+  try {
+    const bestSellingResponse = await request(endpoint, query);
+    return bestSellingResponse.products;
+  } catch (e) {
+    console.log('Failed to fetch Best Selling Products - ', e);
+    return null;
+  }
 }
 
-export default function Home() {
+
+const Home = async () => {
+  const bestSellingProducts = await fetchBestSellingProducts();
+ 
   return (
     <main className={styles.main}>
       <Offers />
+      <Link href={"/store"}>
       <div className={styles.headerImage}>
         <Image
           placeholder='blur'
@@ -46,7 +72,8 @@ export default function Home() {
           height={600}
           width={1536}
         />
-      </div>
+      </div></Link>
+      <Link href={"/store"}>
       <div className={styles.headerImage_mobile}>
         <Image
           placeholder='blur'
@@ -55,7 +82,7 @@ export default function Home() {
           height={400}
           width={350}
         />
-      </div>
+      </div></Link>
       <div className={styles.info}>
         <div className={styles.sec}>
           <BsTruck size='4em' color='#b3b3b3' />
@@ -98,9 +125,9 @@ export default function Home() {
       <div className={`${styles.homegrown} ${styles.tricolorBackground}`}>
         HOMEGROWN INDIAN BRAND
       </div>
-      <BestSellers products={database.products as Product[]} />
+      <BestSellers products={bestSellingProducts} />
       <div className={styles.sale}>
-        <Link href={"/wallets"}>
+        <Link href={"/store/wallets"}>
           <Image
             placeholder='blur'
             src={sale}
@@ -111,7 +138,7 @@ export default function Home() {
         </Link>
       </div>
       <div className={styles.sale_mobile}>
-        <Link href={"/wallets"}>
+        <Link href={"/store/wallets"}>
           <Image
             placeholder='blur'
             src={sale_mobile}
@@ -122,7 +149,11 @@ export default function Home() {
         </Link>
       </div>
 
+
       <JoinTribe />
     </main>
   );
 }
+
+
+export default Home;

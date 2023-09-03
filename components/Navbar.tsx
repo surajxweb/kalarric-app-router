@@ -19,10 +19,12 @@ import { RxCross1 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useAuth } from "@clerk/nextjs";
 import { useClerk } from "@clerk/clerk-react";
+import {MdLogin} from "react-icons/md";
 
 import Link from "next/link";
 import { useState } from "react";
 import UserButton from "./UserButton";
+import Cart from "./Cart";
 
 // Define the Navbar component
 export default function Navbar() {
@@ -71,12 +73,12 @@ export default function Navbar() {
 
           {/* Navigation links */}
           <ul className={styles.pages}>
-            <Link href={"/store/tshirts"}>
-              <li className={styles.page}>T-Shirt</li>
+            <Link href={"/store"}>
+              <li className={styles.page}>Store</li>
             </Link>
-            {/* <Link href={"/caps"}>
-              <li className={styles.page}>Caps</li>
-            </Link> */}
+             <Link href={"/store/tshirts"}>
+              <li className={styles.page}>T-Shirt</li>
+            </Link> 
             <Link href={"/store/wallets"}>
               <li className={styles.page}>Wallets</li>
             </Link>
@@ -99,16 +101,16 @@ export default function Navbar() {
                 size='2em'
               />
             </Link>
-            <UserButton />
-            <Link href={"/cart"}>
+            { userId && <UserButton />}
+            {!userId  && <Link href={"/sign-in"}>
+            <MdLogin className={styles.signIn} size='2em' type="login" />
+                </Link>}
+             <Link href={"/cart"}>
               <div className={styles.carts}>
-                <BsFillBagFill
-                  className={`${styles.icon} ${styles.carticon}`}
-                  size='2em'
-                />
-                <div className={styles.cartno}>10</div>
+              <Cart />
               </div>
-            </Link>
+            </Link> 
+            
           </div>
         </div>
       </div>
@@ -122,15 +124,21 @@ export default function Navbar() {
           }`}
         >
           <div className={styles.msection}>
-            <div className={styles.mheading}>Store</div>
+            <div className={styles.mheading}>Kalarric</div>
             <div className={styles.mlists}>
-              <Link href={"/tshirts"}>
+            <Link href={"/store/tshirts"}>
+                <div className={styles.mlist}>
+                  <LiaTshirtSolid />
+                  <div className={styles.mtext}>Store</div>
+                </div>
+              </Link>
+              <Link href={"/store/tshirts"}>
                 <div className={styles.mlist}>
                   <LiaTshirtSolid />
                   <div className={styles.mtext}>Tshirts</div>
                 </div>
               </Link>
-              <Link href={"/wallets"}>
+              <Link href={"/store/wallets"}>
                 <div className={styles.mlist}>
                   <LiaWalletSolid />
                   <div className={styles.mtext}>Wallets</div>
@@ -176,7 +184,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className={styles.msection}>
-            <div className={styles.mheading}>Kalarric</div>
+            <div className={styles.mheading}>Company</div>
             <div className={styles.mlists}>
               <Link href={"/about"}>
                 <div className={styles.mlist}>

@@ -42,12 +42,6 @@ export default function Footer() {
           </ul>
         </div>
         <div className={styles.socials}>
-          <div className={styles.return}>
-            <Link href='/shippingandreturns'>
-              <GiReturnArrow className={styles.returnicon} size='2em' /> 30 Days
-              Easy Returns
-            </Link>
-          </div>
           <div>
             <Link href='https://www.instagram.com/kalarric'>
               <BsInstagram className={styles.insta} size='2em' />

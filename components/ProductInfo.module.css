@@ -1,0 +1,124 @@
+.infoContainer {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.category {
+  color: orangered;
+}
+
+.productTitle {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.description {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.sizesRow {
+  margin: 30px 0;
+}
+
+.sizes {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 10px 0;
+}
+
+.sizes button {
+  cursor: pointer;
+  font-family: inherit;
+  margin-right: 10px;
+  padding: 10px 20px;
+}
+
+.sizes button:hover {
+  background-color: rgb(223, 221, 221);
+}
+
+.prices {
+  margin: 30px 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.price {
+  margin-right: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.mrp {
+  font-size: 25px;
+  text-decoration: line-through;
+}
+
+.button {
+  margin: 10px 0 30px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+  padding: 10px 60px;
+  font-family: inherit;
+  font-size: 20px;
+  border: 2px solid black;
+  background-color: #111;
+  color: white;
+}
+
+.button:hover {
+  background-color: rgb(202, 200, 200);
+  color: rgb(0, 0, 0);
+}
+
+.button:focus {
+  box-shadow: none;
+}
+
+.roadToCheckout {
+  color: darkgreen;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.sizeError {
+  font-size: 12px;
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .imageContainer {
+    width: 100%;
+  }
+  .images {
+    display: none;
+  }
+  .category {
+    font-size: 12px;
+  }
+  .productTitle {
+    font-size: 25px;
+  }
+  .description {
+    font-size: 14px;
+  }
+
+  .sizes button {
+    padding: 5px 10px;
+  }
+
+  .price {
+    font-size: 25px;
+  }
+
+  .mrp {
+    font-size: 22px;
+  }
+
+  .button {
+    width: 90%;
+  }
+}

@@ -52,17 +52,30 @@
   color: #b3b3b3;
 }
 
+.carts {
+  position: relative;
+  top: -3px;
+}
+
 .tools {
   position: relative;
   top: 2px;
   width: 10%;
   display: flex;
+  align-items: center;
   justify-content: space-around;
   align-items: center;
 }
 
-.icon,
-.carts {
+.signIn {
+  color: #b3b3b3;
+}
+
+.signIn:hover {
+  color: white;
+}
+
+.icon {
   cursor: pointer;
   color: #b3b3b3;
   margin: 0 5px;
@@ -70,19 +83,6 @@
 
 .icon:hover {
   color: #ffffff;
-}
-
-.cartno {
-  position: absolute;
-  bottom: -4px;
-  right: -1px;
-  padding: 2px 6px;
-  background-color: red;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
-  font-size: 12px;
-  z-index: 201;
 }
 
 .mpages {
@@ -192,5 +192,9 @@
   .cartno {
     font-size: 8px;
     padding: 1px 4px;
+  }
+
+  .signIn {
+    display: none;
   }
 }
