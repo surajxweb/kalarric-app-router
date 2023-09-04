@@ -1,5 +1,4 @@
 import { NextPage } from "next";
-import { database } from "@/resources/Database";
 import styles from "../tshirts/Tshirts.module.css";
 import Image from "next/image";
 import banner from "@/resources/banner/2.png";
@@ -11,7 +10,7 @@ const fetchWallets = async () => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI;
   const query = `
     query best_selling {
-      products(where: {category: {id: "cllyd3aeb0prh0aphuiym7aae"}}) {
+      products(where: {category: {id: "cllyd12hb0pqe0aph15jqpws3"}}) {
         id
         productName
         category {
