@@ -91,6 +91,11 @@
 }
 
 @media (max-width: 600px) {
+  .infoContainer {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
   .imageContainer {
     width: 100%;
   }
@@ -120,6 +125,8 @@
   }
 
   .button {
+    border: 2ps solid red;
     width: 90%;
+    margin-right: auto;
   }
 }

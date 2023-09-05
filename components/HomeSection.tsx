@@ -1,24 +1,24 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import styles from "./BestSellers.module.css";
+import styles from "./HomeSection.module.css";
 import { Product } from "@/types/types";
 
-const BestSellers = ({ products }: { products: Product[] }) => {
+const HomeSection = ({ products, name }: { products: Product[], name: string }) => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading}>BEST SELLERS</h2>
+      <h2 className={styles.heading}>{name}</h2>
       <ul className={styles.hascards}>
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductCard
             key={product.id}
             name={product.productName}
             price={product.price}
             imageURL1={
-              product.images[0]?.imageUrl ||
+              product.images[0]?.productImage[0].url ||
               "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
             }
             imageURL2={
-              product.images[1]?.imageUrl ||
+              product.images[0]?.productImage[1].url ||
               "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
             }
             mrp={product.mrp}
@@ -31,4 +31,4 @@ const BestSellers = ({ products }: { products: Product[] }) => {
   );
 };
 
-export default BestSellers;
+export default HomeSection;

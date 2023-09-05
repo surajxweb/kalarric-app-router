@@ -1,0 +1,144 @@
+{
+  "data": {
+    "products": [
+      {
+        "id": "cllygl7kq0qpa0aph16yuzp78",
+        "productName": "Let's Go Travel - Black Oversized T-Shirt",
+        "price": 899,
+        "mrp": 1499,
+        "quantities": [
+          {
+            "size": "s",
+            "number": 2
+          },
+          {
+            "size": "m",
+            "number": 5
+          },
+          {
+            "size": "l",
+            "number": 5
+          },
+          {
+            "size": "xl",
+            "number": 5
+          },
+          {
+            "size": "xxl",
+            "number": 3
+          }
+        ],
+        "category": {
+          "id": "cllyd3aeb0prh0aphuiym7aae",
+          "categoryName": "tshirts"
+        },
+        "images": [
+          {
+            "id": "clm5z03m12q390bo124c4p4ko",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/r9UtPZEARmC0wAwCgSi6"
+              },
+              {
+                "url": "https://media.graphassets.com/ThGSyfVLTNGr7d5EKeiw"
+              },
+              {
+                "url": "https://media.graphassets.com/TeWuK8gCTtCDuOmTQjzs"
+              },
+              {
+                "url": "https://media.graphassets.com/NNotsL9gR9uW6iMrtKDJ"
+              },
+              {
+                "url": "https://media.graphassets.com/QWmNhWq8ReS2XlQFb74b"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cllyks01r0rac0bod5r2h4glj",
+        "productName": "Game Over - White Oversized T-Shirt",
+        "price": 999,
+        "mrp": 1899,
+        "quantities": [
+          {
+            "size": "s",
+            "number": 2
+          },
+          {
+            "size": "m",
+            "number": 5
+          },
+          {
+            "size": "l",
+            "number": 5
+          },
+          {
+            "size": "xl",
+            "number": 5
+          },
+          {
+            "size": "xxl",
+            "number": 3
+          }
+        ],
+        "category": {
+          "id": "cllyd3aeb0prh0aphuiym7aae",
+          "categoryName": "tshirts"
+        },
+        "images": [
+          {
+            "id": "clm5ymsxy2pm30bo103em7kk4",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/MPz9IFfSQu1IsdDmbe3h"
+              },
+              {
+                "url": "https://media.graphassets.com/6qwwWBcLQNCA8Yt0EcOJ"
+              },
+              {
+                "url": "https://media.graphassets.com/QZX4obqCSD6IFuwdyVhu"
+              },
+              {
+                "url": "https://media.graphassets.com/qmB1GOaSJesCXzLoAqWf"
+              },
+              {
+                "url": "https://media.graphassets.com/54zFnioSo8sXTvmUcUlA"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cllyvmltk0v7f0bodrscbzyyx",
+        "productName": "Kalarric One Originals - Pure Leather Wallet",
+        "price": 399,
+        "mrp": 799,
+        "quantities": [],
+        "category": {
+          "id": "cllyd12hb0pqe0aph15jqpws3",
+          "categoryName": "wallets"
+        },
+        "images": [
+          {
+            "id": "clm5yd1qc2p2o0bo1c7qz8n2q",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/pSGMbr1lTnyVYIln4AUA"
+              },
+              {
+                "url": "https://media.graphassets.com/OG4ZDKkQtergfbVC8Skc"
+              },
+              {
+                "url": "https://media.graphassets.com/WtZC8A2RRuWnhvhm1P9A"
+              },
+              {
+                "url": "https://media.graphassets.com/LLoWLiuuSBmgsrO8PQwX"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

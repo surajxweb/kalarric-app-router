@@ -5,14 +5,14 @@ import { BsTruck } from "react-icons/bs";
 import { BsFillChatFill } from "react-icons/bs";
 import { BsCurrencyRupee } from "react-icons/bs";
 import { AiOutlineLock } from "react-icons/ai";
-import BestSellers from "@/components/BestSellers";
+import HomeSection from "@/components/HomeSection";
 import { Cormorant } from "next/font/google";
 import JoinTribe from "@/components/JoinTribe";
 import Offers from "@/components/Offers";
-import headerImage from "@/resources/Header/one.png";
-import header_mobile from "@/resources/Header/one_mobile.png";
-import sale from "@/resources/Header/sale.png";
-import sale_mobile from "@/resources/Header/sale_mobile.png";
+import headerImage from "@/resources/banner/one.webp";
+import header_mobile from "@/resources/banner/one_mobile.webp";
+import sale from "@/resources/banner/sale.webp";
+import sale_mobile from "@/resources/banner/sale_mobile.webp";
 const { request } = require("graphql-request");
 
 const titlefont = Cormorant({ subsets: ["latin"], weight: "400" });
@@ -20,26 +20,28 @@ const titlefont = Cormorant({ subsets: ["latin"], weight: "400" });
 const fetchBestSellingProducts = async () => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI;
   const query = `
-    query best_selling {
-      products(where: {collection: {id: "cllyd4h110p8o0bodcn7zti6f"}}) {
+  query best_selling {
+    products(where: {collection: {id: "cllyd4h110p8o0bodcn7zti6f"}}) {
+      id
+      productName
+      price
+      mrp
+      quantities {
+        size
+        number
+      }
+      category {
         id
-        productName
-        category {
-          id
-          categoryName
-        }
-        price
-        mrp
-        quantities {
-          size
-          number
-        }
-        images {
-          id
-          imageUrl
+        categoryName
+      }
+      images {
+        id
+        productImage{
+          url
         }
       }
     }
+  }
   `;
 
   try {
@@ -51,8 +53,45 @@ const fetchBestSellingProducts = async () => {
   }
 };
 
+const fetchKalarricOneProducts = async () => {
+  const endpoint = process.env.GPAPHQL_KA_CHAABI;
+  const query = `
+  query kalarricOne {
+    products(where: {collection: {id: "clm61i70t2rt00bo1j5rryo67"}}) {
+      id
+      productName
+      price
+      mrp
+      quantities {
+        size
+        number
+      }
+      category {
+        id
+        categoryName
+      }
+      images {
+        id
+        productImage{
+          url
+        }
+      }
+    }
+  }
+  `;
+
+  try {
+    const kalarricOneResponse = await request(endpoint, query);
+    return kalarricOneResponse.products;
+  } catch (e) {
+    console.log("Failed to fetch Kalarric One Products - ", e);
+    return null;
+  }
+};
+
 const Home = async () => {
   const bestSellingProducts = await fetchBestSellingProducts();
+  const kalarricOneProducts = await fetchKalarricOneProducts();
 
   return (
     <main className={styles.main}>
@@ -103,7 +142,7 @@ const Home = async () => {
           <div className={styles.text}>
             <div className={styles.question}>MONEY BACK GUARANTEE</div>
             <div className={styles.answer}>
-              100% Money back guarantee ensured. No questions asked.
+              100% Money back guarantee ensured.
             </div>
           </div>
         </div>
@@ -117,11 +156,10 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      <h1 className={`${titlefont.className} ${styles.title}`}>KALARRIC</h1>
-      <div className={`${styles.homegrown} ${styles.tricolorBackground}`}>
-        HOMEGROWN INDIAN BRAND
-      </div>
-      <BestSellers products={bestSellingProducts} />
+      
+      <HomeSection products={bestSellingProducts} name={"BestSellers"} />
+      <HomeSection products={kalarricOneProducts} name={"One Wallets"} />
+
       <div className={styles.sale}>
         <Link href={"/store/wallets"}>
           <Image
@@ -144,8 +182,10 @@ const Home = async () => {
           />
         </Link>
       </div>
-
-      <JoinTribe />
+      <h1 className={`${titlefont.className} ${styles.title}`}>KALARRIC</h1>
+      <div className={`${styles.homegrown} ${styles.tricolorBackground}`}>
+        HOMEGROWN INDIAN BRAND
+      </div>
     </main>
   );
 };

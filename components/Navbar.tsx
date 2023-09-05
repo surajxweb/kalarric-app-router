@@ -14,7 +14,6 @@ import { BiSupport } from "react-icons/bi";
 import { AiFillLock } from "react-icons/ai";
 import { FaShippingFast } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
-import { BsFillBagFill } from "react-icons/bs";
 import { RxCross1 } from "react-icons/rx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useAuth } from "@clerk/nextjs";
@@ -127,7 +126,7 @@ export default function Navbar() {
           <div className={styles.msection}>
             <div className={styles.mheading}>Kalarric</div>
             <div className={styles.mlists}>
-              <Link href={"/store/tshirts"}>
+              <Link href={"/store"}>
                 <div className={styles.mlist}>
                   <LiaTshirtSolid />
                   <div className={styles.mtext}>Store</div>

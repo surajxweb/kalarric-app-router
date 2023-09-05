@@ -1,4 +1,9 @@
 // types.ts
+interface Image {
+  id: string;
+  productImage: { url: string }[]; // Array of objects with 'url' property
+}
+
 interface Product {
   id: string;
   productName: string;
@@ -20,10 +25,7 @@ interface Quantity {
   number: number;
 }
 
-interface Image {
-  id: string;
-  imageUrl: string;
-}
+
 
 export interface ProductCardProps {
   name: string;

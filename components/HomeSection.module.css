@@ -1,3 +1,9 @@
+.container {
+  margin-top: 20px;
+  border: 1px solid white;
+  margin-bottom: 20px;
+}
+
 .heading {
   width: 50%;
   display: flex;
@@ -7,6 +13,7 @@
   font-weight: bold;
   margin: 20px auto;
   position: relative;
+  text-transform: uppercase;
 }
 
 .heading::before,
@@ -30,10 +37,6 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-}
-
-.container {
-  margin-bottom: 40px;
 }
 
 @media (max-width: 768px) {

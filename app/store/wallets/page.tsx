@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import styles from "../tshirts/Tshirts.module.css";
 import Image from "next/image";
-import banner from "@/resources/banner/2.png";
+import banner from "@/resources/banner/2.webp";
 import Offers from "@/components/Offers";
 import ProductCard from "@/components/ProductCard";
 const { request } = require("graphql-request");
@@ -9,39 +9,43 @@ const { request } = require("graphql-request");
 const fetchWallets = async () => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI;
   const query = `
-    query best_selling {
-      products(where: {category: {id: "cllyd12hb0pqe0aph15jqpws3"}}) {
+  query wallets {
+    products(where: {category: {id: "cllyd12hb0pqe0aph15jqpws3"}}) {
+      id
+      productName
+      price
+      mrp
+      quantities {
+        size
+        number
+      }
+      category {
         id
-        productName
-        category {
-          id
-          categoryName
-        }
-        price
-        mrp
-        quantities {
-          size
-          number
-        }
-        images {
-          id
-          imageUrl
+        categoryName
+      }
+      images {
+        id
+        productImage{
+          url
         }
       }
     }
+  }
   `;
 
   try {
-    const tshirtResponse = await request(endpoint, query);
-    return tshirtResponse.products;
+    const walletsResponse = await request(endpoint, query);
+    return walletsResponse.products;
   } catch (e) {
-    console.log("Failed to fetch Tshirts - ", e);
+    console.log("Failed to fetch Wallets - ", e);
     return null;
   }
 };
 
 const WalletsPage: NextPage = async () => {
-  const wallets = await fetchWallets();
+  const tshirts = await fetchWallets();
+  
+
   return (
     <div className={styles.container}>
       <Offers />
@@ -54,21 +58,17 @@ const WalletsPage: NextPage = async () => {
           alt='tshirts banner'
         />
       </div>
-      <h1 className={styles.heading}>Wallets</h1>
+      <h1 className={styles.heading}>Kalarric Wallets</h1>
       <div className={styles.list}>
-        {wallets.map((product: any) => (
+        {tshirts?.map((product: any) => (
           <ProductCard
             key={product.id}
             name={product.productName}
             price={product.price}
             imageURL1={
-              product.images[0]?.imageUrl ||
-              "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
-            }
+              product.images[0].productImage[0].url}
             imageURL2={
-              product.images[1]?.imageUrl ||
-              "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
-            }
+              product.images[0]?.productImage[1].url }
             mrp={product.mrp}
             id={product.id}
             category={product.category.categoryName}

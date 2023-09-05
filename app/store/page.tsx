@@ -36,7 +36,6 @@ const fetchAllProducts = async () => {
 
 const StorePage = async () => {
   const allProducts = await fetchAllProducts();
-  console.log(allProducts);
 
   return <div>x`</div>;
 };

@@ -6,15 +6,21 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import Image from "next/image";
 
 type ProductPageProps = {
-  imageURLs: string[];
+  images: {
+    id: string;
+    productImage: { url: string }[];
+  }[];
   thumbnails: string;
-};
+category: string};
 
-const ProductImage: FC<ProductPageProps> = ({ imageURLs, thumbnails }) => {
-  const images = imageURLs.map((url) => ({
-    original: url,
-    thumbnail: url,
-  }));
+const ProductImage: FC<ProductPageProps> = ({ images, thumbnails, category }) => {
+  // Create an array of image objects in the required format
+  const imageGalleryItems = images.flatMap((imageObj) =>
+    imageObj?.productImage?.map((image) => ({
+      original: image.url,
+      thumbnail: image.url,
+    }))
+  );
 
   const position = thumbnails === "left" ? "left" : "bottom";
 
@@ -22,15 +28,15 @@ const ProductImage: FC<ProductPageProps> = ({ imageURLs, thumbnails }) => {
     <ImageGallery
       showNav={false}
       thumbnailPosition={position}
-      items={images}
+      items={imageGalleryItems}
       showPlayButton={false}
       renderItem={(image) => (
-        <div className='image-gallery-image'>
+        <div className="image-gallery-image">
           <Image
             src={image.original}
-            alt='product image'
-            width={580}
-            height={580}
+            alt="product image"
+            width={1200}
+            height={category === "tshirts" ? 900 : 1200}
           />
         </div>
       )}

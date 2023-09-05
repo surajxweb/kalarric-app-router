@@ -45,7 +45,7 @@ const SearchPage: NextPage = () => {
               <h2 className={styles.heading}>Search Results</h2>
             )}
             <div className={styles.list}>
-              {searchResults.length > 0 &&
+              {searchResults?.length > 0 &&
                 searchResults
                   .slice(0, 15)
                   .map((product: any) => (

@@ -1,10 +1,8 @@
-import Link from "next/link";
 import styles from "@/app/store/ProductPage.module.css";
 import Offers from "@/components/Offers";
 import ProductImage from "@/components/ProductImage";
 const { request } = require("graphql-request");
 import ProductInfo from "@/components/ProductInfo";
-import { Product } from "@/types/types";
 
 const fetchProductDetails = async (id: string) => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI;
@@ -26,15 +24,17 @@ const fetchProductDetails = async (id: string) => {
         }
         images {
           id
-          imageUrl
+          productImage{
+            url
+          }
         }
       }
     }
   `;
 
   try {
-    const bestSellingResponse = await request(endpoint, query);
-    return bestSellingResponse.products[0];
+    const tshirtsData = await request(endpoint, query);
+    return tshirtsData.products[0];
   } catch (e) {
     console.log("Failed to fetch product data - ", e);
     return null;
@@ -43,7 +43,6 @@ const fetchProductDetails = async (id: string) => {
 
 const TshirtProductPage = async ({ params }: { params: { id: string } }) => {
   const product = await fetchProductDetails(params.id);
-  console.log(product);
 
   return (
     <>
@@ -52,7 +51,7 @@ const TshirtProductPage = async ({ params }: { params: { id: string } }) => {
         <div className={styles.container}>
           <div className={styles.productContainer}>
             <div className={styles.imageContainer}>
-              {/* <div className={styles.images}>
+               <div className={styles.images}>
                 <ProductImage
                   thumbnails={"left"}
                   images={product.images}
@@ -63,7 +62,7 @@ const TshirtProductPage = async ({ params }: { params: { id: string } }) => {
                   thumbnails={"bottom"}
                   images={product.images}
                 />
-              </div> */}
+              </div> 
             </div>
             <ProductInfo product={product} />
           </div>
