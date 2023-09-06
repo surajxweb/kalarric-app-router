@@ -1,5 +1,5 @@
 .container {
-  min-height: 500px;
+  margin-top: 44px;
 }
 
 .form {
@@ -7,7 +7,7 @@
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  margin-top: 44px; /* Initially off-screen above the container */
+  /* Initially off-screen above the container */
   background-color: #222;
   animation: slide-in 0.5s ease-in-out; /* Apply the animation */
 }
@@ -37,19 +37,23 @@
 }
 
 .results {
-  padding: 30px 20px;
+  padding: 30px 10px;
 }
 
 .list {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   flex-flow: row wrap;
 }
 
 .headerImage {
-  width: 400px;
-  margin: auto;
+  width: 40%;
+  margin: 20px auto;
+}
+
+.headerImage img {
+  width: 100%;
+  height: auto;
 }
 
 /* .reactIcons {
@@ -69,3 +73,18 @@
     ); 
   }
 } */
+
+@media (max-width: 800px) {
+  .container {
+    margin-top: 0px;
+  }
+  .headerImage {
+    width: 95%;
+  }
+}
+
+@media (max-width: 500px) {
+  .form input {
+    width: 200px;
+  }
+}

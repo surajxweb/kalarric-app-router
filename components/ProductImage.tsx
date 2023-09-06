@@ -11,15 +11,21 @@ type ProductPageProps = {
     productImage: { url: string }[];
   }[];
   thumbnails: string;
-category: string};
+  category: string;
+};
 
-const ProductImage: FC<ProductPageProps> = ({ images, thumbnails, category }) => {
+const ProductImage: FC<ProductPageProps> = ({
+  images,
+  thumbnails,
+  category,
+}) => {
   // Create an array of image objects in the required format
-  const imageGalleryItems = images.flatMap((imageObj) =>
-    imageObj?.productImage?.map((image) => ({
-      original: image.url,
-      thumbnail: image.url,
-    }))
+  const imageGalleryItems = images.flatMap(
+    (imageObj) =>
+      imageObj?.productImage?.map((image) => ({
+        original: image.url,
+        thumbnail: image.url,
+      }))
   );
 
   const position = thumbnails === "left" ? "left" : "bottom";
@@ -31,10 +37,10 @@ const ProductImage: FC<ProductPageProps> = ({ images, thumbnails, category }) =>
       items={imageGalleryItems}
       showPlayButton={false}
       renderItem={(image) => (
-        <div className="image-gallery-image">
+        <div className='image-gallery-image'>
           <Image
             src={image.original}
-            alt="product image"
+            alt='product image'
             width={1200}
             height={category === "tshirts" ? 900 : 1200}
           />

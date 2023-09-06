@@ -44,7 +44,6 @@ const fetchWallets = async () => {
 
 const WalletsPage: NextPage = async () => {
   const tshirts = await fetchWallets();
-  
 
   return (
     <div className={styles.container}>
@@ -65,10 +64,8 @@ const WalletsPage: NextPage = async () => {
             key={product.id}
             name={product.productName}
             price={product.price}
-            imageURL1={
-              product.images[0].productImage[0].url}
-            imageURL2={
-              product.images[0]?.productImage[1].url }
+            imageURL1={product.images[0].productImage[0].url}
+            imageURL2={product.images[0]?.productImage[1].url}
             mrp={product.mrp}
             id={product.id}
             category={product.category.categoryName}

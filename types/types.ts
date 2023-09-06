@@ -25,8 +25,6 @@ interface Quantity {
   number: number;
 }
 
-
-
 export interface ProductCardProps {
   name: string;
   price: number;

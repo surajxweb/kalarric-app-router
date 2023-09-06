@@ -24,7 +24,9 @@ export async function GET(request: Request) {
         }
         images {
           id
-          imageUrl
+          productImage{
+            url
+          }
         }
       }
     }

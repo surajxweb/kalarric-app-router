@@ -156,7 +156,7 @@ const Home = async () => {
           </div>
         </div>
       </div>
-      
+
       <HomeSection products={bestSellingProducts} name={"BestSellers"} />
       <HomeSection products={kalarricOneProducts} name={"One Wallets"} />
 
@@ -191,3 +191,5 @@ const Home = async () => {
 };
 
 export default Home;
+
+// npm add -D encoding

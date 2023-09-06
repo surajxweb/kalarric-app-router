@@ -1,0 +1,44 @@
+.container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  position: relative; /* Add this line to make it a positioning context for child elements */
+  align-items: center;
+}
+
+.filterContainer {
+  position: sticky;
+  top: 0; /* Set it to 0 to make it stick to the top of the container */
+  z-index: 1;
+  width: 150px;
+  padding: 74px 20px;
+  height: 200px;
+  align-self: flex-start;
+}
+
+.heading {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 510px) {
+  .container {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  .filterContainer {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    padding: 30px;
+    width: 100%;
+    margin: 0 0 20px 0;
+    justify-content: space-around;
+    background-color: white;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  }
+  .heading {
+    display: none;
+  }
+}

@@ -14,7 +14,6 @@
 }
 
 .imageContainer {
-  position: relative;
   width: 32px; /* Adjust the width to match your image size */
   height: 32px; /* Adjust the height to match your image size */
   background-image: url("../resources/logo/smalllogo.png"); /* Replace with the path to your default image */

@@ -1,11 +1,13 @@
 import { request } from "graphql-request";
 import { Product } from "@/types/types";
+import styles from "./Store.module.css";
+import FilterAndResults from "@/components/FilterAndResults";
 
 const fetchAllProducts = async () => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI || "";
   const query = `
     query all_products {
-        products {
+        products (first: 20) {
           productName
           id
           price
@@ -14,13 +16,18 @@ const fetchAllProducts = async () => {
             size
             number
           }
+          category {
+            id
+            categoryName
+          }
           images {
             id
-            imageUrl
+            productImage{
+              url
+            }
           }
-        }
       }
-      
+    }
     `;
   try {
     const allProductsResponse: { products: Product[] } = await request(
@@ -37,7 +44,7 @@ const fetchAllProducts = async () => {
 const StorePage = async () => {
   const allProducts = await fetchAllProducts();
 
-  return <div>x`</div>;
+  return <FilterAndResults allProducts={allProducts} />;
 };
 
 export default StorePage;

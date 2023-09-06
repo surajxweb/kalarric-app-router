@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./Search.module.css";
 import { BsSearch } from "react-icons/bs";
 import ProductCard from "@/components/ProductCard";
-import Offers from "@/components/Offers";
 import Image from "next/image";
 import search from "@/resources/store.svg";
 
@@ -53,14 +52,8 @@ const SearchPage: NextPage = () => {
                       key={product.id}
                       name={product.productName}
                       price={product.price}
-                      imageURL1={
-                        product.images[0]?.imageUrl ||
-                        "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
-                      }
-                      imageURL2={
-                        product.images[1]?.imageUrl ||
-                        "https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gwOo8lCPSZWopkUpx5Pv"
-                      }
+                      imageURL1={product.images[0].productImage[0].url}
+                      imageURL2={product.images[0]?.productImage[1].url}
                       mrp={product.mrp}
                       id={product.id}
                       category={product.category.categoryName}
@@ -69,7 +62,7 @@ const SearchPage: NextPage = () => {
             </div>
           </div>
         )}
-        {(searchResults.length < 0 || formData.length < 3) && (
+        {searchResults.length <= 0 && (
           <div className={styles.headerImage}>
             <Image src={search} alt='search image' height={500} width={500} />
           </div>

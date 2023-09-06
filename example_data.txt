@@ -2,8 +2,8 @@
   "data": {
     "products": [
       {
-        "id": "cllygl7kq0qpa0aph16yuzp78",
         "productName": "Let's Go Travel - Black Oversized T-Shirt",
+        "id": "cllygl7kq0qpa0aph16yuzp78",
         "price": 899,
         "mrp": 1499,
         "quantities": [
@@ -28,10 +28,6 @@
             "number": 3
           }
         ],
-        "category": {
-          "id": "cllyd3aeb0prh0aphuiym7aae",
-          "categoryName": "tshirts"
-        },
         "images": [
           {
             "id": "clm5z03m12q390bo124c4p4ko",
@@ -56,8 +52,58 @@
         ]
       },
       {
-        "id": "cllyks01r0rac0bod5r2h4glj",
+        "productName": "Beach Vibes - Black Oversized T-Shirt",
+        "id": "cllykkujl0roz0aphjaf2ytk7",
+        "price": 899,
+        "mrp": 1499,
+        "quantities": [
+          {
+            "size": "s",
+            "number": 2
+          },
+          {
+            "size": "m",
+            "number": 5
+          },
+          {
+            "size": "l",
+            "number": 5
+          },
+          {
+            "size": "xxl",
+            "number": 3
+          },
+          {
+            "size": "xl",
+            "number": 5
+          }
+        ],
+        "images": [
+          {
+            "id": "clm5yz4012bbx0bo4xz9q38pa",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/n9vTWvvmSW2o05mw7w32"
+              },
+              {
+                "url": "https://media.graphassets.com/1FBnjVOOTjaLwc6colse"
+              },
+              {
+                "url": "https://media.graphassets.com/Js7qDuESTVXt4Yxi6rnn"
+              },
+              {
+                "url": "https://media.graphassets.com/haw7SgnKRZ2KMA5HnJKT"
+              },
+              {
+                "url": "https://media.graphassets.com/lIZolICyRg3pieu2rhJY"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "productName": "Game Over - White Oversized T-Shirt",
+        "id": "cllyks01r0rac0bod5r2h4glj",
         "price": 999,
         "mrp": 1899,
         "quantities": [
@@ -82,10 +128,6 @@
             "number": 3
           }
         ],
-        "category": {
-          "id": "cllyd3aeb0prh0aphuiym7aae",
-          "categoryName": "tshirts"
-        },
         "images": [
           {
             "id": "clm5ymsxy2pm30bo103em7kk4",
@@ -110,15 +152,163 @@
         ]
       },
       {
-        "id": "cllyvmltk0v7f0bodrscbzyyx",
+        "productName": "Escape The Ordinary - White Oversized T-Shirts",
+        "id": "cllykx3ux0rup0aphp9avatet",
+        "price": 749,
+        "mrp": 999,
+        "quantities": [
+          {
+            "size": "s",
+            "number": 2
+          },
+          {
+            "size": "m",
+            "number": 5
+          },
+          {
+            "size": "l",
+            "number": 5
+          },
+          {
+            "size": "xl",
+            "number": 5
+          },
+          {
+            "size": "xxl",
+            "number": 3
+          }
+        ],
+        "images": [
+          {
+            "id": "clm5z0v3i2q900bo1ptanbx0i",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/sL6yaQnXTOaRbJzVv49C"
+              },
+              {
+                "url": "https://media.graphassets.com/c3ClEgvwRCSXck3qALg2"
+              },
+              {
+                "url": "https://media.graphassets.com/zbptejFRSisP1rnixdlw"
+              },
+              {
+                "url": "https://media.graphassets.com/E442v6yvQcyvlB8mhIhC"
+              },
+              {
+                "url": "https://media.graphassets.com/iZFt9QvRqtnISEHweuAg"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "productName": "my Style - Kalarric - White Oversized T-Shirts",
+        "id": "cllyl37df0rf40bodgn4f95hs",
+        "price": 799,
+        "mrp": 999,
+        "quantities": [
+          {
+            "size": "s",
+            "number": 2
+          },
+          {
+            "size": "m",
+            "number": 5
+          },
+          {
+            "size": "l",
+            "number": 5
+          },
+          {
+            "size": "xl",
+            "number": 5
+          },
+          {
+            "size": "xxl",
+            "number": 3
+          }
+        ],
+        "images": [
+          {
+            "id": "clm5yl9t72awp0bo47i7t71kl",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/POoK9nSWQ8GFoF96UZib"
+              },
+              {
+                "url": "https://media.graphassets.com/TWtRKghdRoqxbxHJWddc"
+              },
+              {
+                "url": "https://media.graphassets.com/8LoF7Wk2Ry2BmPCrAqf8"
+              },
+              {
+                "url": "https://media.graphassets.com/NXJca6SZCJ66kxUXfLAJ"
+              },
+              {
+                "url": "https://media.graphassets.com/CrNP6kYTKy1cJUULi4XT"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "productName": "Kalarric One Wallet - Baby Grey",
+        "id": "cllytculu0utp0aph45faxamr",
+        "price": 349,
+        "mrp": 699,
+        "quantities": [],
+        "images": [
+          {
+            "id": "clm5y8uzq2owg0bo1meabfzme",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/ZeMWf1WFSQyVNq2PgFDV"
+              },
+              {
+                "url": "https://media.graphassets.com/ujBUpepgRNyPhXaHoiTW"
+              },
+              {
+                "url": "https://media.graphassets.com/jE51v21yRiuuGnErt1G7"
+              },
+              {
+                "url": "https://media.graphassets.com/W9hWduzTKKp19xt09gQv"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "productName": "Kalarric One Wallet - Baby Green",
+        "id": "cllyvgdrk0v530bodpf4xhrei",
+        "price": 349,
+        "mrp": 699,
+        "quantities": [],
+        "images": [
+          {
+            "id": "clm5yfpmy2amx0bo4yxblqrsx",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/04d7edwYQc2ylEGnZgad"
+              },
+              {
+                "url": "https://media.graphassets.com/CAeXCQ5kTuyIFj9t2JSg"
+              },
+              {
+                "url": "https://media.graphassets.com/QU9OwVZGSNu8FxmIX6ZO"
+              },
+              {
+                "url": "https://media.graphassets.com/60gKT8xHTQm41mIyd1n6"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "productName": "Kalarric One Originals - Pure Leather Wallet",
+        "id": "cllyvmltk0v7f0bodrscbzyyx",
         "price": 399,
         "mrp": 799,
         "quantities": [],
-        "category": {
-          "id": "cllyd12hb0pqe0aph15jqpws3",
-          "categoryName": "wallets"
-        },
         "images": [
           {
             "id": "clm5yd1qc2p2o0bo1c7qz8n2q",
@@ -134,6 +324,58 @@
               },
               {
                 "url": "https://media.graphassets.com/LLoWLiuuSBmgsrO8PQwX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "productName": "Kalarric One Wallet - Textured Black",
+        "id": "cllyvsxkv0vr50aphrg4pdl3b",
+        "price": 399,
+        "mrp": 799,
+        "quantities": [],
+        "images": [
+          {
+            "id": "clm5yhonh2pdk0bo1ehuthy6l",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/Fo8ktrRdS8KNJcUOnopQ"
+              },
+              {
+                "url": "https://media.graphassets.com/19nCCH8uQOGpqvzd6zAD"
+              },
+              {
+                "url": "https://media.graphassets.com/L9BqI72NRhyfwa3TJNtS"
+              },
+              {
+                "url": "https://media.graphassets.com/4lUyToLIQxKlc86vtOAf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "productName": "Kalarric One X Wallet - Dark Side of the Moon",
+        "id": "cllyw81r80vw10aphmhrmek42",
+        "price": 649,
+        "mrp": 899,
+        "quantities": [],
+        "images": [
+          {
+            "id": "clm5ygqis2apg0bo4pdf5fwa2",
+            "productImage": [
+              {
+                "url": "https://media.graphassets.com/4CvKCP5cRiy84OyMUaOF"
+              },
+              {
+                "url": "https://media.graphassets.com/4ECFASvRQzqNNBllj7j5"
+              },
+              {
+                "url": "https://media.graphassets.com/QQr8j8KPSneU9oO5vnOP"
+              },
+              {
+                "url": "https://media.graphassets.com/w4A8V1YjQ3QjKZHB1aZJ"
               }
             ]
           }

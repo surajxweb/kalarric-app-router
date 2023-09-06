@@ -51,20 +51,20 @@ const TshirtProductPage = async ({ params }: { params: { id: string } }) => {
         <div className={styles.container}>
           <div className={styles.productContainer}>
             <div className={styles.imageContainer}>
-               <div className={styles.images}>
+              <div className={styles.images}>
                 <ProductImage
-                category="tshirts"
+                  category='tshirts'
                   thumbnails={"left"}
                   images={product.images}
                 />
               </div>
               <div className={styles.mobile_images}>
                 <ProductImage
-                category="tshirts"
+                  category='tshirts'
                   thumbnails={"bottom"}
                   images={product.images}
                 />
-              </div> 
+              </div>
             </div>
             <ProductInfo product={product} />
           </div>

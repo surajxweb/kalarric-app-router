@@ -1,0 +1,7 @@
+.container {
+  min-height: 600px;
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
