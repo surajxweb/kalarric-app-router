@@ -17,6 +17,8 @@ export default authMiddleware({
     "/search/api",
     "/cart",
     "/jobs",
+    "/api/create-user",
+    "/api/start-session",
   ],
 });
 
