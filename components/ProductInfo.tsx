@@ -6,10 +6,9 @@ import { useState } from "react";
 import { Product } from "@/types/types";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
-import {addToCart} from "@/redux/features/auth-slice";
+import { addToCart } from "@/redux/features/auth-slice";
 
 const ProductInfo = ({ product }: { product: Product }) => {
-
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [isAddedToBag, setIsAddedToBag] = useState(false);
   const [sizeError, setSizeError] = useState(false);
@@ -25,25 +24,25 @@ const ProductInfo = ({ product }: { product: Product }) => {
   const dispatch = useDispatch<AppDispatch>();
 
   const addToCartHandler = () => {
-    
     selectedSize ? setIsAddedToBag(true) : setSizeError(true);
     if (selectedSize) {
       //add to cart
-      dispatch(addToCart({
-        cartID: `${product.productName}${selectedSize}`,
-        productId: product.id,
-  productName: product.productName,
-  size: selectedSize,
-  mrp: product.mrp,
-  price: product.price,
-  quantity: 1,
-  imageURL: product.images[0].productImage[0].url,
-      }))
+      dispatch(
+        addToCart({
+          cartID: `${product.productName}${selectedSize}`,
+          productId: product.id,
+          productName: product.productName,
+          size: selectedSize,
+          mrp: product.mrp,
+          price: product.price,
+          quantity: 1,
+          imageURL: product.images[0].productImage[0].url,
+        })
+      );
     }
   };
 
   console.log(product.images[0].productImage[0].url);
-  
 
   return (
     <div className={styles.infoContainer}>

@@ -24,14 +24,14 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body className={bodyfont.className}>
-          <ReduxProvider >
-          <header>
-            <Navbar />
-          </header>
-          <main>{children}</main>
-          <footer>
-            <Footer />
-          </footer>
+          <ReduxProvider>
+            <header>
+              <Navbar />
+            </header>
+            <main>{children}</main>
+            <footer>
+              <Footer />
+            </footer>
           </ReduxProvider>
         </body>
       </html>

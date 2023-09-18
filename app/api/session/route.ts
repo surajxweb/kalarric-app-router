@@ -1,6 +1,6 @@
 // "use client"
-import {logIn, logOut} from "@/redux/features/auth-slice";
-// import {useDispatch} from "react-redux"; 
+import { logIn, logOut } from "@/redux/features/auth-slice";
+// import {useDispatch} from "react-redux";
 import type { IncomingHttpHeaders } from "http";
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { WebhookRequiredHeaders } from "svix";
@@ -9,10 +9,7 @@ import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { AppDispatch } from "@/redux/store";
 
-
 const webhookSecret: string = process.env.CLERK_SESSION || "";
-
-
 
 export async function POST(req: Request) {
   // const dispatch = useDispatch<AppDispatch>();
@@ -51,15 +48,11 @@ export async function POST(req: Request) {
   if (eventType === "session.created") {
     console.log(evt.data);
     // dispatch(logIn(evt.data.user_id));
-    
-  } else if (eventType === "session.ended")
-  {
+  } else if (eventType === "session.ended") {
     console.log("Khatam tata good bye gaya!");
     // dispatch(logOut());
-  } else 
-  {
+  } else {
     console.log("Unhandeled Event!");
-    
   }
 
   return new Response("", {

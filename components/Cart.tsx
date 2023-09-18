@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import * as React from "react";
 import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
@@ -24,9 +24,10 @@ const WhiteOnHoverIcon = styled(BsFillBagFill)({
   },
 });
 
-
 export default function Cart() {
-const cartQty = useAppSelector((state) => state.storeReducer.value.cart.reduce((acc, item) =>  acc + item.quantity, 0))
+  const cartQty = useAppSelector((state) =>
+    state.storeReducer.value.cart.reduce((acc, item) => acc + item.quantity, 0)
+  );
 
   return (
     <IconButton aria-label='cart'>

@@ -41,7 +41,9 @@ export const auth = createSlice({
     },
     addToCart: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
-      const existingItem = state.value.cart.find((item) => item.cartID === newItem.cartID);
+      const existingItem = state.value.cart.find(
+        (item) => item.cartID === newItem.cartID
+      );
 
       if (existingItem) {
         // If the item with the same cartID already exists, increment its quantity
@@ -51,25 +53,23 @@ export const auth = createSlice({
         state.value.cart.push(newItem);
       }
     },
-    removeFromCart : (state, action : PayloadAction<string>) => {
-      const  cartID = action.payload;
+    removeFromCart: (state, action: PayloadAction<string>) => {
+      const cartID = action.payload;
       const cartItem = state.value.cart.find((item) => item.cartID === cartID);
 
       if (cartItem) {
         // Update the quantity of the cart itemx
-        state.value.cart = state.value.cart.filter((item) => (item.cartID !== cartID))
+        state.value.cart = state.value.cart.filter(
+          (item) => item.cartID !== cartID
+        );
       }
-
-
     },
-    buyNow : () => {
-
-
-    },
-    clearCart : () => {
-
-    },
-    updateCartItemQuantity: (state, action: PayloadAction<{ cartID: string; quantity: number }>) => {
+    buyNow: () => {},
+    clearCart: () => {},
+    updateCartItemQuantity: (
+      state,
+      action: PayloadAction<{ cartID: string; quantity: number }>
+    ) => {
       const { cartID, quantity } = action.payload;
       const cartItem = state.value.cart.find((item) => item.cartID === cartID);
 
@@ -81,5 +81,13 @@ export const auth = createSlice({
   },
 });
 
-export const { logIn, logOut, addToCart, updateCartItemQuantity, removeFromCart, buyNow, clearCart } = auth.actions;
+export const {
+  logIn,
+  logOut,
+  addToCart,
+  updateCartItemQuantity,
+  removeFromCart,
+  buyNow,
+  clearCart,
+} = auth.actions;
 export default auth.reducer;

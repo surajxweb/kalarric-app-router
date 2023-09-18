@@ -27,33 +27,29 @@ const CartProduct = ({
   const totalmrp = mrp * qty;
   const totalprice = price * qty;
 
-
   const dispatch = useDispatch<AppDispatch>();
 
-
   const deleteKaro = () => {
-      dispatch(removeFromCart(cartID));
-  }
+    dispatch(removeFromCart(cartID));
+  };
 
-  
   return (
     <div className={styles.container}>
       <div className={styles.productContainer}>
         <div className={styles.image_name}>
           <div className={styles.productImage}>
-            <Image
-              src={image}
-              alt='product image'
-              height={150}
-              width={150}
-            />
+            <Image src={image} alt='product image' height={150} width={150} />
           </div>
           <div className={styles.productInfo}>
             <div className={styles.name}>{name}</div>
             <div className={styles.size}>Size: {size}</div>
             <div className={styles.qty}>
-              <CartQuantity qty={qty} cartID={cartID}/>
-              <RiDeleteBin5Fill onClick={deleteKaro} className={styles.icons} size='1.5em' />
+              <CartQuantity qty={qty} cartID={cartID} />
+              <RiDeleteBin5Fill
+                onClick={deleteKaro}
+                className={styles.icons}
+                size='1.5em'
+              />
             </div>
           </div>
         </div>

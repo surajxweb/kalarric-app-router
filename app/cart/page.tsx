@@ -15,8 +15,14 @@ const Cart = () => {
   console.log(cart);
   const { userId } = useAuth();
 
-  const totalMrp = cart.reduce((acc, item) => acc + item.mrp * item.quantity, 0);
-  let totalAmt = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const totalMrp = cart.reduce(
+    (acc, item) => acc + item.mrp * item.quantity,
+    0
+  );
+  let totalAmt = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
   const remainingAmt = 999 - totalAmt;
   const shipping = remainingAmt > 0 ? 50 : 0;
   const taxes = 0;

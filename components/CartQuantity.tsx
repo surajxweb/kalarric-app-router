@@ -4,13 +4,21 @@ import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import { AppDispatch } from "@/redux/store";
-import {  useDispatch } from "react-redux"; // Import the necessary hooks
+import { useDispatch } from "react-redux"; // Import the necessary hooks
 import { updateCartItemQuantity } from "@/redux/features/auth-slice"; // Import the action
 
-export default function CartQuantity({ qty, cartID }: { qty: number; cartID: string }) {
+export default function CartQuantity({
+  qty,
+  cartID,
+}: {
+  qty: number;
+  cartID: string;
+}) {
   const dispatch = useDispatch<AppDispatch>(); // Get the dispatch function
 
-  const handleQuantityChange = (event: React.ChangeEvent<{ name?: string; value: unknown }>) => {
+  const handleQuantityChange = (
+    event: React.ChangeEvent<{ name?: string; value: unknown }>
+  ) => {
     const newQuantity = Number(event.target.value);
     dispatch(updateCartItemQuantity({ cartID, quantity: newQuantity })); // Dispatch the action
   };
@@ -18,7 +26,7 @@ export default function CartQuantity({ qty, cartID }: { qty: number; cartID: str
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel variant="standard" htmlFor="uncontrolled-native">
+        <InputLabel variant='standard' htmlFor='uncontrolled-native'>
           Quantity
         </InputLabel>
         <NativeSelect
