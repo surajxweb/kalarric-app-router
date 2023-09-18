@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ReduxProvider } from "@/redux/provider";
 
 const bodyfont = Poppins({ subsets: ["latin"], weight: "400" });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body className={bodyfont.className}>
+          <ReduxProvider >
           <header>
             <Navbar />
           </header>
@@ -30,6 +32,7 @@ export default function RootLayout({
           <footer>
             <Footer />
           </footer>
+          </ReduxProvider>
         </body>
       </html>
     </ClerkProvider>

@@ -2,6 +2,6 @@
   min-height: 600px;
   flex: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-flow: row wrap;
 }

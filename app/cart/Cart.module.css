@@ -1,0 +1,156 @@
+.container {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+.container h2 {
+  font-size: 20px;
+}
+
+.container button {
+  transition: all 0.3s;
+}
+
+.info {
+  padding: 20px;
+  width: 70%;
+  border-right: 1px solid rgb(197, 197, 197);
+}
+
+.signin {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  background-color: wheat;
+  padding: 20px;
+  align-items: center;
+}
+
+.text h2 {
+  margin-bottom: 10px;
+}
+
+.signinbutton {
+  width: 100px;
+  height: 50px;
+  font: inherit;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #222;
+  cursor: pointer;
+}
+
+.signinbutton:hover {
+  background-color: #111;
+  color: white;
+}
+
+.signinbutton:active {
+  background-color: black;
+  color: white;
+}
+
+.payment {
+  padding: 20px;
+  flex: 1;
+}
+
+.prices {
+  margin: 20px 0;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.total {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  border-top: 1px solid rgb(197, 197, 197);
+  padding: 10px 0;
+}
+
+.totalname {
+  margin-right: 10px;
+}
+
+.paymentbutton {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  margin: 10px 0;
+  font: inherit;
+  background-color: wheat;
+  color: black;
+  cursor: pointer;
+  border: 1px solid #222;
+}
+
+.discount {
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  border: 1px solid wheat;
+}
+
+.input {
+  width: 70%;
+  height: 100%;
+  font-family: inherit;
+  padding: 0 10px;
+  border: 0;
+}
+
+.input:focus {
+  border: none;
+}
+
+.discountButton {
+  flex: 1;
+  font-family: inherit;
+  height: 100%;
+  border: 0;
+  background-color: wheat;
+  color: black;
+  border: 1px solid #222;
+  cursor: pointer;
+}
+
+.paymentbutton:hover,
+.discountButton:hover {
+  background-color: #111;
+  color: white;
+}
+
+.discountFeedback {
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-flow: column nowrap;
+  }
+  .info {
+    border-right: 0;
+  }
+  .info {
+    width: 100%;
+  }
+}

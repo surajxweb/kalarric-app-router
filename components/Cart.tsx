@@ -1,8 +1,11 @@
+"use client"
 import * as React from "react";
 import Badge, { BadgeProps } from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import { BsFillBagFill } from "react-icons/bs";
+
+import { useAppSelector } from "@/redux/store";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -21,10 +24,13 @@ const WhiteOnHoverIcon = styled(BsFillBagFill)({
   },
 });
 
+
 export default function Cart() {
+const cartQty = useAppSelector((state) => state.storeReducer.value.cart.reduce((acc, item) =>  acc + item.quantity, 0))
+
   return (
     <IconButton aria-label='cart'>
-      <StyledBadge badgeContent={4} color='primary'>
+      <StyledBadge badgeContent={cartQty > 0 ? cartQty : "0"} color='primary'>
         <WhiteOnHoverIcon />
       </StyledBadge>
     </IconButton>
