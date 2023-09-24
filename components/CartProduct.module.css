@@ -14,7 +14,7 @@
 
 .productImage {
   margin-right: 25px;
-  width: 150px;
+  width: 110px;
 }
 
 .productImage img {
@@ -24,24 +24,16 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.qty {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.icons {
-  color: black;
-  cursor: pointer;
-}
-
-.icons:hover {
-  color: rgb(66, 66, 66);
-}
-
 .productInfo {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+
   flex: 1;
+}
+
+.size {
+  text-transform: uppercase;
 }
 
 .name {
@@ -64,6 +56,95 @@
   font-size: 18px;
   margin-left: 10px;
   font-weight: bold;
+}
+
+.quantity {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.qbutton {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: rgb(212, 212, 212);
+  border: 0.5px solid #222;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 3px;
+}
+
+.qbutton:disabled,
+.qbutton[disabled] {
+  border: 0.5px solid grey;
+  cursor: not-allowed;
+  background-color: rgb(235, 235, 235);
+}
+
+.qtext {
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+.removeCont {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rmtext {
+  text-decoration: underline;
+}
+
+.icons {
+  color: black;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.icons:hover {
+  color: rgb(66, 66, 66);
+}
+
+.modalDes {
+  margin: 15px 0;
+}
+
+.deleteButtons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.yesButton,
+.noButton {
+  width: 100px;
+  height: 30px;
+  font: inherit;
+  border: 1px solid #111;
+  cursor: pointer;
+}
+
+.yesButton {
+  background-color: #111;
+  color: #fff;
+}
+
+.noButton {
+  background-color: #fff;
+  color: #111;
+  margin-left: 20px;
+}
+
+.noButton:hover {
+  background-color: #f1eeee;
+}
+
+.yesButton:hover {
+  background-color: #222;
 }
 
 @media (max-width: 900px) {

@@ -9,12 +9,28 @@ interface CartItem {
   price: number;
   quantity: number;
   imageURL: string;
+  category: string;
+}
+
+interface AddressFields {
+  id: string;
+  phone: string;
+  firstName: string;
+  lastName: string;
+  addressLine1: string;
+  addressLine2: string;
+  streetName: string;
+  city: string;
+  state: string;
+  pincode: string;
+  country: string;
 }
 
 interface StoreState {
-  user: string | null | undefined; // Make user property nullable
+  // Make user property nullable
   cart: CartItem[];
   paymentCart: CartItem[];
+  deliveryAddress: AddressFields;
 }
 
 interface InitialState {
@@ -23,9 +39,22 @@ interface InitialState {
 
 const initialState: InitialState = {
   value: {
-    user: null, // Set user as null
+    // Set user as null
     cart: [],
     paymentCart: [],
+    deliveryAddress: {
+      id: "",
+      phone: "",
+      firstName: "",
+      lastName: "",
+      addressLine1: "",
+      addressLine2: "",
+      streetName: "",
+      city: "",
+      state: "",
+      pincode: "",
+      country: "",
+    },
   },
 };
 
@@ -33,12 +62,6 @@ export const auth = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    logOut: (state) => {
-      state.value.user = null;
-    },
-    logIn: (state, action: PayloadAction<string>) => {
-      state.value.user = action.payload;
-    },
     addToCart: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
       const existingItem = state.value.cart.find(
@@ -65,29 +88,45 @@ export const auth = createSlice({
       }
     },
     buyNow: () => {},
+    addToPaymentCart: (state, action: PayloadAction<CartItem>) => {
+      const newItem = action.payload;
+
+      // If it doesn't exist, add the new item to the cart
+      state.value.paymentCart = [];
+      state.value.paymentCart.push(newItem);
+    },
+    initializePaymentCart: (state) => {
+      state.value.paymentCart = state.value.cart;
+    },
     clearCart: () => {},
     updateCartItemQuantity: (
       state,
-      action: PayloadAction<{ cartID: string; quantity: number }>
+      action: PayloadAction<{ cartID: string; type: string }>
     ) => {
-      const { cartID, quantity } = action.payload;
+      const { cartID, type } = action.payload;
       const cartItem = state.value.cart.find((item) => item.cartID === cartID);
 
       if (cartItem) {
         // Update the quantity of the cart itemx
-        cartItem.quantity = quantity;
+        type === "plus"
+          ? (cartItem.quantity = cartItem.quantity + 1)
+          : (cartItem.quantity = cartItem.quantity - 1);
       }
+    },
+    updateDeliveryAddress: (state, action: PayloadAction<AddressFields>) => {
+      state.value.deliveryAddress = action.payload;
     },
   },
 });
 
 export const {
-  logIn,
-  logOut,
   addToCart,
   updateCartItemQuantity,
   removeFromCart,
   buyNow,
   clearCart,
+  initializePaymentCart,
+  addToPaymentCart,
+  updateDeliveryAddress,
 } = auth.actions;
 export default auth.reducer;

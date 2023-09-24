@@ -1,0 +1,89 @@
+/*  box-shadow: rgba(0, 0, 0, 0.24) */
+.container {
+  width: 100%;
+
+  margin: 30px 0;
+}
+
+.reviewContainer {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  padding: 20px;
+}
+
+.cartItems {
+  width: 70%;
+}
+
+.product {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.image img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.productInfo {
+  font-size: 14px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+}
+
+.productName {
+  font-weight: bold;
+}
+
+.sizeNumber {
+  text-transform: uppercase;
+}
+
+.moreInfo {
+  flex: 1;
+}
+
+.section {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.name {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.phone {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .reviewContainer {
+    flex-flow: column wrap;
+  }
+  .moreInfo {
+    margin-top: 10px;
+    border-top: 1px solid rgb(210, 210, 210);
+  }
+}

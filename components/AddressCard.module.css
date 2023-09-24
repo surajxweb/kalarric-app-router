@@ -1,0 +1,27 @@
+.container {
+  font-size: 14px;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 10px 10px 0;
+  transition: all 0.2s;
+  background-color: #fff;
+}
+
+.container:hover {
+  transform: scale(1.04);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.phone {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgb(210, 210, 210);
+}

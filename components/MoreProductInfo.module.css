@@ -1,0 +1,80 @@
+/* .actionButtons {
+  border: 1px solid hotpink;
+  display: flex;
+}
+
+.button {
+  padding: 10px;
+  height: 30px;
+  flex: 1;
+  gap: 10px;
+} 
+
+.question {
+  margin: 10px 0;
+  font-weight: bold;
+  display: block;
+}
+
+
+*/
+
+/* MoreProductInfo.module.css */
+
+.container {
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+.actionButtons {
+  display: flex;
+  background-color: #f0f0f0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  flex: 1;
+  padding: 10px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.activeTab {
+  background-color: #fff;
+  color: #333;
+  border-bottom: 2px solid #333;
+}
+
+.content {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.questions {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.question {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.answer {
+  margin: 5px 0;
+  display: block; /* Add this property to start the answer on a new line */
+}
+
+.text {
+  font-weight: bold;
+  color: #333;
+}

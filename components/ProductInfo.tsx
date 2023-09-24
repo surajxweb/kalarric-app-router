@@ -6,12 +6,16 @@ import { useState } from "react";
 import { Product } from "@/types/types";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
-import { addToCart } from "@/redux/features/auth-slice";
+import { addToCart, addToPaymentCart } from "@/redux/features/auth-slice";
+import { useRouter } from "next/navigation";
+import MoreProductInfo from "./MoreProductInfo";
 
 const ProductInfo = ({ product }: { product: Product }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [isAddedToBag, setIsAddedToBag] = useState(false);
   const [sizeError, setSizeError] = useState(false);
+
+  const router = useRouter();
 
   const sizeWithStocks = product.quantities?.filter((size) => size.number > 0);
 
@@ -23,6 +27,27 @@ const ProductInfo = ({ product }: { product: Product }) => {
 
   const dispatch = useDispatch<AppDispatch>();
 
+  const justBuyNow = () => {
+    selectedSize ? setIsAddedToBag(false) : setSizeError(true);
+    if (selectedSize) {
+      //add to cart
+      dispatch(
+        addToPaymentCart({
+          cartID: `${product.productName}${selectedSize}`,
+          category: `${product.category.categoryName}`,
+          productId: product.id,
+          productName: product.productName,
+          size: selectedSize,
+          mrp: product.mrp,
+          price: product.price,
+          quantity: 1,
+          imageURL: product.images[0].productImage[0].url,
+        })
+      );
+      router.push("/checkout");
+    }
+  };
+
   const addToCartHandler = () => {
     selectedSize ? setIsAddedToBag(true) : setSizeError(true);
     if (selectedSize) {
@@ -30,6 +55,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
       dispatch(
         addToCart({
           cartID: `${product.productName}${selectedSize}`,
+          category: `${product.category.categoryName}`,
           productId: product.id,
           productName: product.productName,
           size: selectedSize,
@@ -42,7 +68,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
     }
   };
 
-  console.log(product.images[0].productImage[0].url);
+  console.log(product.category.categoryName);
 
   return (
     <div className={styles.infoContainer}>
@@ -78,9 +104,15 @@ const ProductInfo = ({ product }: { product: Product }) => {
         <div className={styles.price}>{`₹ ${product.price}`}</div>
         <div className={styles.mrp}>{`MRP ${product.mrp}`}</div>
       </div>
-      <button onClick={addToCartHandler} className={styles.button}>
-        ADD TO CART
-      </button>
+      <div className={styles.actionButtons}>
+        <button onClick={addToCartHandler} className={styles.addButton}>
+          ADD TO CART
+        </button>
+        <button onClick={justBuyNow} className={styles.buyButton}>
+          BUY NOW
+        </button>
+      </div>
+
       {isAddedToBag && (
         <Link href={"/cart"}>
           <div className={styles.roadToCheckout}>
@@ -88,6 +120,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
           </div>
         </Link>
       )}
+      <MoreProductInfo category={product.category.categoryName} />
     </div>
   );
 };

@@ -1,0 +1,36 @@
+.formcontainer {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 30px 0;
+  background-color: #fff;
+}
+
+.formlabel {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.forminput {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.submibutton {
+  font-family: inherit;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.submitbutton:hover {
+  background-color: #333;
+}

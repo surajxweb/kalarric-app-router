@@ -27,7 +27,12 @@
   margin: 10px 0;
 }
 
-.sizes button {
+.sizeButton {
+  text-align: center;
+  width: 65px;
+  border-radius: 40px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 0.5px solid black;
   cursor: pointer;
   font-family: inherit;
   margin-right: 10px;
@@ -56,23 +61,41 @@
   text-decoration: line-through;
 }
 
-.button {
+.actionButtons {
+  width: 100%;
   margin: 10px 0 30px 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+
+.addButton,
+.buyButton {
   border-radius: 5px;
   font-weight: bold;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
-  padding: 10px 60px;
+  padding: 10px;
   font-family: inherit;
   font-size: 20px;
   border: 2px solid black;
+  width: 250px;
+}
+
+.addButton {
+  background-color: #fff;
+  color: #111;
+}
+
+.buyButton {
   background-color: #111;
   color: white;
 }
 
-.button:hover {
-  background-color: rgb(202, 200, 200);
-  color: rgb(0, 0, 0);
+.addButton:hover,
+.buyButton:hover {
+  background-color: #4b4a4a;
+  color: white;
 }
 
 .button:focus {
@@ -113,7 +136,8 @@
   }
 
   .sizes button {
-    padding: 5px 10px;
+    padding: 5px;
+    margin-top: 10px;
   }
 
   .price {
@@ -128,5 +152,12 @@
     border: 2ps solid red;
     width: 90%;
     margin-right: auto;
+  }
+  .actionButtons {
+    flex-flow: column wrap;
+  }
+  .addButton,
+  .buyButton {
+    width: 100%;
   }
 }

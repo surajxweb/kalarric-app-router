@@ -1,12 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ReduxProvider } from "@/redux/provider";
 
-const bodyfont = Poppins({ subsets: ["latin"], weight: "400" });
+const bodyfont = Montserrat({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title:
