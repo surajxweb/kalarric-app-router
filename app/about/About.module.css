@@ -49,7 +49,7 @@
 }
 
 .sec2image {
-  width: 60%;
+  width: 80%;
   margin: 20px auto;
 }
 
@@ -110,21 +110,21 @@
 }
 
 .name {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .job {
   margin: 5px 0;
   font-style: italic;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .about {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .socials {
-  margin: 5px 0;
+  margin: 10px 0;
   width: 80px;
   display: flex;
   justify-content: space-around;

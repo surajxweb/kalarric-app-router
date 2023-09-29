@@ -1,5 +1,6 @@
 "use client";
 
+import PaymentDetails from "@/components/PaymentDetails";
 import React, { useState, useEffect } from "react";
 import { useAuth } from "@clerk/nextjs";
 import AddressCard from "@/components/AddressCard";
@@ -73,6 +74,10 @@ const Checkout = () => {
               />
             )}
           </div>
+          {/* <h3>Select a payment method.</h3>
+          <div className={styles.paymentOptionsList}>
+            Stripe
+          </div> */}
           {paymentCart.length > 0 ? (
             <ReviewOrder />
           ) : (
@@ -81,7 +86,7 @@ const Checkout = () => {
             </Link>
           )}
         </div>
-
+        <PaymentDetails page={"checkout"} />
         {/* You may add your PaymentDetails component here */}
       </div>
     </>

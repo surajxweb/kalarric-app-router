@@ -68,8 +68,7 @@ const ReviewOrder = () => {
                 <div className={styles.price}>
                   Price: {item.price} ₹ x {item.quantity} ={" "}
                   {item.price * item.quantity} ₹
-                </div>{" "}
-                bhh
+                </div>
               </div>
             </div>
           ))}
