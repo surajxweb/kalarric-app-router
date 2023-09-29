@@ -6,16 +6,12 @@ import { BsFillChatFill } from "react-icons/bs";
 import { BsCurrencyRupee } from "react-icons/bs";
 import { AiOutlineLock } from "react-icons/ai";
 import HomeSection from "@/components/HomeSection";
-import { Cormorant } from "next/font/google";
-import JoinTribe from "@/components/JoinTribe";
 import Offers from "@/components/Offers";
 import headerImage from "@/resources/banner/one.webp";
 import header_mobile from "@/resources/banner/one_mobile.webp";
 import sale from "@/resources/banner/sale.webp";
 import sale_mobile from "@/resources/banner/sale_mobile.webp";
 const { request } = require("graphql-request");
-
-const titlefont = Cormorant({ subsets: ["latin"], weight: "400" });
 
 const fetchBestSellingProducts = async () => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI;
@@ -124,7 +120,7 @@ const Home = async () => {
           <div className={styles.text}>
             <div className={styles.question}>EASY SHIPPING AND RETURNS</div>
             <div className={styles.answer}>
-              Free shipping availble on all orders above ₹ 999.
+              Free shipping availble on all orders above ₹999.
             </div>
           </div>
         </div>
@@ -138,7 +134,7 @@ const Home = async () => {
           </div>
         </div>
         <div className={styles.sec}>
-          <BsCurrencyRupee size='6em' color='#b3b3b3' />
+          <BsCurrencyRupee size='4em' color='#b3b3b3' />
           <div className={styles.text}>
             <div className={styles.question}>MONEY BACK GUARANTEE</div>
             <div className={styles.answer}>
@@ -182,8 +178,8 @@ const Home = async () => {
           />
         </Link>
       </div>
-      <h1 className={`${titlefont.className} ${styles.title}`}>KALARRIC</h1>
-      <div className={`${styles.homegrown} ${styles.tricolorBackground}`}>
+      {/* <h1 className={`${chillfont.className} ${styles.title}`}>KALARRIC</h1> */}
+      <div className={`${styles.homegrown}  ${styles.tricolorBackground}`}>
         HOMEGROWN INDIAN BRAND
       </div>
     </main>

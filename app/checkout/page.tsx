@@ -10,6 +10,7 @@ import AddressCard from "@/components/AddressCard";
 import { useAppSelector } from "@/redux/store";
 import { useDispatch } from "react-redux";
 import ReviewOrder from "@/components/ReviewOrder";
+import Link from "next/link";
 
 const Checkout = () => {
   const { userId } = useAuth();
@@ -17,6 +18,9 @@ const Checkout = () => {
   const [addressList, setAddressList] = useState<[]>([]);
   const deliveryAddress = useAppSelector(
     (state) => state.storeReducer.value.deliveryAddress
+  );
+  const paymentCart = useAppSelector(
+    (state) => state.storeReducer.value.paymentCart
   );
 
   useEffect(() => {
@@ -64,7 +68,11 @@ const Checkout = () => {
             </div>
             {showForm && <AddressForm setView={setShowForm} />}
           </div>
-          <ReviewOrder />
+          {paymentCart.length > 0 ? (
+            <ReviewOrder />
+          ) : (
+            <Link href={"/cart"}>Go to the cart to initiate order.</Link>
+          )}
         </div>
 
         <PaymentDetails page={"checkout"} />

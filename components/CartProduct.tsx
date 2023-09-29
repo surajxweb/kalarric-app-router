@@ -92,6 +92,7 @@ const CartProduct = ({
                 onClick={() => {
                   quanityChange("plus");
                 }}
+                disabled={qty >= 3 ? true : false}
               >
                 +
               </button>

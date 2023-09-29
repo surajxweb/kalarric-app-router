@@ -31,7 +31,7 @@ export default function ProductCard({
       <Link href={`/store/${category}/${id}`}>
         <div className={styles.container}>
           <div
-            className='image-container'
+            className={styles.imageContainer}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >

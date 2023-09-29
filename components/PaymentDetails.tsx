@@ -22,30 +22,18 @@ const PaymentDetails = ({ page }: { page: string }) => {
     (acc, item) => acc + item.mrp * item.quantity,
     0
   );
-  let totalAmt = cart.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-  const remainingAmt = 999 - totalAmt;
+  const remainingAmt =
+    999 - cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const shipping = remainingAmt > 0 ? 50 : 0;
   const taxes = 0;
+  const totalAmt =
+    cart.reduce((acc, item) => acc + item.price * item.quantity, 0) + shipping;
   const discount = totalAmt - totalMrp;
 
   const applyCoupon = () => {
     if (codeApplied === 0) {
-      if (code === "OCTOBER") {
-        // Calculate the discount (10% off)
-        const discountAmount = totalAmt * 0.1;
-
-        // Apply the discount to the totalAmt
-        totalAmt -= discountAmount;
-
-        // Update the codeApplied state to indicate that the coupon has been applied
-        setCodeApplied(1);
-      } else {
-        // Handle invalid coupon code
-        setCodeApplied(2);
-      }
+      // Handle invalid coupon code
+      setCodeApplied(2);
     }
   };
 
@@ -85,12 +73,13 @@ const PaymentDetails = ({ page }: { page: string }) => {
       <button
         onClick={page === "cart" ? proceedToPayment : makePayment}
         className={styles.paymentbutton}
+        disabled={totalMrp > 0 ? false : true}
       >
-        Place Order
+        {page === "cart" ? "Place Order" : "Make Payment"}
       </button>
       {remainingAmt > 0 && (
         <div className={styles.remarks}>
-          {`Add products worth Rs ${remainingAmt} to get free delivery.`}
+          {`Add products worth Rs ${remainingAmt} to get free shippping.`}
         </div>
       )}
       <div className={styles.discount}>

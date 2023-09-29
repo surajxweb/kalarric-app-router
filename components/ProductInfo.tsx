@@ -9,6 +9,8 @@ import { AppDispatch } from "@/redux/store";
 import { addToCart, addToPaymentCart } from "@/redux/features/auth-slice";
 import { useRouter } from "next/navigation";
 import MoreProductInfo from "./MoreProductInfo";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductInfo = ({ product }: { product: Product }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -51,6 +53,16 @@ const ProductInfo = ({ product }: { product: Product }) => {
   const addToCartHandler = () => {
     selectedSize ? setIsAddedToBag(true) : setSizeError(true);
     if (selectedSize) {
+      toast.success("Product added to cart", {
+        position: "bottom-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "dark",
+      });
       //add to cart
       dispatch(
         addToCart({
@@ -76,7 +88,6 @@ const ProductInfo = ({ product }: { product: Product }) => {
         <div className={styles.category}>{product.category.categoryName}</div>
       </Link>
       <h1 className={styles.productTitle}>{product.productName}</h1>
-      <div className={styles.description}>{product.productDescription}</div>
       <div className={styles.sizesRow}>
         <div className={styles.select}>Select Size</div>
         <div className={styles.sizes}>
@@ -85,8 +96,11 @@ const ProductInfo = ({ product }: { product: Product }) => {
               onClick={() => sizeSelectHandler(size.size)}
               className={styles.sizeButton}
               style={{
-                backgroundColor: selectedSize === size.size ? "black" : "white",
-                color: selectedSize === size.size ? "white" : "black",
+                border: selectedSize === size.size ? "1px solid black" : "none",
+                width:
+                  product.category.categoryName === "tshirts"
+                    ? "65px"
+                    : "110px",
               }}
               key={size.size}
             >
@@ -115,12 +129,27 @@ const ProductInfo = ({ product }: { product: Product }) => {
 
       {isAddedToBag && (
         <Link href={"/cart"}>
-          <div className={styles.roadToCheckout}>
-            Added to cart. Click here to checkout.
-          </div>
+          <div className={styles.roadToCheckout}>Click here to checkout.</div>
         </Link>
       )}
-      <MoreProductInfo category={product.category.categoryName} />
+      <MoreProductInfo
+        category={product.category.categoryName}
+        description={product.productDescription}
+      />
+      <Link href={"/cart"}>
+        <ToastContainer
+          position='bottom-left'
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable={false}
+          pauseOnHover
+          theme='dark'
+        />
+      </Link>
     </div>
   );
 };

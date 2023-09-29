@@ -46,7 +46,7 @@ export default function FilterAndResults({ allProducts }: any) {
 
   const theme = createTheme({
     palette: {
-      primary: lime,
+      primary: grey,
       secondary: purple,
     },
   });

@@ -6,7 +6,6 @@ import styles from "./Cart.module.css";
 import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import { useAppSelector } from "@/redux/store";
-
 import PaymentDetails from "@/components/PaymentDetails";
 
 const Cart = () => {
@@ -31,22 +30,28 @@ const Cart = () => {
           )}
           <div className={styles.products}>
             <h2>Shopping Bag</h2>
-            <div className={styles.productList}>
-              {cart.map((product) => (
-                <CartProduct
-                  key={product.cartID}
-                  name={product.productName}
-                  size={product.size}
-                  qty={product.quantity}
-                  price={product.price}
-                  mrp={product.mrp}
-                  image={product.imageURL}
-                  cartID={product.cartID}
-                  category={product.category}
-                  productID={product.productId}
-                />
-              ))}
-            </div>
+            {cart.length > 0 ? (
+              <div className={styles.productList}>
+                {cart.map((product) => (
+                  <CartProduct
+                    key={product.cartID}
+                    name={product.productName}
+                    size={product.size}
+                    qty={product.quantity}
+                    price={product.price}
+                    mrp={product.mrp}
+                    image={product.imageURL}
+                    cartID={product.cartID}
+                    category={product.category}
+                    productID={product.productId}
+                  />
+                ))}
+              </div>
+            ) : (
+              <Link href={"/"} className={styles.emptyCart}>
+                Shopping Bag is empty. Continue shopping.
+              </Link>
+            )}
           </div>
         </div>
         <PaymentDetails page={"cart"} />

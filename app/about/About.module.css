@@ -1,0 +1,160 @@
+.headerImage {
+  width: 100%;
+}
+
+.headerImage img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 30px 50px;
+  line-height: 1.5;
+  letter-spacing: 1.5;
+  background-image: url("../../resources/backgrounds/leaves.webp");
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.logoImage {
+  width: 300px;
+}
+
+.logoImage img {
+  width: 100%;
+  height: auto;
+}
+
+.sec1text {
+  font-size: 16px;
+  max-width: 600px;
+  margin-left: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 50px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.heading {
+  margin: 25px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.sec2image {
+  width: 60%;
+  margin: 20px auto;
+}
+
+.sec2image img {
+  width: 100%;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  height: auto;
+}
+
+.sec2text {
+  padding: 30px;
+  width: 90%;
+  margin: auto;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 70%;
+}
+
+.categoryIcon {
+  size: 6em;
+  color: rgb(182, 177, 177);
+}
+
+.section3 {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-flow: row wrap;
+}
+
+.people {
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.people img {
+  width: 70%;
+  margin: auto;
+  height: auto;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.job {
+  margin: 5px 0;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.about {
+  font-size: 12px;
+}
+
+.socials {
+  margin: 5px 0;
+  width: 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .logoImage {
+    width: 200px;
+  }
+
+  .sec1text {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .sec2image {
+    width: 90%;
+  }
+
+  .sec2text {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .icons {
+    width: 100%;
+    justify-content: space-around;
+  }
+}

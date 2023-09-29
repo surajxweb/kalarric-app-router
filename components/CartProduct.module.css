@@ -38,7 +38,7 @@
 
 .name {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
   margin-right: 10px;
 }
@@ -55,7 +55,7 @@
 .price {
   font-size: 18px;
   margin-left: 10px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .quantity {
@@ -73,6 +73,7 @@
   border: 0.5px solid #222;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 3px;
+  color: black;
 }
 
 .qbutton:disabled,

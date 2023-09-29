@@ -30,13 +30,12 @@ export async function GET(request: Request) {
         state: "${state}",
         country: "${country}",
         pincode: "${pincode}",
-        costumer: { connect: { clerkUserId: "user_2UeuBdux41X4a5mTMJXrZP8zRrl" } }
+        costumer: { connect: { clerkUserId: "${clerkID}" } }
       }
     ) {
       id
     }
   }
- 
   `;
 
   // Create a GraphQL client instance

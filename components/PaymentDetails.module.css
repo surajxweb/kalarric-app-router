@@ -38,6 +38,11 @@
   border: 1px solid #111;
 }
 
+.paymentbutton:disabled,
+.paymentbutton[disabled] {
+  cursor: not-allowed;
+}
+
 .discount {
   margin: 10px 0;
   width: 100%;

@@ -1,3 +1,8 @@
+.container .MuiMenu-list,
+.container .MuiMenuItem-root {
+  font-family: inherit !important;
+}
+
 .icon {
   cursor: pointer;
   color: #b3b3b3;

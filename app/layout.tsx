@@ -1,12 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Urbanist } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ReduxProvider } from "@/redux/provider";
+import { neobrutalism } from "@clerk/themes";
 
-const bodyfont = Montserrat({ subsets: ["latin"], weight: "400" });
+const bodyfont = Urbanist({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title:
@@ -21,7 +22,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        elements: {
+          baseTheme: neobrutalism,
+          formButtonPrimary: {
+            fontSize: 14,
+            textTransform: "none",
+            backgroundColor: "#373737",
+            "&:hover, &:focus, &:active": {
+              backgroundColor: "#636363",
+            },
+          },
+        },
+      }}
+    >
       <html lang='en'>
         <body className={bodyfont.className}>
           <ReduxProvider>

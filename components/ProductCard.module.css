@@ -33,7 +33,10 @@
 .name,
 .price {
   font-size: 18px;
-  font-weight: bold;
+}
+
+.name {
+  height: 45px;
 }
 
 .mrp {
@@ -47,6 +50,18 @@
 .info {
   display: flex;
 }
+
+/* .imageContainer {
+  overflow: hidden;
+}
+
+.imageContainer img {
+  transition: all 1s;
+}
+
+.imageContainer img:hover {
+  transform: scale(1.02);
+} */
 
 @media (max-width: 768px) {
   .container {

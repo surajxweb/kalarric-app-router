@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import biglogo from "../resources/logo/biglogo.png";
 import { BsInstagram } from "react-icons/bs";
-import { BsTwitter } from "react-icons/bs";
-import { GiReturnArrow } from "react-icons/gi";
+import { RiTwitterXFill } from "react-icons/ri";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -47,7 +46,7 @@ export default function Footer() {
               <BsInstagram className={styles.insta} size='2em' />
             </Link>
             <Link href='https://www.twitter.com/kalarric'>
-              <BsTwitter className={styles.insta} size='2em' />
+              <RiTwitterXFill className={styles.insta} size='2em' />
             </Link>
           </div>
         </div>

@@ -7,6 +7,13 @@
   align-items: center;
 }
 
+.container > *,
+.container > * > *,
+.container > * > * > *,
+.container > * > * > * > * {
+  font-family: inherit !important;
+}
+
 .filterContainer {
   position: sticky;
   top: 0; /* Set it to 0 to make it stick to the top of the container */

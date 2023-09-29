@@ -46,7 +46,7 @@
 }
 
 .productName {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .sizeNumber {
@@ -63,13 +63,13 @@
 }
 
 .question {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
   font-size: 16px;
 }
 
 .name {
-  font-weight: bold;
+  font-weight: 600;
   margin-right: 20px;
 }
 
