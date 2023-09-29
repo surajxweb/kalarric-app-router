@@ -43,11 +43,6 @@ const ReviewOrder = () => {
     return `${day} ${month}, ${year}`;
   };
 
-  // Print the dates
-  // console.log('Current Date:', formatDate(today));
-  // console.log('Four Days from Now:', formatDate(fourDaysFromNow));
-  // console.log('Six Days from Now:', formatDate(sixDaysFromNow));
-
   return (
     <div className={styles.container}>
       <h3>Review Order</h3>
@@ -73,28 +68,37 @@ const ReviewOrder = () => {
                 <div className={styles.price}>
                   Price: {item.price} ₹ x {item.quantity} ={" "}
                   {item.price * item.quantity} ₹
-                </div>
+                </div>{" "}
+                bhh
               </div>
             </div>
           ))}
         </div>
         <div className={styles.moreInfo}>
-          <div className={styles.section}>
-            <div className={styles.question}>Selected Delivery Address:</div>
-            <div
-              className={styles.name}
-            >{`${deleveryAddress.firstName} ${deleveryAddress.lastName}`}</div>
-            <div className={styles.phone}>{deleveryAddress.phone}</div>
-            <div>{deleveryAddress.addressLine1},</div>
-            <div>{deleveryAddress.addressLine2},</div>
-            <div>
-              {deleveryAddress.streetName}, {deleveryAddress.city}
+          {deleveryAddress.firstName.length > 0 ? (
+            <div className={styles.section}>
+              <div className={styles.question}>Selected Delivery Address:</div>
+              <div
+                className={styles.name}
+              >{`${deleveryAddress.firstName} ${deleveryAddress.lastName}`}</div>
+              <div className={styles.phone}>{deleveryAddress.phone}</div>
+              <div>{deleveryAddress.addressLine1},</div>
+              <div>{deleveryAddress.addressLine2},</div>
+              <div>
+                {deleveryAddress.streetName}, {deleveryAddress.city}
+              </div>
+              <div>
+                {deleveryAddress.state}: {deleveryAddress.pincode},
+              </div>
+              <div>{deleveryAddress.country}</div>
             </div>
-            <div>
-              {deleveryAddress.state}: {deleveryAddress.pincode},
+          ) : (
+            <div className={styles.section}>
+              <div className={styles.question}>
+                Delivery Address Not Selected.
+              </div>
             </div>
-            <div>{deleveryAddress.country}</div>
-          </div>
+          )}
           <div className={styles.section}>
             <div className={styles.question}>Estimated Deliery Date:</div>
             <div>{formatDate(fiveDaysFromNow)}</div>

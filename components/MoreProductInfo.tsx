@@ -39,7 +39,11 @@ const MoreProductInfo = ({
             </div>
             <div className={styles.questions}>
               <div className={styles.question}>Material</div>
-              <div className={styles.answer}>100% Cotton (240 GSM)</div>
+              <div className={styles.answer}>
+                {category === "tshirts"
+                  ? "Best Quality 100% Cotton"
+                  : "Genuine Leather"}
+              </div>
             </div>
             <div className={styles.questions}>
               <div className={styles.question}>Country of Origin</div>
@@ -47,12 +51,14 @@ const MoreProductInfo = ({
             </div>
             <div className={styles.questions}>
               <div className={styles.question}>Weight</div>
-              <div className={styles.answer}>100 grams</div>
+              <div className={styles.answer}>
+                {category === "tshirts" ? "240 GSM" : "50 Grams"}
+              </div>
             </div>
-            <div className={styles.questions}>
+            {/* <div className={styles.questions}>
               <div className={styles.question}>Dimensions</div>
-              <div className={styles.answer}> 4 in X 6 in</div>
-            </div>
+              <div className={styles.answer}>4 in X 6 in</div>
+            </div> */}
           </div>
         ) : (
           <div>

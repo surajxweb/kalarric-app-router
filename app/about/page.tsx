@@ -4,7 +4,6 @@ import Image from "next/image";
 import headerImage from "@/resources/banner/3.webp";
 import biglogo from "@/resources/logo/logo_black.png";
 import artisian from "@/resources/banner/artisian.webp";
-import think from "@/resources/think.png";
 import { PiHoodieBold } from "react-icons/pi";
 import { PiBaseballCapFill } from "react-icons/pi";
 import { PiTShirtBold } from "react-icons/pi";
@@ -16,9 +15,6 @@ import { MdEmail } from "react-icons/md";
 import akash from "@/resources/avatar/akash.png";
 import suraj from "@/resources/avatar/suraj.png";
 import Link from "next/link";
-import { Caveat } from "next/font/google";
-
-const stylefont = Caveat({ subsets: ["latin"], weight: "400" });
 
 const team = [
   {

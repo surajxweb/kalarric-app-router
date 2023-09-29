@@ -29,6 +29,8 @@
 }
 
 .sizeButton {
+  background-color: rgb(208, 208, 208);
+  color: #111;
   border: none;
   text-align: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

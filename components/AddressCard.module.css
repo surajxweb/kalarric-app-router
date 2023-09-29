@@ -9,6 +9,7 @@
   margin: 0 10px 10px 0;
   transition: all 0.2s;
   background-color: #fff;
+  overflow: hidden;
 }
 
 .container:hover {

@@ -9,7 +9,8 @@ import { BiSolidHelpCircle } from "react-icons/bi";
 import { RiCustomerService2Fill } from "react-icons/ri";
 import { AiFillMail } from "react-icons/ai";
 import Image from "next/image";
-import helpImage from "@/resources/help.svg";
+
+import headerImage from "@/resources/banner/5.webp";
 import FAQ from "@/components/FAQ";
 
 const SupportPage = () => {
@@ -36,14 +37,10 @@ const SupportPage = () => {
         defer
       />
       <Offers />
+      <div className={styles.headerImage}>
+        <Image src={headerImage} alt='header image' height={480} width={1600} />
+      </div>
       <div className={styles.container}>
-        <div className={styles.titleBox}>
-          <Image src={helpImage} height={250} width={250} alt='help header' />
-          <h1 className={styles.title}>
-            Welcome to Kalarric Support. How may we assist you today?
-          </h1>
-        </div>
-
         <div className={styles.support}>
           <div className={styles.section}>
             <h2>Frequently Asked Question</h2>

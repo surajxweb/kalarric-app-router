@@ -49,7 +49,10 @@ const Cart = () => {
               </div>
             ) : (
               <Link href={"/"} className={styles.emptyCart}>
-                Shopping Bag is empty. Continue shopping.
+                Shopping Bag is empty.{" "}
+                <span className={styles.underline}>
+                  Click here to continue shopping.
+                </span>
               </Link>
             )}
           </div>

@@ -43,7 +43,7 @@ const PaymentDetails = ({ page }: { page: string }) => {
   };
 
   const makePayment = () => {
-    console.log("karo bc payment");
+    console.log("karo payment");
   };
   return (
     <div className={styles.payment}>

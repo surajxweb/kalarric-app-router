@@ -8,7 +8,12 @@
   padding: 30px;
 }
 
-.container > .flex-item:last-child {
-  align-self: flex-start;
-  justify-self: flex-start;
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+    grid-gap: 0px;
+  }
 }

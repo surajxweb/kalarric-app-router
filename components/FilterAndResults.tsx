@@ -7,7 +7,6 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import styles from "./FilterAndResults.module.css";
 import StoreProducts from "./StoreProducts";
-import Offers from "./Offers";
 
 export default function FilterAndResults({ allProducts }: any) {
   const [checkboxes, setCheckboxes] = useState({
@@ -53,7 +52,6 @@ export default function FilterAndResults({ allProducts }: any) {
 
   return (
     <>
-      <Offers />
       <div className={styles.container}>
         <div className={styles.filterContainer}>
           <div className={styles.heading}>Collections</div>

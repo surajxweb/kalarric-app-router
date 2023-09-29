@@ -2,10 +2,15 @@ import { updateDeliveryAddress } from "@/redux/features/auth-slice";
 import styles from "./AddressForm.module.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-const { request } = require("graphql-request");
 import { useAuth } from "@clerk/nextjs";
 
-const AddressForm = ({ setView }: { setView: any }) => {
+const AddressForm = ({
+  setView,
+  clerkUserID,
+}: {
+  setView: any;
+  clerkUserID: string;
+}) => {
   const { userId } = useAuth();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
@@ -20,7 +25,7 @@ const AddressForm = ({ setView }: { setView: any }) => {
     state: "",
     pincode: "",
     country: "India",
-    userId: userId,
+    userId: clerkUserID,
   });
 
   const handleChange = (e: any) => {
@@ -32,7 +37,7 @@ const AddressForm = ({ setView }: { setView: any }) => {
     e.preventDefault();
 
     const response = await fetch(
-      `/checkout/api/add-address?firstName=${formData.firstName}&lastName=${formData.lastName}&phone=${formData.phone}&addressLine1=${formData.addressLine1}&addressLine2=${formData.addressLine2}&streetName=${formData.streetName}&city=${formData.city}&state=${formData.state}&pincode=${formData.pincode}&country=${formData.country}&userId=${formData.userId}`
+      `/checkout/api/add-address?firstName=${formData.firstName}&lastName=${formData.lastName}&phone=${formData.phone}&addressLine1=${formData.addressLine1}&addressLine2=${formData.addressLine2}&streetName=${formData.streetName}&city=${formData.city}&state=${formData.state}&pincode=${formData.pincode}&country=${formData.country}&clerkID=${clerkUserID}`
     );
     if (response.ok) {
       const data = await response.json();

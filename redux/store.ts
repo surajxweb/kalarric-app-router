@@ -8,8 +8,10 @@ import storeReducer from "./features/auth-slice";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { localStorageMiddleware } from "./localStorage"; // Import the middleware.
 
-const localStorageState =
-  localStorage !== undefined ? localStorage?.getItem("reduxState") : "";
+let localStorageState = "";
+if (typeof window !== "undefined") {
+  localStorageState = localStorage.getItem("reduxState") || "";
+}
 const persistedState = localStorageState ? JSON.parse(localStorageState) : {};
 
 export const store = configureStore({

@@ -2,6 +2,7 @@ import { request } from "graphql-request";
 import { Product } from "@/types/types";
 import styles from "./Store.module.css";
 import FilterAndResults from "@/components/FilterAndResults";
+import Offers from "@/components/Offers";
 
 const fetchAllProducts = async () => {
   const endpoint = process.env.GPAPHQL_KA_CHAABI || "";
@@ -44,7 +45,12 @@ const fetchAllProducts = async () => {
 const StorePage = async () => {
   const allProducts = await fetchAllProducts();
 
-  return <FilterAndResults allProducts={allProducts} />;
+  return (
+    <>
+      {" "}
+      <Offers /> <FilterAndResults allProducts={allProducts} />
+    </>
+  );
 };
 
 export default StorePage;

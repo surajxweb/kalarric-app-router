@@ -80,8 +80,6 @@ const ProductInfo = ({ product }: { product: Product }) => {
     }
   };
 
-  console.log(product.category.categoryName);
-
   return (
     <div className={styles.infoContainer}>
       <Link href={`/store/${product.category.categoryName}`}>
