@@ -24,9 +24,7 @@ const Orders = () => {
 
   useEffect(() => {
     const fetchAddress = async () => {
-      const response = await fetch(
-        `/orders/api?query=user_2UeuBdux41X4a5mTMJXrZP8zRrl`
-      );
+      const response = await fetch(`/orders/api?query=${userId}`);
       const data = await response.json();
 
       setOrdersData(data?.ordersData.orders);
@@ -89,8 +87,6 @@ const Orders = () => {
                       />
                     </div>
                     <div className={styles.pname}>
-                      <div className={styles.iquestion}>Product Name</div>
-
                       {product.product.productName}
                     </div>
                     <div className={styles.aquestions}>

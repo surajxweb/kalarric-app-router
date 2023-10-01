@@ -2,6 +2,7 @@
   padding: 20px;
   width: 80%;
   margin: auto;
+  min-height: 60vh;
 }
 
 .historyContainer {

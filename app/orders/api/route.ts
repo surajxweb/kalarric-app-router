@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   // Define your GraphQL query as a string
   const graphqlQuery = `
   query orders {
-    orders(where: {costumer: {clerkUserId: "user_2UeuBdux41X4a5mTMJXrZP8zRrl"}}) {
+    orders(where: {costumer: {clerkUserId: "${query}"}}) {
       id
       dateAndTime
       
