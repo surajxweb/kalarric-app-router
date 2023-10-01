@@ -19,6 +19,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useAuth } from "@clerk/nextjs";
 import { useClerk } from "@clerk/clerk-react";
 import { MdLogin } from "react-icons/md";
+import { BiSolidStore } from "react-icons/bi";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -81,9 +82,9 @@ export default function Navbar() {
             <Link href={"/store/wallets"}>
               <li className={styles.page}>Wallets</li>
             </Link>
-            <Link href={"/blog"}>
+            {/* <Link href={"/blog"}>
               <li className={styles.page}>Blog</li>
-            </Link>
+            </Link> */}
             <Link href={"/support"}>
               <li className={styles.page}>Support</li>
             </Link>
@@ -128,7 +129,7 @@ export default function Navbar() {
             <div className={styles.mlists}>
               <Link href={"/store"}>
                 <div className={styles.mlist}>
-                  <LiaTshirtSolid />
+                  <BiSolidStore />
                   <div className={styles.mtext}>Store</div>
                 </div>
               </Link>
@@ -192,12 +193,12 @@ export default function Navbar() {
                   <div className={styles.mtext}>Our Story</div>
                 </div>
               </Link>
-              <Link href={"/blog"}>
+              {/* <Link href={"/blog"}>
                 <div className={styles.mlist}>
                   <FaBlog />
                   <div className={styles.mtext}>Our Blog</div>
                 </div>
-              </Link>
+              </Link> */}
               <Link href={"/support"}>
                 <div className={styles.mlist}>
                   <BiSupport />

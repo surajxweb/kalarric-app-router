@@ -1,0 +1,59 @@
+.container {
+  background-image: url("../resources/404_background2.webp");
+  /* background-image: url("../resources/404_background.webp"); */
+
+  padding: 20px 0;
+}
+
+.contentConatiner {
+  background: rgba(255, 255, 255, 0.1); /* Use a semi-transparent white color */
+  backdrop-filter: blur(
+    10px
+  ); /* Apply a blur effect to create the glass effect */
+  border-radius: 10px; /* Apply rounded corners */
+  padding: 20px 10px; /* Add some padding for spacing */
+
+  /* Add shadow to enhance the effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* A light shadow */
+  width: 85%;
+  margin: 10px auto;
+
+  /* actual styles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+.errorImage {
+  width: 60%;
+}
+
+.errorImage img {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  line-height: 2;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 40px;
+}
+
+.text a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .text {
+    margin: 0 20px;
+    padding: 20px;
+  }
+
+  .errorImage {
+    width: 90%;
+  }
+}

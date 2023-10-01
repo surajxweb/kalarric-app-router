@@ -48,7 +48,7 @@ const Cart = () => {
                 ))}
               </div>
             ) : (
-              <Link href={"/"} className={styles.emptyCart}>
+              <Link href={"/store"} className={styles.emptyCart}>
                 Shopping Bag is empty.{" "}
                 <span className={styles.underline}>
                   Click here to continue shopping.

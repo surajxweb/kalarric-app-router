@@ -64,4 +64,9 @@
   .addressContainer {
     width: 100%;
   }
+
+  .addCard {
+    width: 100%;
+    height: auto;
+  }
 }

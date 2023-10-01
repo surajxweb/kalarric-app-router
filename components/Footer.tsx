@@ -35,9 +35,9 @@ export default function Footer() {
             <Link href='/privacypolicy'>
               <li>Privacy Policy</li>
             </Link>
-            <Link href='/jobs'>
+            {/* <Link href='/jobs'>
               <li>We are Hiring</li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
         <div className={styles.socials}>

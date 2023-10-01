@@ -75,10 +75,7 @@ const SupportPage = () => {
           </div>
           <div className={styles.description}>
             At Kalarric Lifestyle, we&#39;re committed to providing exceptional
-            customer service and assistance whenever you need it. Our support
-            executives are available round the clock to answer all your queries
-            and ensure your experience with our products is seamless and
-            enjoyable.
+            customer service and assistance whenever you need it. 
           </div>
         </div>
         {/*  */}
