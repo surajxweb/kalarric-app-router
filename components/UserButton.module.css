@@ -8,6 +8,18 @@
   color: #ffffff;
 }
 
+.container > *,
+.container > * > *,
+.container > * > * > *,
+.container > * > * > * > *,
+.container > * > * > * > * > *,
+.container > * > * > * > * > * > *,
+.container > * > * > * > * > * > * > *,
+.container > * > * > * > * > * > * > * > *,
+.container > * > * > * > * > * > * > * > * > * {
+  font-family: inherit !important;
+}
+
 @media (max-width: 800px) {
   .container {
     display: none;

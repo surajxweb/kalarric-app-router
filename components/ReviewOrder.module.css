@@ -86,4 +86,7 @@
     padding: 10px;
     border-top: 1px solid rgb(210, 210, 210);
   }
+  .cartItems {
+    width: 100%;
+  }
 }
