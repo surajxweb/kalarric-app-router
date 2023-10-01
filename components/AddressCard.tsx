@@ -56,7 +56,7 @@ const AddressCard = ({
     <div
       onClick={updateAddress}
       className={styles.container}
-      style={{ border: isSelected ? "1px solid grey" : "none" }}
+      style={{ border: isSelected ? "2px solid grey" : "none" }}
     >
       <div className={styles.name}>{`${fname} ${lname}`}</div>
       <div className={styles.phone}>{phone}</div>

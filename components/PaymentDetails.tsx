@@ -24,7 +24,7 @@ const PaymentDetails = ({ page }: { page: string }) => {
   );
   const remainingAmt =
     999 - cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const shipping = totalMrp > 0 ? remainingAmt > 0 ? 50 : 0 : 0;
+  const shipping = totalMrp > 0 ? (remainingAmt > 0 ? 50 : 0) : 0;
   const taxes = 0;
   const totalAmt =
     cart.reduce((acc, item) => acc + item.price * item.quantity, 0) + shipping;

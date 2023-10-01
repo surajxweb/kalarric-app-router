@@ -1,0 +1,24 @@
+.container {
+  padding: 20px 30px;
+  font-size: 14px;
+}
+
+.popperContainer {
+  border-radius: 20px;
+}
+
+.phone {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgb(203, 203, 203);
+}
+
+.name,
+.phone {
+  font-size: 15px;
+}
+
+.icon {
+  vertical-align: middle;
+  cursor: pointer;
+}

@@ -75,7 +75,7 @@ const SupportPage = () => {
           </div>
           <div className={styles.description}>
             At Kalarric Lifestyle, we&#39;re committed to providing exceptional
-            customer service and assistance whenever you need it. 
+            customer service and assistance whenever you need it.
           </div>
         </div>
         {/*  */}

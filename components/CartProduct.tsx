@@ -135,7 +135,7 @@ const CartProduct = ({
         </div>
         <div className={styles.prices}>
           <div className={styles.mrp}>MRP {totalmrp}</div>
-          <div className={styles.price}>₹{totalprice}</div>
+          <div className={styles.price}> ₹{totalprice}</div>
         </div>
       </div>
     </div>

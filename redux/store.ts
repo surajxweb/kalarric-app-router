@@ -1,19 +1,15 @@
 "use client";
 
-
 // store.js
-
 
 import { configureStore } from "@reduxjs/toolkit";
 import storeReducer from "./features/auth-slice";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { localStorageMiddleware } from "./localStorage"; // Import the middleware.
 
-
 const localStorageState =
   localStorage !== undefined ? localStorage?.getItem("reduxState") : "";
 const persistedState = localStorageState ? JSON.parse(localStorageState) : {};
-
 
 export const store = configureStore({
   reducer: {
@@ -27,6 +23,5 @@ export const store = configureStore({
 });
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

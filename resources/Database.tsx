@@ -90,7 +90,8 @@ export const database = {
       },
       orderHistory: [
         {
-          date: "",
+          id: 1,
+          date: "28th September, 2023",
           totalPrice: 1798,
           purchasedProducts: [
             { productId: 1, pricePaid: 899 },
@@ -98,7 +99,8 @@ export const database = {
           ],
         },
         {
-          date: "",
+          id: 2,
+          date: "1st October, 2023",
           totalPrice: 399,
           purchasedProducts: [{ productId: 2, pricePaid: 399 }],
         },
