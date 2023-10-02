@@ -71,8 +71,8 @@ const Orders = () => {
                   </div>
                 </div>
                 <div className={styles.ordernumber}>
-                  <div className={styles.iquestion}>Order Number</div>
-                  <div className={styles.ianswer}>{"someRandomNumberLMAO"}</div>
+                  <div className={styles.iquestion}>Order ID</div>
+                  <div className={styles.ianswer}>{order.id}</div>
                 </div>
               </div>
               <div className={styles.products}>

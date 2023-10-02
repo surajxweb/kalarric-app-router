@@ -6,10 +6,15 @@ import { useAppSelector } from "@/redux/store";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { initializePaymentCart } from "@/redux/features/auth-slice";
+import { loadStripe } from "@stripe/stripe-js";
+import { stripepk } from "@/lib/stripe";
 
 const PaymentDetails = ({ page }: { page: string }) => {
   const [codeApplied, setCodeApplied] = useState(0);
   const [code, setCode] = useState("");
+  const deleveryAddress = useAppSelector(
+    (state) => state.storeReducer.value.deliveryAddress
+  );
   const cart = useAppSelector((state) =>
     page === "cart"
       ? state.storeReducer.value.cart
@@ -42,9 +47,47 @@ const PaymentDetails = ({ page }: { page: string }) => {
     router.push("/checkout");
   };
 
-  const makePayment = () => {
+  const makePayment = async () => {
     console.log("karo payment");
+
+    // Assuming your cart data is stored in a variable named 'cartData'
+    const requestPayload = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        cart: cart, // Cart data
+        deliveryAddress: deleveryAddress, // Delivery address object
+      }), // Send the cart data in the request body
+    };
+
+    const response = await fetch("/checkout/api/payment", requestPayload);
+
+    if (response.ok) {
+      const session = await response.json();
+
+      if (stripepk) {
+        const stripe = await loadStripe(stripepk);
+
+        if (stripe) {
+          const { error } = await stripe.redirectToCheckout({
+            sessionId: session.id,
+          });
+
+          if (error) {
+            // Handle any errors that occur during the redirect to Stripe's checkout page.
+            console.error(error);
+          }
+        } else {
+          console.error("Stripe is null.");
+        }
+      } else {
+        console.error("Session is null.");
+      }
+    }
   };
+
   return (
     <div className={styles.payment}>
       <h2>Billing Details</h2>
