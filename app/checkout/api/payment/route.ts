@@ -10,9 +10,9 @@ export async function POST(request: Request) {
   const origin = request.headers.get("origin");
   const requestData = await request.json();
 
-  if (!requestData || !requestData.cart || !isCartsValid(requestData.cart)) {
-    return "Error with Cart Value. Something seems fishy!";
-  }
+  // if (!requestData || !requestData.cart || !isCartsValid(requestData.cart)) {
+  //   return "Error with Cart Value. Something seems fishy!";
+  // }
 
   const cart = requestData.cart;
   const deliveryAddress = requestData.deliveryAddress;
@@ -38,7 +38,16 @@ export async function POST(request: Request) {
     payment_method_types: ["card"],
     success_url: `${origin}/success?success=true&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/cart`,
+    client_reference_id: 'your-customer-id', // A unique identifier for your customer
+  metadata: {
+    customer_email: 'customer@example.com', // Customer's email
+    customer_name: 'Customer Name', // Customer's name
+    customer_phone: '+1234567890', // Customer's phone number
+  },
   });
 
   return NextResponse.json(session);
 }
+
+
+// 5200828282828210
