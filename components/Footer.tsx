@@ -35,17 +35,17 @@ export default function Footer() {
             <Link href='/privacypolicy'>
               <li>Privacy Policy</li>
             </Link>
-            {/* <Link href='/jobs'>
-              <li>We are Hiring</li>
-            </Link> */}
+             <Link  href='https://www.kalarric.art/' target="_blank">
+              <li>Design @ Kalarric</li>
+            </Link> 
           </ul>
         </div>
         <div className={styles.socials}>
           <div>
-            <Link href='https://www.instagram.com/kalarric'>
+            <Link  target="_blank" href='https://www.instagram.com/kalarric'>
               <BsInstagram className={styles.insta} size='2em' />
             </Link>
-            <Link href='https://www.twitter.com/kalarric'>
+            <Link  target="_blank" href='https://www.twitter.com/kalarric'>
               <RiTwitterXFill className={styles.insta} size='2em' />
             </Link>
           </div>

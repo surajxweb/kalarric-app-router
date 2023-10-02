@@ -3,6 +3,7 @@
   background-color: rgb(55, 55, 55);
   color: white;
   padding: 20px;
+  text-underline-offset: 3px;
 }
 
 .info {

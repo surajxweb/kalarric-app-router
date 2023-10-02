@@ -1,13 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ReduxProvider } from "@/redux/provider";
 import { neobrutalism } from "@clerk/themes";
 
-const bodyfont = Urbanist({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title:
@@ -38,7 +36,7 @@ export default function RootLayout({
       }}
     >
       <html lang='en'>
-        <body className={bodyfont.className}>
+        <body >
           <ReduxProvider>
             <header>
               <Navbar />
