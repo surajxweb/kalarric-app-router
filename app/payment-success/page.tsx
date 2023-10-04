@@ -2,7 +2,7 @@ import Offers from "@/components/Offers";
 import { stripe } from "@/lib/stripe";
 import Image from "next/image";
 import success from "@/resources/success.webp";
-import styles from "./Success.module.css";
+import styles from "./PaymentSuccess.module.css";
 import Link from "next/link";
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   };
 }
 
-const Success = async ({ searchParams }: Props) => {
+const PaymentSuccess = async ({ searchParams }: Props) => {
   const sessionID = searchParams?.session_id ?? "";
   const checkoutSession = await stripe.checkout.sessions.retrieve(sessionID);
   const customerDetails = checkoutSession?.customer_details;
@@ -56,4 +56,4 @@ const Success = async ({ searchParams }: Props) => {
   );
 };
 
-export default Success;
+export default PaymentSuccess;

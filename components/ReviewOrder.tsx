@@ -105,8 +105,7 @@ const ReviewOrder = () => {
           <div className={styles.section}>
             <div className={styles.question}>Payment Method:</div>
             <div>
-              All major credit and debit cards, digital wallets, net banking,
-              and UPI accepted.
+              We support all Visa, MasterCard and American Express Cards, and we are constantly adding more methods of payment.
             </div>
           </div>
         </div>
@@ -116,5 +115,3 @@ const ReviewOrder = () => {
 };
 
 export default ReviewOrder;
-
-// ,Cck7p8GjK,CE2N@123

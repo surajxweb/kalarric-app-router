@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
         <div className={styles.company}>
           <ul className={styles.links}>
-            <Link href='/ourstory'>
+            <Link href='/about'>
               <li>Our Story</li>
             </Link>
             <Link href='/shippingandreturns'>
