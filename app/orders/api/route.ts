@@ -8,12 +8,13 @@ export async function GET(request: Request) {
   // Define your GraphQL query as a string
   const graphqlQuery = `
   query orders {
-    orders(where: {costumer: {clerkUserId: "${query}"}}) {
+    orders(where: {costumer: {clerkUserId: "${query}"}}, stage: DRAFT, orderBy: createdAt_DESC) {
       id
       dateAndTime
-      
+      createdAt
       totalAmount
       address {
+        
         firstName
         lastName
         phoneNumber

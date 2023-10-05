@@ -78,6 +78,10 @@
   margin-bottom: 5px;
 }
 
+.error {
+  color: red;
+}
+
 @media screen and (max-width: 500px) {
   .reviewContainer {
     flex-flow: column wrap;

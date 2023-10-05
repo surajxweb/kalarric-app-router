@@ -62,10 +62,10 @@ const Checkout = () => {
               ))}
             <div
               className={styles.addCard}
-              onClick={() => setShowForm(!showForm)}
+              // onClick={() => setShowForm(!showForm)}
             >
-              <div>+</div>
-              <div>Add new address.</div>
+              {/* <div>+</div> */}
+              <div>Add new address at the payment page.</div>
             </div>
             {showForm && (
               <AddressForm

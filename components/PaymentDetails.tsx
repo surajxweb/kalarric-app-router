@@ -8,8 +8,10 @@ import { useDispatch } from "react-redux";
 import { initializePaymentCart } from "@/redux/features/auth-slice";
 import { loadStripe } from "@stripe/stripe-js";
 import { stripepk } from "@/lib/stripe";
+import { useAuth } from "@clerk/nextjs";
 
 const PaymentDetails = ({ page }: { page: string }) => {
+  const { userId } = useAuth();
   const [codeApplied, setCodeApplied] = useState(0);
   const [code, setCode] = useState("");
   const deleveryAddress = useAppSelector(
@@ -59,6 +61,7 @@ const PaymentDetails = ({ page }: { page: string }) => {
       body: JSON.stringify({
         cart: cart, // Cart data
         deliveryAddress: deleveryAddress, // Delivery address object
+        userId: userId,
       }), // Send the cart data in the request body
     };
 
@@ -113,13 +116,20 @@ const PaymentDetails = ({ page }: { page: string }) => {
           <div className={styles.price}>{totalAmt} ₹</div>
         </div>
       </div>
-      <button
-        onClick={page === "cart" ? proceedToPayment : makePayment}
+      {page === "checkout" && <button
+        onClick={makePayment}
         className={styles.paymentbutton}
         disabled={totalMrp > 0 ? false : true}
       >
-        {page === "cart" ? "Place Order" : "Make Payment"}
-      </button>
+       Make Payment
+      </button>}
+      {page === "cart " && <button
+        onClick={proceedToPayment }
+        className={styles.paymentbutton}
+        disabled={totalMrp > 0 ? false : true}
+      >
+        Place Order
+      </button>}
       {remainingAmt > 0 && (
         <div className={styles.remarks}>
           {`Add products worth Rs ${remainingAmt} to get free shippping.`}

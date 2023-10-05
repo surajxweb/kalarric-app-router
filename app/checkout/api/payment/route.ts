@@ -9,13 +9,21 @@ const isCartsValid = (cart: any) => {
 export async function POST(request: Request) {
   const origin = request.headers.get("origin");
   const requestData = await request.json();
-
   // if (!requestData || !requestData.cart || !isCartsValid(requestData.cart)) {
   //   return "Error with Cart Value. Something seems fishy!";
   // }
 
   const cart = requestData.cart;
+  const userID =requestData.userId;
   const deliveryAddress = requestData.deliveryAddress;
+
+  const totalMrp = cart.reduce(
+    (acc:any, item:any) => acc + item.mrp * item.quantity,
+    0
+  );
+  const remainingAmt =
+    999 - cart.reduce((acc:any, item:any) => acc + item.price * item.quantity, 0);
+  const shipping = totalMrp > 0 ? (remainingAmt > 0 ? 50 : 0) : 0;
 
   const lineItems = cart.map((item: any) => ({
     price_data: {
@@ -36,13 +44,19 @@ export async function POST(request: Request) {
     mode: "payment",
     line_items: lineItems,
     payment_method_types: ["card"],
-    success_url: `${origin}/success?success=true&session_id={CHECKOUT_SESSION_ID}`,
+    shipping_options: [{
+      shipping_rate: shipping > 0 ? process.env.STRIPE_PAID_DELIVERY :  process.env.STRIPE_FREE_DELIVERY,
+    }],
+    success_url: `${origin}/payment-success?success=true&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/cart`,
-    client_reference_id: 'your-customer-id', // A unique identifier for your customer
+    client_reference_id: userID, // A unique identifier for your customer
+    shipping_address_collection: {
+      allowed_countries: ['IN'],
+      },
+    billing_address_collection: "auto",
   metadata: {
-    customer_email: 'customer@example.com', // Customer's email
-    customer_name: 'Customer Name', // Customer's name
-    customer_phone: '+1234567890', // Customer's phone number
+    cart: JSON.stringify(cart), 
+    deliveryAddress: JSON.stringify(deliveryAddress),
   },
   });
 

@@ -54,15 +54,7 @@ const Orders = () => {
                   <div className={styles.iquestions}>
                     <div className={styles.iquestion}>Order placed on</div>
                     <div className={styles.ianswer}>
-                      {new Date(order.dateAndTime).toLocaleDateString(
-                        "en-US",
-                        optionsDate
-                      )}{" "}
-                      at{" "}
-                      {new Date(order.dateAndTime).toLocaleTimeString(
-                        "en-US",
-                        optionsTime
-                      )}
+                      {new Date(order.createdAt).toLocaleDateString('en-US',{ year: 'numeric', month: 'long', day: 'numeric' })}
                     </div>
                   </div>
                   <div className={styles.iquestions}>
