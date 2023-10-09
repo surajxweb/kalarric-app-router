@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ReduxProvider } from "@/redux/provider";
 import { neobrutalism } from "@clerk/themes";
+import { Analytics } from '@vercel/analytics/react';
 
 
 export const metadata: Metadata = {
@@ -41,7 +42,9 @@ export default function RootLayout({
             <header>
               <Navbar />
             </header>
-            <main>{children}</main>
+            <main>{children}
+  <Analytics />
+</main>
             <footer>
               <Footer />
             </footer>
