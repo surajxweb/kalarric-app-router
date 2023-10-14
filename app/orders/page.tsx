@@ -6,9 +6,12 @@ import React, { useState, useEffect } from "react";
 import { useAuth } from "@clerk/nextjs";
 import DropDown from "@/components/Dropdown";
 import Image from "next/image";
+import Loader from "@/components/Loader";
+
 
 const Orders = () => {
   const { userId } = useAuth();
+  const [isLoaoding, setIsLoading] = useState(false);
   const [ordersData, setOrdersData] = useState<[]>([]);
 
   const optionsDate: Intl.DateTimeFormatOptions = {
@@ -23,14 +26,16 @@ const Orders = () => {
   };
 
   useEffect(() => {
-    const fetchAddress = async () => {
+    const fetchOrders = async () => {
+      setIsLoading(true);
       const response = await fetch(`/orders/api?query=${userId}`);
       const data = await response.json();
 
       setOrdersData(data?.ordersData.orders);
+      setIsLoading(false);
     };
 
-    fetchAddress();
+    fetchOrders();
   }, [userId]);
 
   return (
@@ -38,6 +43,10 @@ const Orders = () => {
       <Offers />
       <div className={styles.container}>
         <h1 className={styles.heading}>Your Orders</h1>
+        {<div className={`${styles.historyContainer} ${styles.loaderContainer}`}>
+          <Loader />
+          <div>Loading Order History</div>
+        </div>}
 
         {ordersData.length > 0 ? (
           ordersData.map((order: any) => (

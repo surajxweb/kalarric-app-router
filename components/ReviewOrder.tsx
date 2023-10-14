@@ -93,8 +93,8 @@ const ReviewOrder = () => {
             </div>
           ) : (
             <div className={styles.section}>
-              <div style={{ color: "red"}} className={`${styles.question} ${styles.error}`}>
-                Delivery Address Not Selected. Add it in the payment page.
+               <div  style={{ color: "red"}}  className={`${styles.question} ${styles.error}`}>
+                Delivery Address Not Selected.
               </div>
             </div>
           )}

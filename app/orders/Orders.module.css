@@ -5,6 +5,10 @@
   min-height: 60vh;
 }
 
+.loaderContainer {
+  padding: 10px;
+}
+
 .historyContainer {
   width: 90%;
   margin: 20px auto 40px auto;

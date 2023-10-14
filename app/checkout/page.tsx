@@ -11,9 +11,11 @@ import Link from "next/link";
 import AddressForm from "@/components/AddressForm";
 import Offers from "@/components/Offers";
 import styles from "./Checkout.module.css";
+import Loader from "@/components/Loader";
 
 const Checkout = () => {
   const { userId } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [addressList, setAddressList] = useState<[]>([]);
   const paymentCart = useAppSelector(
@@ -25,13 +27,16 @@ const Checkout = () => {
 
   useEffect(() => {
     // Call fetchAddress when the component mounts
+    setIsLoading(true);
     const fetchAddress = async () => {
       const response = await fetch(`/checkout/api/get-address?query=${userId}`);
       const data = await response.json();
       setAddressList(data?.addressData?.addresses);
+      setIsLoading(false);
     };
 
-    fetchAddress(); // Now it won't trigger an infinite loop
+    fetchAddress();
+     // Now it won't trigger an infinite loop
   }, [userId, deliveryAddress]); // Ensure it only runs when userId changes
 
   return (
@@ -43,6 +48,12 @@ const Checkout = () => {
           <h2>Checkout</h2>
           <h3>Select a delivery address.</h3>
           <div className={styles.addressList}>
+          {isLoading && <div
+              className={styles.addCard}
+            >
+               <Loader />
+              <div>Loading Address</div>
+            </div>}
             {addressList.length > 0 &&
               addressList.map((address: any) => (
                 <AddressCard
@@ -62,10 +73,10 @@ const Checkout = () => {
               ))}
             <div
               className={styles.addCard}
-              // onClick={() => setShowForm(!showForm)}
+              onClick={() => setShowForm(!showForm)}
             >
-              {/* <div>+</div> */}
-              <div>Add new address at the payment page.</div>
+               <div>+</div>
+              <div>Add new address.</div>
             </div>
             {showForm && (
               <AddressForm
@@ -87,7 +98,6 @@ const Checkout = () => {
           )}
         </div>
         <PaymentDetails page={"checkout"} />
-        {/* You may add your PaymentDetails component here */}
       </div>
     </>
   );

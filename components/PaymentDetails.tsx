@@ -123,7 +123,7 @@ const PaymentDetails = ({ page }: { page: string }) => {
       >
        Make Payment
       </button>}
-      {page === "cart " && <button
+      {page === "cart" && <button
         onClick={proceedToPayment }
         className={styles.paymentbutton}
         disabled={totalMrp > 0 ? false : true}
