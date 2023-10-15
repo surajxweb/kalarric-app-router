@@ -21,17 +21,21 @@ const PaymentSuccess = async ({ searchParams }: Props) => {
   const deliveryAddress = checkoutSession?.metadata?.deliveryAddress;
 
   const cartObject = JSON.parse(cart ?? "");
-const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
+  const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
 
   // console.log("lelo detail session ka: ", sessionID);
-  console.log("lelo id checkout session ka: ", checkoutSession.client_reference_id);
+  console.log(
+    "lelo id checkout session ka: ",
+    checkoutSession.client_reference_id
+  );
   // console.log("lelo detail cutomer ka: ", customerDetails);
-
 
   // console.log("cart deko:", cartObject);
   // console.log("deliveryAddress dekho:", deliveryAddressObject);
 
-  const totalAmount = checkoutSession?.amount_total ? checkoutSession.amount_total / 100 : 0;
+  const totalAmount = checkoutSession?.amount_total
+    ? checkoutSession.amount_total / 100
+    : 0;
 
   console.log(cartObject);
 
@@ -45,7 +49,7 @@ const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
     }
     
     `;
-  
+
     try {
       const payemntIdResponse = await request(endpoint, query);
       return payemntIdResponse;
@@ -53,8 +57,7 @@ const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
       console.log("Failed to fetch payment id - ", e);
       return null;
     }
-  }
-  
+  };
 
   const addOrder = async () => {
     const endpoint = process.env.GPAPHQL_KA_CHAABI;
@@ -72,7 +75,7 @@ const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
       }
     }
     `;
-  
+
     try {
       const createOrderResponseID = await request(endpoint, query);
       return createOrderResponseID;
@@ -82,7 +85,13 @@ const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
     }
   };
 
-  const addProductToOrder = async ( quantity : any, size: any, price:any, pid: any, oid:any) => {
+  const addProductToOrder = async (
+    quantity: any,
+    size: any,
+    price: any,
+    pid: any,
+    oid: any
+  ) => {
     const endpoint = process.env.GPAPHQL_KA_CHAABI;
     const query = `
     mutation {
@@ -100,7 +109,7 @@ const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
     }
     
     `;
-  
+
     try {
       const addProductToOrderResponseID = await request(endpoint, query);
       return addProductToOrderResponseID.products;
@@ -115,9 +124,7 @@ const deliveryAddressObject = JSON.parse(deliveryAddress ?? "");
   // const exists = paymentIds.data.orders.some((order : any )=> order.paymentId === currPaymentId);
   // console.log(exists);
 
-
   return (
-
     <>
       <Offers />
       <div className={styles.container}>

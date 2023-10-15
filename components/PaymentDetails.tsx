@@ -116,20 +116,24 @@ const PaymentDetails = ({ page }: { page: string }) => {
           <div className={styles.price}>{totalAmt} ₹</div>
         </div>
       </div>
-      {page === "checkout" && <button
-        onClick={makePayment}
-        className={styles.paymentbutton}
-        disabled={totalMrp > 0 ? false : true}
-      >
-       Make Payment
-      </button>}
-      {page === "cart" && <button
-        onClick={proceedToPayment }
-        className={styles.paymentbutton}
-        disabled={totalMrp > 0 ? false : true}
-      >
-        Place Order
-      </button>}
+      {page === "checkout" && (
+        <button
+          onClick={makePayment}
+          className={styles.paymentbutton}
+          disabled={totalMrp > 0 ? false : true}
+        >
+          Make Payment
+        </button>
+      )}
+      {page === "cart" && (
+        <button
+          onClick={proceedToPayment}
+          className={styles.paymentbutton}
+          disabled={totalMrp > 0 ? false : true}
+        >
+          Place Order
+        </button>
+      )}
       {remainingAmt > 0 && (
         <div className={styles.remarks}>
           {`Add products worth Rs ${remainingAmt} to get free shippping.`}

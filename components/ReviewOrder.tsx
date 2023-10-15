@@ -93,7 +93,10 @@ const ReviewOrder = () => {
             </div>
           ) : (
             <div className={styles.section}>
-               <div  style={{ color: "red"}}  className={`${styles.question} ${styles.error}`}>
+              <div
+                style={{ color: "red" }}
+                className={`${styles.question} ${styles.error}`}
+              >
                 Delivery Address Not Selected.
               </div>
             </div>
@@ -105,7 +108,8 @@ const ReviewOrder = () => {
           <div className={styles.section}>
             <div className={styles.question}>Payment Method:</div>
             <div>
-              We support all Visa, MasterCard and American Express Cards, and we are constantly adding more methods of payment.
+              We support all Visa, MasterCard and American Express Cards, and we
+              are constantly adding more methods of payment.
             </div>
           </div>
         </div>

@@ -36,7 +36,7 @@ const Checkout = () => {
     };
 
     fetchAddress();
-     // Now it won't trigger an infinite loop
+    // Now it won't trigger an infinite loop
   }, [userId, deliveryAddress]); // Ensure it only runs when userId changes
 
   return (
@@ -48,12 +48,12 @@ const Checkout = () => {
           <h2>Checkout</h2>
           <h3>Select a delivery address.</h3>
           <div className={styles.addressList}>
-          {isLoading && <div
-              className={styles.addCard}
-            >
-               <Loader />
-              <div>Loading Address</div>
-            </div>}
+            {isLoading && (
+              <div className={styles.addCard}>
+                <Loader />
+                <div>Loading Address</div>
+              </div>
+            )}
             {addressList.length > 0 &&
               addressList.map((address: any) => (
                 <AddressCard
@@ -75,7 +75,7 @@ const Checkout = () => {
               className={styles.addCard}
               onClick={() => setShowForm(!showForm)}
             >
-               <div>+</div>
+              <div>+</div>
               <div>Add new address.</div>
             </div>
             {showForm && (

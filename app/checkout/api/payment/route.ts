@@ -14,15 +14,16 @@ export async function POST(request: Request) {
   // }
 
   const cart = requestData.cart;
-  const userID =requestData.userId;
+  const userID = requestData.userId;
   const deliveryAddress = requestData.deliveryAddress;
 
   const totalMrp = cart.reduce(
-    (acc:any, item:any) => acc + item.mrp * item.quantity,
+    (acc: any, item: any) => acc + item.mrp * item.quantity,
     0
   );
   const remainingAmt =
-    999 - cart.reduce((acc:any, item:any) => acc + item.price * item.quantity, 0);
+    999 -
+    cart.reduce((acc: any, item: any) => acc + item.price * item.quantity, 0);
   const shipping = totalMrp > 0 ? (remainingAmt > 0 ? 50 : 0) : 0;
 
   const lineItems = cart.map((item: any) => ({
@@ -44,24 +45,28 @@ export async function POST(request: Request) {
     mode: "payment",
     line_items: lineItems,
     payment_method_types: ["card"],
-    shipping_options: [{
-      shipping_rate: shipping > 0 ? process.env.STRIPE_PAID_DELIVERY :  process.env.STRIPE_FREE_DELIVERY,
-    }],
+    shipping_options: [
+      {
+        shipping_rate:
+          shipping > 0
+            ? process.env.STRIPE_PAID_DELIVERY
+            : process.env.STRIPE_FREE_DELIVERY,
+      },
+    ],
     success_url: `${origin}/payment-success?success=true&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/cart`,
     client_reference_id: userID, // A unique identifier for your customer
     shipping_address_collection: {
-      allowed_countries: ['IN'],
-      },
+      allowed_countries: ["IN"],
+    },
     billing_address_collection: "auto",
-  metadata: {
-    cart: JSON.stringify(cart), 
-    deliveryAddress: JSON.stringify(deliveryAddress),
-  },
+    metadata: {
+      cart: JSON.stringify(cart),
+      deliveryAddress: JSON.stringify(deliveryAddress),
+    },
   });
 
   return NextResponse.json(session);
 }
-
 
 // 5200828282828210

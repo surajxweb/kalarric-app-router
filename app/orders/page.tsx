@@ -8,7 +8,6 @@ import DropDown from "@/components/Dropdown";
 import Image from "next/image";
 import Loader from "@/components/Loader";
 
-
 const Orders = () => {
   const { userId } = useAuth();
   const [isLoaoding, setIsLoading] = useState(false);
@@ -43,10 +42,14 @@ const Orders = () => {
       <Offers />
       <div className={styles.container}>
         <h1 className={styles.heading}>Your Orders</h1>
-        {<div className={`${styles.historyContainer} ${styles.loaderContainer}`}>
-          <Loader />
-          <div>Loading Order History</div>
-        </div>}
+        {
+          <div
+            className={`${styles.historyContainer} ${styles.loaderContainer}`}
+          >
+            <Loader />
+            <div>Loading Order History</div>
+          </div>
+        }
 
         {ordersData.length > 0 ? (
           ordersData.map((order: any) => (
@@ -63,7 +66,11 @@ const Orders = () => {
                   <div className={styles.iquestions}>
                     <div className={styles.iquestion}>Order placed on</div>
                     <div className={styles.ianswer}>
-                      {new Date(order.createdAt).toLocaleDateString('en-US',{ year: 'numeric', month: 'long', day: 'numeric' })}
+                      {new Date(order.createdAt).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
                     </div>
                   </div>
                   <div className={styles.iquestions}>
