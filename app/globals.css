@@ -5,29 +5,19 @@
 }
 
 @font-face {
-  font-family: "myFirstFont";
-  src: url("../resources/Fonts/09c8fb44d2c62d99647e4ce58736293e.eot");
-}
-
-/* @font-face {
-  font-family: "latinFont";
-  src: url("https://db.onlinewebfonts.com/t/09c8fb44d2c62d99647e4ce58736293e.eot");
+  font-family: "someLatinFont";
   src:
-    url("https://db.onlinewebfonts.com/t/09c8fb44d2c62d99647e4ce58736293e.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/09c8fb44d2c62d99647e4ce58736293e.woff2")
+    url("../resources/Fonts/09c8fb44d2c62d99647e4ce58736293e.woff2")
       format("woff2"),
-    url("https://db.onlinewebfonts.com/t/09c8fb44d2c62d99647e4ce58736293e.woff")
+    url("../resources/Fonts/09c8fb44d2c62d99647e4ce58736293e.woff")
       format("woff"),
-    url("https://db.onlinewebfonts.com/t/09c8fb44d2c62d99647e4ce58736293e.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/09c8fb44d2c62d99647e4ce58736293e.svg#HM Sans Latin Regular")
-      format("svg");
-} */
+    url("../resources/Fonts/09c8fb44d2c62d99647e4ce58736293e.ttf")
+      format("truetype");
+}
 
 body {
   color: #111;
-  font-family: myFirstFont;
+  font-family: someLatinFont;
   background-color: #f6f6f6;
   font-synthesis: none;
   letter-spacing: 1px;
