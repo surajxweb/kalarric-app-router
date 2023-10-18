@@ -9,9 +9,9 @@ const ShippingReturns = () => {
       <div className={styles.section}>
         <h2 className={styles.sectionTitle}>Shipping Information</h2>
         <p>
-          We offer free standard shipping on all orders within the India. Orders
-          are typically processed and shipped within 1-2 business days. Please
-          allow 3-5 business days for delivery.
+          We offer free standard shipping on all prepaid orders within the
+          India. Orders are typically processed and shipped within 1-2 business
+          days. Please allow 3-5 business days for delivery.
         </p>
       </div>
 

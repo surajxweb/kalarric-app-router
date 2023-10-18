@@ -12,12 +12,15 @@ import AddressForm from "@/components/AddressForm";
 import Offers from "@/components/Offers";
 import styles from "./Checkout.module.css";
 import Loader from "@/components/Loader";
+import PaymentOptions from "@/components/PaymentOptions";
 
 const Checkout = () => {
   const { userId } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [addressList, setAddressList] = useState<[]>([]);
+  const [paymentOption, setPaymentOption] = useState("ccdc");
+
   const paymentCart = useAppSelector(
     (state) => state.storeReducer.value.paymentCart
   );
@@ -87,19 +90,23 @@ const Checkout = () => {
               />
             )}
           </div>
-          {/* <div className={styles.paymentSection}> <h3>Select a payment method.</h3>
-          
-
-          </div>  */}
+          {/* <div className={styles.paymentSection}>
+           
+            <h3>Select a payment method.</h3>
+            <PaymentOptions
+              paymentOption={paymentOption}
+              setPaymentOption={setPaymentOption}
+            />
+          </div> */}
           {paymentCart.length > 0 ? (
-            <ReviewOrder />
+            <ReviewOrder paymentMethod={paymentOption} />
           ) : (
             <Link className={styles.emptyCart} href={"/cart"}>
               Go to the cart to initiate the order.
             </Link>
           )}
         </div>
-        <PaymentDetails page={"checkout"} />
+        <PaymentDetails paymentMethod={paymentOption} page={"checkout"} />
       </div>
     </>
   );

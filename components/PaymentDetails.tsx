@@ -10,7 +10,13 @@ import { loadStripe } from "@stripe/stripe-js";
 import { stripepk } from "@/lib/stripe";
 import { useAuth } from "@clerk/nextjs";
 
-const PaymentDetails = ({ page }: { page: string }) => {
+const PaymentDetails = ({
+  page,
+  paymentMethod,
+}: {
+  page: string;
+  paymentMethod: string;
+}) => {
   const { userId } = useAuth();
   const [codeApplied, setCodeApplied] = useState(0);
   const [code, setCode] = useState("");
@@ -25,13 +31,15 @@ const PaymentDetails = ({ page }: { page: string }) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
+  const paymentMethodCharge = paymentMethod === "cod" ? 25 : 0;
   const totalMrp = cart.reduce(
     (acc, item) => acc + item.mrp * item.quantity,
     0
   );
   const remainingAmt =
     999 - cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const shipping = totalMrp > 0 ? (remainingAmt > 0 ? 50 : 0) : 0;
+  const shipping =
+    (totalMrp > 0 ? (remainingAmt > 0 ? 50 : 0) : 0) + paymentMethodCharge;
   const taxes = 0;
   const totalAmt =
     cart.reduce((acc, item) => acc + item.price * item.quantity, 0) + shipping;
@@ -42,6 +50,10 @@ const PaymentDetails = ({ page }: { page: string }) => {
       // Handle invalid coupon code
       setCodeApplied(2);
     }
+  };
+
+  const codKaro = () => {
+    console.log("cod karo");
   };
 
   const proceedToPayment = () => {
@@ -91,6 +103,8 @@ const PaymentDetails = ({ page }: { page: string }) => {
     }
   };
 
+  const disableOrder = deleveryAddress.firstName.length === 0 || totalMrp === 0;
+
   return (
     <div className={styles.payment}>
       <h2>Billing Details</h2>
@@ -116,29 +130,44 @@ const PaymentDetails = ({ page }: { page: string }) => {
           <div className={styles.price}>{totalAmt} ₹</div>
         </div>
       </div>
-      {page === "checkout" && (
+      {page === "checkout" && paymentMethod === "ccdc" && (
         <button
           onClick={makePayment}
           className={styles.paymentbutton}
-          disabled={totalMrp > 0 ? false : true}
+          disabled={disableOrder}
         >
           Make Payment
+        </button>
+      )}
+      {page === "checkout" && paymentMethod === "cod" && (
+        <button
+          onClick={codKaro}
+          className={styles.paymentbutton}
+          disabled={disableOrder}
+        >
+          Place Order
         </button>
       )}
       {page === "cart" && (
         <button
           onClick={proceedToPayment}
           className={styles.paymentbutton}
-          disabled={totalMrp > 0 ? false : true}
+          disabled={disableOrder}
         >
-          Place Order
+          Proceed to Checkout
         </button>
       )}
       {remainingAmt > 0 && (
         <div className={styles.remarks}>
-          {`Add products worth Rs ${remainingAmt} to get free shippping.`}
+          {`Add products worth ₹ ${remainingAmt} to get free shippping on prepaid orders.`}
         </div>
       )}
+      {paymentMethod === "cod" && (
+        <div className={styles.remarks}>
+          {`A 25 ₹ Cash on Delivery charge has been added. `}
+        </div>
+      )}
+
       <div className={styles.discount}>
         <input
           onChange={(e) => setCode(e.target.value)}

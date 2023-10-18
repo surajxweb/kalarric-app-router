@@ -55,6 +55,15 @@
 
 .moreInfo {
   flex: 1;
+  padding: 20px;
+  border-radius: 50px;
+  background: #fffefe;
+  box-shadow:
+    20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff,
+    0 0 5px rgba(0, 0, 0, 0.5); /* New shadow for the left side */
+  border: 0.5px solid #ffffff;
+  margin: 0 10px 10px 0;
 }
 
 .section {

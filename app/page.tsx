@@ -120,7 +120,7 @@ const Home = async () => {
           <div className={styles.text}>
             <div className={styles.question}>EASY SHIPPING AND RETURNS</div>
             <div className={styles.answer}>
-              Free shipping availble on all orders above ₹999.
+              Free shipping availble on prepaid all orders above ₹999.
             </div>
           </div>
         </div>

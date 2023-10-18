@@ -2,7 +2,7 @@ import { useAppSelector } from "@/redux/store";
 import styles from "./ReviewOrder.module.css";
 import Image from "next/image";
 
-const ReviewOrder = () => {
+const ReviewOrder = ({ paymentMethod }: { paymentMethod: string }) => {
   const paymentCart = useAppSelector(
     (state) => state.storeReducer.value.paymentCart
   );
@@ -108,8 +108,11 @@ const ReviewOrder = () => {
           <div className={styles.section}>
             <div className={styles.question}>Payment Method:</div>
             <div>
-              We support all Visa, MasterCard and American Express Cards, and we
-              are constantly adding more methods of payment.
+              {paymentMethod === "ccdc"
+                ? "Credit/Debit Card"
+                : paymentMethod === "cod"
+                ? "Cash on delivery"
+                : "Payment method not selected"}
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     price_data: {
       currency: "inr",
       product_data: {
-        name: item.productName,
+        name: `${item.productName} - ${item.size.toUpperCase()}`,
 
         images: [item.imageURL], // Add the image URL to the images array
       },
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
       },
     ],
     success_url: `${origin}/payment-success?success=true&session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${origin}/cart`,
+    cancel_url: `${origin}/checkout`,
     client_reference_id: userID, // A unique identifier for your customer
     shipping_address_collection: {
       allowed_countries: ["IN"],

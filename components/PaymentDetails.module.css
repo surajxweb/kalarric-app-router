@@ -88,7 +88,7 @@
 
 .remarks {
   margin: 10px 0 20px 0;
-  font-size: 14px;
+  font-size: 13px;
   color: red;
   width: 100%;
 }
@@ -97,6 +97,6 @@
   .payment {
     position: sticky;
     top: 35px;
-    height: 450px;
+    height: 500px;
   }
 }

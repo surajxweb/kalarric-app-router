@@ -57,7 +57,7 @@ const Cart = () => {
             )}
           </div>
         </div>
-        <PaymentDetails page='cart' />
+        <PaymentDetails paymentMethod='ccdc' page='cart' />
       </div>
     </>
   );
