@@ -71,14 +71,15 @@ const Checkout = () => {
                   pincode={address.pincode}
                 />
               ))}
-            {!isLoading && (<div
-              className={styles.addCard}
-              onClick={() => setShowForm(!showForm)}
-            >
-              <div>+</div>
-              <div>Add new address.</div>
-            </div>
-             )}
+            {!isLoading && (
+              <div
+                className={styles.addCard}
+                onClick={() => setShowForm(!showForm)}
+              >
+                <div>+</div>
+                <div>Add new address.</div>
+              </div>
+            )}
             {showForm && (
               <AddressForm
                 clerkUserID={userId ? userId : ""}
@@ -86,10 +87,10 @@ const Checkout = () => {
               />
             )}
           </div>
-          {/* <h3>Select a payment method.</h3>
-          <div className={styles.paymentOptionsList}>
-            Stripe
-          </div> */}
+          {/* <div className={styles.paymentSection}> <h3>Select a payment method.</h3>
+          
+
+          </div>  */}
           {paymentCart.length > 0 ? (
             <ReviewOrder />
           ) : (

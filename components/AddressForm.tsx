@@ -218,7 +218,7 @@ const AddressForm = ({
         <button type='submit' className={styles.submibutton}>
           Submit
         </button>
-        <button onClick={() => (setView(false))} className={styles.cancelButton}>
+        <button onClick={() => setView(false)} className={styles.cancelButton}>
           Cancel
         </button>
       </form>

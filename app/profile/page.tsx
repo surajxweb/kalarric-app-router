@@ -8,7 +8,6 @@ const UserPage = () => {
   return (
     <div className={styles.container}>
       <UserProfile />
-
     </div>
   );
 };
