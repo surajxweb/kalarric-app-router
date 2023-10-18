@@ -8,6 +8,8 @@ import styles from "./UserButton.module.css";
 import { useAuth } from "@clerk/nextjs";
 import { useClerk } from "@clerk/clerk-react";
 import Link from "next/link";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 
 export default function UserButton() {
   const { userId } = useAuth();
@@ -25,8 +27,17 @@ export default function UserButton() {
     signOut();
   };
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        'inherit',
+      ].join(','),
+    }
+  });
+
   return (
     <div className={styles.container}>
+        <ThemeProvider theme={theme}>
       <AiOutlineUser
         id='basic-button'
         aria-controls={open ? "basic-menu" : undefined}
@@ -58,6 +69,8 @@ export default function UserButton() {
           </MenuItem>
         )}
       </Menu>
+
+      </ThemeProvider>
     </div>
   );
 }

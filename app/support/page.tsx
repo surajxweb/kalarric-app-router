@@ -24,15 +24,15 @@ const SupportPage = () => {
     <>
       <Script id='freshdesk-widget-config'>
         {`
-          window.fwSettings = {
-            'widget_id': 1070000000499, // Your widget ID
-          };
-          !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}();
+         window.fwSettings={
+         'widget_id':1070000000639
+         };
+         !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
         `}
       </Script>
       <Script
         type='text/javascript'
-        src='https://ind-widget.freshworks.com/widgets/1070000000499.js'
+        src='https://ind-widget.freshworks.com/widgets/1070000000639.js'
         async
         defer
       />

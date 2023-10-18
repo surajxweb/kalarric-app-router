@@ -92,3 +92,11 @@
   color: red;
   width: 100%;
 }
+
+@media (min-width: 1000px) {
+  .payment {
+    position: sticky;
+    top: 35px;
+    height: 450px;
+  }
+}

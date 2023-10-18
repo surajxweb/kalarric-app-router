@@ -37,7 +37,7 @@ const Checkout = () => {
 
     fetchAddress();
     // Now it won't trigger an infinite loop
-  }, [userId, deliveryAddress]); // Ensure it only runs when userId changes
+  }, [userId]); // Ensure it only runs when userId changes
 
   return (
     <>
@@ -71,13 +71,14 @@ const Checkout = () => {
                   pincode={address.pincode}
                 />
               ))}
-            <div
+            {!isLoading && (<div
               className={styles.addCard}
               onClick={() => setShowForm(!showForm)}
             >
               <div>+</div>
               <div>Add new address.</div>
             </div>
+             )}
             {showForm && (
               <AddressForm
                 clerkUserID={userId ? userId : ""}

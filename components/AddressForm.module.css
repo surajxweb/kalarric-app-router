@@ -23,12 +23,31 @@
 
 .submibutton {
   font-family: inherit;
-  background-color: #111;
+  background-color: #222;
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.submibutton:hover {
+  background-color: #000000;
+}
+
+.cancelButton:hover {
+  background-color: #a3a3a3;
+}
+
+.cancelButton {
+  font-family: inherit;
+  background-color: #ccc;
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 20px;
 }
 
 .submitbutton:hover {

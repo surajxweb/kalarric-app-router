@@ -4,4 +4,5 @@
   align-self: center;
   justify-content: center;
   border: 2px solid black;
+  min-height: 500px;
 }
