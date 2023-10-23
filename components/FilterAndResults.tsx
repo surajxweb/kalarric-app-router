@@ -59,24 +59,24 @@ export default function FilterAndResults({ allProducts }: any) {
             <FormControlLabel
               control={
                 <Checkbox
-                  name='tshirts'
+                  name="tshirts"
                   checked={checkboxes.tshirts}
                   onChange={handleCheckboxChange}
-                  color='primary'
+                  color="primary"
                 />
               }
-              label='T-Shirts'
+              label="T-Shirts"
             />
             <FormControlLabel
               control={
                 <Checkbox
-                  name='wallets'
+                  name="wallets"
                   checked={checkboxes.wallets}
                   onChange={handleCheckboxChange}
-                  color='primary'
+                  color="primary"
                 />
               }
-              label='Wallets'
+              label="Wallets"
             />
           </ThemeProvider>
         </div>

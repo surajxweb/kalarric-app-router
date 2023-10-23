@@ -23,6 +23,7 @@
 .text2,
 .link {
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .text1 {
@@ -52,4 +53,10 @@
 .link:hover {
   color: rgb(185, 76, 37);
   text-underline-offset: 5px;
+}
+
+@media (max-width: 768px) {
+  .links {
+    flex-flow: column wrap;
+  }
 }

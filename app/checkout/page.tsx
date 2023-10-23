@@ -37,10 +37,9 @@ const Checkout = () => {
       setAddressList(data?.addressData?.addresses);
       setIsLoading(false);
     };
-
     fetchAddress();
     // Now it won't trigger an infinite loop
-  }, [userId]); // Ensure it only runs when userId changes
+  }, [userId, showForm]); // Ensure it only runs when userId changes
 
   return (
     <>
@@ -90,14 +89,13 @@ const Checkout = () => {
               />
             )}
           </div>
-          {/* <div className={styles.paymentSection}>
-           
+          <div className={styles.paymentSection}>
             <h3>Select a payment method.</h3>
             <PaymentOptions
               paymentOption={paymentOption}
               setPaymentOption={setPaymentOption}
             />
-          </div> */}
+          </div>
           {paymentCart.length > 0 ? (
             <ReviewOrder paymentMethod={paymentOption} />
           ) : (

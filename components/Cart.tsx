@@ -30,8 +30,8 @@ export default function Cart() {
   );
 
   return (
-    <IconButton aria-label='cart'>
-      <StyledBadge badgeContent={cartQty > 0 ? cartQty : "0"} color='primary'>
+    <IconButton aria-label="cart">
+      <StyledBadge badgeContent={cartQty > 0 ? cartQty : "0"} color="primary">
         <WhiteOnHoverIcon />
       </StyledBadge>
     </IconButton>

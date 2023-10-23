@@ -10,7 +10,8 @@ export async function GET(request: Request) {
   query orders {
     orders(where: {costumer: {clerkUserId: "${query}"}}, stage: DRAFT, orderBy: createdAt_DESC) {
       id
-      dateAndTime
+      tracking
+      prepaid
       createdAt
       totalAmount
       address {

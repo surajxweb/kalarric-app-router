@@ -28,9 +28,9 @@ const SearchPage: NextPage = () => {
     <>
       <div className={styles.container}>
         <div className={styles.form}>
-          <BsSearch size='2em' color='#b3b3b3' className={styles.reactIcons} />
+          <BsSearch size="2em" color="#b3b3b3" className={styles.reactIcons} />
           <input
-            type='text'
+            type="text"
             value={formData}
             onChange={(e) => setFormData(e.target.value)}
             placeholder={`let's find somthing`}
@@ -64,7 +64,7 @@ const SearchPage: NextPage = () => {
         )}
         {searchResults.length <= 0 && (
           <div className={styles.headerImage}>
-            <Image src={search} alt='search image' height={500} width={500} />
+            <Image src={search} alt="search image" height={500} width={500} />
           </div>
         )}
       </div>

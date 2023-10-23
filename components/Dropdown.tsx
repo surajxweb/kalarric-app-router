@@ -25,9 +25,9 @@ export default function DropDown({ address }: { address: any }) {
     <div>
       <AiOutlineDown
         aria-describedby={id}
-        variant='contained'
+        variant="contained"
         onClick={handleClick}
-        color='orangered'
+        color="orangered"
         className={styles.icon}
       />
 

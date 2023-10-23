@@ -58,7 +58,7 @@ export default function CustomizedAccordions() {
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
-        <AccordionSummary aria-controls='panel1d-content' id='panel1d-header'>
+        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           What payment options are accepted on Kalarric?
         </AccordionSummary>
         <AccordionDetails>
@@ -71,7 +71,7 @@ export default function CustomizedAccordions() {
         expanded={expanded === "panel2"}
         onChange={handleChange("panel2")}
       >
-        <AccordionSummary aria-controls='panel2d-content' id='panel2d-header'>
+        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
           How long does it take for a product to be delivered?
         </AccordionSummary>
         <AccordionDetails>
@@ -84,7 +84,7 @@ export default function CustomizedAccordions() {
         expanded={expanded === "panel3"}
         onChange={handleChange("panel3")}
       >
-        <AccordionSummary aria-controls='panel3d-content' id='panel3d-header'>
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
           How long does it take to process a refund?
         </AccordionSummary>
         <AccordionDetails>
@@ -100,7 +100,7 @@ export default function CustomizedAccordions() {
         expanded={expanded === "panel4"}
         onChange={handleChange("panel4")}
       >
-        <AccordionSummary aria-controls='panel4d-content' id='panel4d-header'>
+        <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
           What is the average response time for support tickets?
         </AccordionSummary>
         <AccordionDetails>
@@ -114,7 +114,7 @@ export default function CustomizedAccordions() {
         expanded={expanded === "panel5"}
         onChange={handleChange("panel5")}
       >
-        <AccordionSummary aria-controls='panel5d-content' id='panel5d-header'>
+        <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
           Can I track my order status?
         </AccordionSummary>
         <AccordionDetails>
@@ -128,7 +128,7 @@ export default function CustomizedAccordions() {
         expanded={expanded === "panel6"}
         onChange={handleChange("panel6")}
       >
-        <AccordionSummary aria-controls='panel6d-content' id='panel6d-header'>
+        <AccordionSummary aria-controls="panel6d-content" id="panel6d-header">
           What is your return policy?
         </AccordionSummary>
         <AccordionDetails>
@@ -142,7 +142,7 @@ export default function CustomizedAccordions() {
         expanded={expanded === "panel7"}
         onChange={handleChange("panel7")}
       >
-        <AccordionSummary aria-controls='panel7d-content' id='panel7d-header'>
+        <AccordionSummary aria-controls="panel7d-content" id="panel7d-header">
           What should I do if I receive a damaged or incorrect product?
         </AccordionSummary>
         <AccordionDetails>

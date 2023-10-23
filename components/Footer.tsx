@@ -10,14 +10,14 @@ export default function Footer() {
     <div className={styles.footer}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Image src={biglogo} alt='big logo' width={313} height={222} />
+          <Image src={biglogo} alt="big logo" width={313} height={222} />
         </div>
         <div className={styles.shop}>
           <ul className={styles.links}>
-            <Link href='/store/tshirts'>
+            <Link href="/store/tshirts">
               <li>T-Shirts</li>
             </Link>
-            <Link href='/store/wallets'>
+            <Link href="/store/wallets">
               <li>Wallets</li>
             </Link>
 
@@ -26,27 +26,27 @@ export default function Footer() {
         </div>
         <div className={styles.company}>
           <ul className={styles.links}>
-            <Link href='/about'>
+            <Link href="/about">
               <li>Our Story</li>
             </Link>
-            <Link href='/shippingandreturns'>
+            <Link href="/shippingandreturns">
               <li>Shipping and Returns</li>
             </Link>
-            <Link href='/privacypolicy'>
+            <Link href="/privacypolicy">
               <li>Privacy Policy</li>
             </Link>
-            <Link href='https://www.kalarric.art/' target='_blank'>
+            <Link href="https://www.kalarric.art/" target="_blank">
               <li>Design @ Kalarric</li>
             </Link>
           </ul>
         </div>
         <div className={styles.socials}>
           <div>
-            <Link target='_blank' href='https://www.instagram.com/kalarric'>
-              <BsInstagram className={styles.insta} size='2em' />
+            <Link target="_blank" href="https://www.instagram.com/kalarric">
+              <BsInstagram className={styles.insta} size="2em" />
             </Link>
-            <Link target='_blank' href='https://www.twitter.com/kalarric'>
-              <RiTwitterXFill className={styles.insta} size='2em' />
+            <Link target="_blank" href="https://www.twitter.com/kalarric">
+              <RiTwitterXFill className={styles.insta} size="2em" />
             </Link>
           </div>
         </div>

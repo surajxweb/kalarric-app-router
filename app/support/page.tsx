@@ -22,7 +22,7 @@ const SupportPage = () => {
 
   return (
     <>
-      <Script id='freshdesk-widget-config'>
+      <Script id="freshdesk-widget-config">
         {`
          window.fwSettings={
          'widget_id':1070000000639
@@ -31,14 +31,14 @@ const SupportPage = () => {
         `}
       </Script>
       <Script
-        type='text/javascript'
-        src='https://ind-widget.freshworks.com/widgets/1070000000639.js'
+        type="text/javascript"
+        src="https://ind-widget.freshworks.com/widgets/1070000000639.js"
         async
         defer
       />
       <Offers />
       <div className={styles.headerImage}>
-        <Image src={headerImage} alt='header image' height={480} width={1600} />
+        <Image src={headerImage} alt="header image" height={480} width={1600} />
       </div>
       <div className={styles.container}>
         <div className={styles.support}>
@@ -54,22 +54,22 @@ const SupportPage = () => {
               <BiSolidHelpCircle
                 onClick={handleOpenWidget}
                 className={styles.icons}
-                size='7em'
+                size="7em"
               />
 
               <Link href={""}>
-                <IoLogoWhatsapp className={styles.icons} size='7em' />
+                <IoLogoWhatsapp className={styles.icons} size="7em" />
               </Link>
 
               <Link href={"mailto:support@kalarric.freshdesk.com"}>
-                <AiFillMail className={styles.icons} size='7em' />
+                <AiFillMail className={styles.icons} size="7em" />
               </Link>
 
               <Link
-                target='_blank'
+                target="_blank"
                 href={"https://kalarric.freshdesk.com/support/home"}
               >
-                <RiCustomerService2Fill className={styles.icons} size='7em' />
+                <RiCustomerService2Fill className={styles.icons} size="7em" />
               </Link>
             </div>
           </div>

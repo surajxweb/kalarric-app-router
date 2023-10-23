@@ -6,7 +6,7 @@ const ReviewOrder = ({ paymentMethod }: { paymentMethod: string }) => {
   const paymentCart = useAppSelector(
     (state) => state.storeReducer.value.paymentCart
   );
-  const deleveryAddress = useAppSelector(
+  const deliveryAddress = useAppSelector(
     (state) => state.storeReducer.value.deliveryAddress
   );
 
@@ -56,7 +56,7 @@ const ReviewOrder = ({ paymentMethod }: { paymentMethod: string }) => {
                   src={item.imageURL}
                   height={80}
                   width={60}
-                  alt='product image'
+                  alt="product image"
                 />{" "}
               </div>
               <div className={styles.productInfo}>
@@ -74,22 +74,22 @@ const ReviewOrder = ({ paymentMethod }: { paymentMethod: string }) => {
           ))}
         </div>
         <div className={styles.moreInfo}>
-          {deleveryAddress.firstName.length > 0 ? (
+          {deliveryAddress.firstName.length > 0 ? (
             <div className={styles.section}>
               <div className={styles.question}>Selected Delivery Address:</div>
               <div
                 className={styles.name}
-              >{`${deleveryAddress.firstName} ${deleveryAddress.lastName}`}</div>
-              <div className={styles.phone}>{deleveryAddress.phone}</div>
-              <div>{deleveryAddress.addressLine1},</div>
-              <div>{deleveryAddress.addressLine2},</div>
+              >{`${deliveryAddress.firstName} ${deliveryAddress.lastName}`}</div>
+              <div className={styles.phone}>{deliveryAddress.phone}</div>
+              <div>{deliveryAddress.addressLine1},</div>
+              <div>{deliveryAddress.addressLine2},</div>
               <div>
-                {deleveryAddress.streetName}, {deleveryAddress.city}
+                {deliveryAddress.streetName}, {deliveryAddress.city}
               </div>
               <div>
-                {deleveryAddress.state}: {deleveryAddress.pincode},
+                {deliveryAddress.state}: {deliveryAddress.pincode},
               </div>
-              <div>{deleveryAddress.country}</div>
+              <div>{deliveryAddress.country}</div>
             </div>
           ) : (
             <div className={styles.section}>

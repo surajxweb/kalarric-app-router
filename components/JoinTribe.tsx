@@ -17,24 +17,24 @@ const JoinTribe = () => {
         inbox.
       </p>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <label htmlFor='email' className={styles.label}></label>
+        <label htmlFor="email" className={styles.label}></label>
         <input
-          id='email'
-          type='email'
-          name='email'
+          id="email"
+          type="email"
+          name="email"
           className={styles.emailInput}
-          placeholder='enter email id'
+          placeholder="enter email id"
           required
         />
         <ValidationError
-          prefix='Email'
-          field='email'
+          prefix="Email"
+          field="email"
           errors={state.errors}
           className={styles.validationError}
         />
 
         <button
-          type='submit'
+          type="submit"
           disabled={state.submitting}
           className={styles.submitButton}
         >

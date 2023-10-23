@@ -69,7 +69,7 @@ const CartProduct = ({
         <div className={styles.image_name}>
           <Link href={`/store/${category}/${productID}`}>
             <div className={styles.productImage}>
-              <Image src={image} alt='product image' height={150} width={150} />
+              <Image src={image} alt="product image" height={150} width={150} />
             </div>
           </Link>
           <div className={styles.productInfo}>
@@ -102,20 +102,20 @@ const CartProduct = ({
             <div>
               <div className={styles.removeCont} onClick={handleOpen}>
                 <div className={styles.rmtext}>Remove from Cart</div>
-                <RiDeleteBin5Fill className={styles.icons} size='1.5em' />
+                <RiDeleteBin5Fill className={styles.icons} size="1.5em" />
               </div>
 
               <Modal
                 open={open}
                 onClose={handleClose}
-                aria-labelledby='modal-modal-title'
-                aria-describedby='modal-modal-description'
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
               >
                 <Box sx={style}>
-                  <h3 id='modal-modal-title'>
+                  <h3 id="modal-modal-title">
                     Are you sure you want to remove item from Cart?
                   </h3>
-                  <div className={styles.modalDes} id='modal-modal-description'>
+                  <div className={styles.modalDes} id="modal-modal-description">
                     Every product at Kalarric comes with a 7 day stress free
                     return and exchange.
                   </div>

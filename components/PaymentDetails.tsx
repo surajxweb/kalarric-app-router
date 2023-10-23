@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useAppSelector } from "@/redux/store";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { initializePaymentCart } from "@/redux/features/auth-slice";
+import { clearCart, initializePaymentCart } from "@/redux/features/auth-slice";
 import { loadStripe } from "@stripe/stripe-js";
 import { stripepk } from "@/lib/stripe";
 import { useAuth } from "@clerk/nextjs";
@@ -20,7 +20,8 @@ const PaymentDetails = ({
   const { userId } = useAuth();
   const [codeApplied, setCodeApplied] = useState(0);
   const [code, setCode] = useState("");
-  const deleveryAddress = useAppSelector(
+  const [isLoading, setIsLoading] = useState(false);
+  const deliveryAddress = useAppSelector(
     (state) => state.storeReducer.value.deliveryAddress
   );
   const cart = useAppSelector((state) =>
@@ -52,8 +53,70 @@ const PaymentDetails = ({
     }
   };
 
-  const codKaro = () => {
-    console.log("cod karo");
+  const createOrder = async () => {
+    const requestOrderPayload = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        paymentId: `COD_${new Date().getTime()}_${userId}_${Math.floor(
+          Math.random() * 1000
+        )}`,
+        totalAmount: totalAmt,
+        userId: userId,
+        addressId: deliveryAddress.id,
+        tracking: 0,
+        prepaid: false,
+      }), // Send the cart data in the request body
+    };
+    const response = await fetch("/api/add-order", requestOrderPayload);
+    if (response.ok) {
+      const data = await response.json();
+      return data.productInOrderId.createOrder.id;
+    }
+  };
+
+  const addProductToOrder = async (
+    quantity: number,
+    size: string,
+    price: number,
+    oid: string,
+    pid: string
+  ) => {
+    const requestProductToOrderPayload = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity: quantity,
+        size: size,
+        price: price,
+        oid: oid,
+        pid: pid,
+      }), // Send the cart data in the request body
+    };
+    const response = await fetch(
+      "/api/add-product-to-order",
+      requestProductToOrderPayload
+    );
+  };
+
+  const codKaro = async () => {
+    setIsLoading(true);
+    const newOrderId = await createOrder();
+    for (var i = 0; i < cart.length; i++) {
+      addProductToOrder(
+        cart[i].quantity,
+        cart[i].size,
+        cart[i].price,
+        newOrderId,
+        cart[i].productId
+      );
+    }
+
+    router.push("/order-success");
   };
 
   const proceedToPayment = () => {
@@ -72,7 +135,7 @@ const PaymentDetails = ({
       },
       body: JSON.stringify({
         cart: cart, // Cart data
-        deliveryAddress: deleveryAddress, // Delivery address object
+        deliveryAddress: deliveryAddress, // Delivery address object
         userId: userId,
       }), // Send the cart data in the request body
     };
@@ -103,7 +166,8 @@ const PaymentDetails = ({
     }
   };
 
-  const disableOrder = deleveryAddress.firstName.length === 0 || totalMrp === 0;
+  const disableOrder =
+    deliveryAddress.firstName.length === 0 || totalMrp === 0 || isLoading;
 
   return (
     <div className={styles.payment}>
@@ -171,7 +235,7 @@ const PaymentDetails = ({
       <div className={styles.discount}>
         <input
           onChange={(e) => setCode(e.target.value)}
-          placeholder='Enter Discount Code'
+          placeholder="Enter Discount Code"
           className={styles.input}
         />
         <button onClick={applyCoupon} className={styles.discountButton}>
@@ -193,3 +257,6 @@ const PaymentDetails = ({
 };
 
 export default PaymentDetails;
+
+// 4242424242424242
+// http://localhost:3000/payment-success?success=true&session_id=cs_test_b1CswX6USVAqDJ66SNowX8Gry7rbMpOVG9Ssd10l6kA0wWiUD9qEGDWqav

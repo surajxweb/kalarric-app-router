@@ -13,17 +13,6 @@ const Orders = () => {
   const [isLoaoding, setIsLoading] = useState(false);
   const [ordersData, setOrdersData] = useState<[]>([]);
 
-  const optionsDate: Intl.DateTimeFormatOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const optionsTime: Intl.DateTimeFormatOptions = {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  };
-
   useEffect(() => {
     const fetchOrders = async () => {
       setIsLoading(true);
@@ -42,14 +31,14 @@ const Orders = () => {
       <Offers />
       <div className={styles.container}>
         <h1 className={styles.heading}>Your Orders</h1>
-        {
+        {isLoaoding && (
           <div
             className={`${styles.historyContainer} ${styles.loaderContainer}`}
           >
             <Loader />
             <div>Loading Order History</div>
           </div>
-        }
+        )}
 
         {ordersData.length > 0 ? (
           ordersData.map((order: any) => (
@@ -77,6 +66,16 @@ const Orders = () => {
                     <div className={styles.iquestion}>Total Price</div>
                     <div className={styles.ianswer}>{order.totalAmount} ₹</div>
                   </div>
+                  <div className={styles.iquestions}>
+                    <div className={styles.iquestion}>Order Type</div>
+                    <div className={styles.ianswer}>
+                      {order.prepaid ? "Prepaid" : "Cash on Delivery"}
+                    </div>
+                  </div>
+                  {/* <div className={styles.iquestions}>
+                    <div className={styles.iquestion}>Status</div>
+                    <div className={styles.ianswer}>{order.tracking}</div>
+                  </div> */}
                 </div>
                 <div className={styles.ordernumber}>
                   <div className={styles.iquestion}>Order ID</div>
@@ -91,7 +90,7 @@ const Orders = () => {
                         src={product.product.images[0].productImage[0].url}
                         height={400}
                         width={300}
-                        alt='product image'
+                        alt="product image"
                       />
                     </div>
                     <div className={styles.pname}>
@@ -116,7 +115,9 @@ const Orders = () => {
             </div>
           ))
         ) : (
-          <div className={styles.error}>No orders found.</div>
+          <div className={styles.error}>
+            {!isLoaoding && "No orders found."}
+          </div>
         )}
       </div>
     </>

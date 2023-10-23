@@ -1,11 +1,8 @@
 import Offers from "@/components/Offers";
-import { stripe } from "@/lib/stripe";
 import Image from "next/image";
-import success from "@/resources/success.webp";
-import styles from "./PaymentSuccess.module.css";
-const { request } = require("graphql-request");
+import success from "@/resources/tick.png";
+import styles from "../payment-success/PaymentSuccess.module.css";
 import Link from "next/link";
-import PaymentManager from "@/components/PaymentManager";
 
 interface Props {
   searchParams: {
@@ -14,15 +11,9 @@ interface Props {
   };
 }
 
-const PaymentSuccess = async ({ searchParams }: Props) => {
-  const sessionID = searchParams?.session_id ?? "";
-  const checkoutSession = await stripe.checkout.sessions.retrieve(sessionID);
-  const customerDetails = checkoutSession?.customer_details;
-  console.log(checkoutSession.id);
-
+const OrderSuccess = async ({ searchParams }: Props) => {
   return (
     <>
-      <PaymentManager paymentId={checkoutSession.id} />
       <Offers />
       <div className={styles.container}>
         <div className={styles.imageContainer}>
@@ -34,14 +25,10 @@ const PaymentSuccess = async ({ searchParams }: Props) => {
           />
         </div>
         <div className={styles.text1}>
-          Yayy! Payment Successful. Thank you for shopping at Kalarric.
+          Yayy! Order Successfully Placed. Thank you for shopping at Kalarric.
         </div>
         <div className={styles.text2}>
-          Your payment invoice will be sent to{" "}
-          {customerDetails
-            ? customerDetails?.email
-            : "your registered email address"}
-          .
+          Your payment invoice will be sent to your registered Email ID shortly.
         </div>
         <div className={styles.links}>
           <Link className={styles.link} href={"/"}>
@@ -59,4 +46,4 @@ const PaymentSuccess = async ({ searchParams }: Props) => {
   );
 };
 
-export default PaymentSuccess;
+export default OrderSuccess;
