@@ -91,14 +91,16 @@ export const auth = createSlice({
     addToPaymentCart: (state, action: PayloadAction<CartItem>) => {
       const newItem = action.payload;
 
-      // If it doesn't exist, add the new item to the cart
       state.value.paymentCart = [];
       state.value.paymentCart.push(newItem);
     },
     initializePaymentCart: (state) => {
       state.value.paymentCart = state.value.cart;
     },
-    clearCart: () => {},
+    clearCart: (state) => {
+      state.value.paymentCart = [];
+      state.value.cart = [];
+    },
     updateCartItemQuantity: (
       state,
       action: PayloadAction<{ cartID: string; type: string }>

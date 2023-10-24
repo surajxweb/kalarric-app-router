@@ -37,10 +37,10 @@ const ProductImage: FC<ProductPageProps> = ({
       items={imageGalleryItems}
       showPlayButton={false}
       renderItem={(image) => (
-        <div className='image-gallery-image'>
+        <div className="image-gallery-image">
           <Image
             src={image.original}
-            alt='product image'
+            alt="product image"
             width={1200}
             height={category === "tshirts" ? 900 : 1200}
           />

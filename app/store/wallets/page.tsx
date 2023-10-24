@@ -50,11 +50,11 @@ const WalletsPage: NextPage = async () => {
       <Offers />
       <div className={styles.banner}>
         <Image
-          placeholder='blur'
+          placeholder="blur"
           src={banner}
           height={480}
           width={1600}
-          alt='tshirts banner'
+          alt="tshirts banner"
         />
       </div>
       <h1 className={styles.heading}>Kalarric Wallets</h1>

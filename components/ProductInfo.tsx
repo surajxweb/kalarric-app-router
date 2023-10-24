@@ -136,7 +136,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
       />
       <Link href={"/cart"}>
         <ToastContainer
-          position='bottom-left'
+          position="bottom-left"
           autoClose={1000}
           hideProgressBar={false}
           newestOnTop
@@ -145,7 +145,7 @@ const ProductInfo = ({ product }: { product: Product }) => {
           pauseOnFocusLoss={false}
           draggable={false}
           pauseOnHover
-          theme='dark'
+          theme="dark"
         />
       </Link>
     </div>

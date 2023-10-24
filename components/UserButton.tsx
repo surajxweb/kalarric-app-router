@@ -36,16 +36,16 @@ export default function UserButton() {
     <div className={styles.container}>
       <ThemeProvider theme={theme}>
         <AiOutlineUser
-          id='basic-button'
+          id="basic-button"
           aria-controls={open ? "basic-menu" : undefined}
-          aria-haspopup='true'
+          aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
           onClick={handleClick}
           className={styles.icon}
-          size='2em'
+          size="2em"
         />
         <Menu
-          id='basic-menu'
+          id="basic-menu"
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}

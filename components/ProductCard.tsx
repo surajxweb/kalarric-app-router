@@ -38,14 +38,14 @@ export default function ProductCard({
             {hover ? (
               <Image
                 src={imageURL2}
-                alt='cover picture 1'
+                alt="cover picture 1"
                 width={400}
                 height={400}
               />
             ) : (
               <Image
                 src={imageURL1}
-                alt='cover picture 2'
+                alt="cover picture 2"
                 width={400}
                 height={400}
               />

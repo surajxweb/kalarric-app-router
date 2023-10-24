@@ -60,10 +60,6 @@ export async function POST(request: Request) {
       allowed_countries: ["IN"],
     },
     billing_address_collection: "auto",
-    metadata: {
-      cart: JSON.stringify(cart),
-      deliveryAddress: JSON.stringify(deliveryAddress),
-    },
   });
 
   return NextResponse.json(session);

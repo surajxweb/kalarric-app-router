@@ -95,9 +95,9 @@ const Home = async () => {
       <Link href={"/store"}>
         <div className={styles.headerImage}>
           <Image
-            placeholder='blur'
+            placeholder="blur"
             src={headerImage}
-            alt='header image'
+            alt="header image"
             height={600}
             width={1536}
           />
@@ -106,9 +106,9 @@ const Home = async () => {
       <Link href={"/store"}>
         <div className={styles.headerImage_mobile}>
           <Image
-            placeholder='blur'
+            placeholder="blur"
             src={header_mobile}
-            alt='header image'
+            alt="header image"
             height={400}
             width={350}
           />
@@ -116,7 +116,7 @@ const Home = async () => {
       </Link>
       <div className={styles.info}>
         <div className={styles.sec}>
-          <BsTruck size='4em' color='#b3b3b3' />
+          <BsTruck size="4em" color="#b3b3b3" />
           <div className={styles.text}>
             <div className={styles.question}>EASY SHIPPING AND RETURNS</div>
             <div className={styles.answer}>
@@ -125,7 +125,7 @@ const Home = async () => {
           </div>
         </div>
         <div className={styles.sec}>
-          <BsFillChatFill size='4em' color='#b3b3b3' />
+          <BsFillChatFill size="4em" color="#b3b3b3" />
           <div className={styles.text}>
             <div className={styles.question}>24X7 CUSTOMER SUPPORT</div>
             <div className={styles.answer}>
@@ -134,7 +134,7 @@ const Home = async () => {
           </div>
         </div>
         <div className={styles.sec}>
-          <BsCurrencyRupee size='4em' color='#b3b3b3' />
+          <BsCurrencyRupee size="4em" color="#b3b3b3" />
           <div className={styles.text}>
             <div className={styles.question}>MONEY BACK GUARANTEE</div>
             <div className={styles.answer}>
@@ -143,7 +143,7 @@ const Home = async () => {
           </div>
         </div>
         <div className={styles.sec}>
-          <AiOutlineLock size='4em' color='#b3b3b3' />
+          <AiOutlineLock size="4em" color="#b3b3b3" />
           <div className={styles.text}>
             <div className={styles.question}>100% SECURE PAYMENT</div>
             <div className={styles.answer}>
@@ -159,9 +159,9 @@ const Home = async () => {
       <div className={styles.sale}>
         <Link href={"/store/wallets"}>
           <Image
-            placeholder='blur'
+            placeholder="blur"
             src={sale}
-            alt='wallet banner'
+            alt="wallet banner"
             height={600}
             width={1536}
           />
@@ -170,9 +170,9 @@ const Home = async () => {
       <div className={styles.sale_mobile}>
         <Link href={"/store/wallets"}>
           <Image
-            placeholder='blur'
+            placeholder="blur"
             src={sale_mobile}
-            alt='wallet banner'
+            alt="wallet banner"
             height={400}
             width={350}
           />

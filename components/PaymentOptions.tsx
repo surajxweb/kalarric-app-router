@@ -32,23 +32,23 @@ export default function PaymentOptions({
   return (
     <ThemeProvider theme={theme}>
       <FormControl>
-        <FormLabel id='demo-controlled-radio-buttons-group'></FormLabel>
+        <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
         <RadioGroup
           row
-          aria-labelledby='demo-controlled-radio-buttons-group'
-          name='controlled-radio-buttons-group'
+          aria-labelledby="demo-controlled-radio-buttons-group"
+          name="controlled-radio-buttons-group"
           value={paymentOption}
           onChange={handleChange}
         >
           <FormControlLabel
-            value='ccdc'
+            value="ccdc"
             control={<Radio />}
-            label='Credit/Debit Card'
+            label="Credit/Debit Card"
           />
           <FormControlLabel
-            value='cod'
+            value="cod"
             control={<Radio />}
-            label='Cash on Delivery'
+            label="Cash on Delivery"
           />
         </RadioGroup>
         {paymentOption === "ccdc" && (

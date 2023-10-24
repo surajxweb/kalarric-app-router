@@ -44,12 +44,12 @@ const AboutPage = () => {
     <>
       <Offers />
       <div className={styles.headerImage}>
-        <Image src={headerImage} alt='header image' height={480} width={1600} />
+        <Image src={headerImage} alt="header image" height={480} width={1600} />
       </div>
       <div className={styles.container}>
         <div className={styles.section1}>
           <div className={styles.logoImage}>
-            <Image src={biglogo} alt='big logo' width={313} height={222} />
+            <Image src={biglogo} alt="big logo" width={313} height={222} />
           </div>
           <div className={`${styles.sec1text}`}>
             At Kalarric, we are more than just an online store. We are the
@@ -62,7 +62,7 @@ const AboutPage = () => {
         <h2 className={styles.heading}>Our Vision</h2>
         <div className={styles.section2}>
           <div className={styles.sec2image}>
-            <Image src={artisian} alt='big logo' width={1200} height={900} />
+            <Image src={artisian} alt="big logo" width={1200} height={900} />
           </div>
           <div className={styles.sec2text}>
             In the heart of India, where age-old traditions and craftsmanship
@@ -76,28 +76,28 @@ const AboutPage = () => {
             in facilitating this connection.
           </div>
           <div className={styles.icons}>
-            <PiTShirtBold size='6em' className={styles.categoryIcon} />
-            <PiBaseballCapFill size='6em' className={styles.categoryIcon} />
-            <PiHoodieBold size='6em' className={styles.categoryIcon} />
-            <GiShorts size='6em' className={styles.categoryIcon} />
-            <PiWalletFill size='6em' className={styles.categoryIcon} />
-            <PiPantsBold size='6em' className={styles.categoryIcon} />
+            <PiTShirtBold size="6em" className={styles.categoryIcon} />
+            <PiBaseballCapFill size="6em" className={styles.categoryIcon} />
+            <PiHoodieBold size="6em" className={styles.categoryIcon} />
+            <GiShorts size="6em" className={styles.categoryIcon} />
+            <PiWalletFill size="6em" className={styles.categoryIcon} />
+            <PiPantsBold size="6em" className={styles.categoryIcon} />
           </div>
         </div>
         <h2 className={styles.heading}>The Team</h2>
         <div className={styles.section3}>
           {team.map((person) => (
             <div className={styles.people} key={person.eid}>
-              <Image src={person.image} alt='avatar' height={500} width={500} />
+              <Image src={person.image} alt="avatar" height={500} width={500} />
               <div className={styles.name}>{person.name} </div>
               <div className={styles.job}>{person.job} </div>
               <div className={styles.about}>{person.about} </div>
               <div className={styles.socials}>
                 <Link href={person.twitter} className={styles.twitter}>
-                  <RiTwitterXFill size='1.5em' />
+                  <RiTwitterXFill size="1.5em" />
                 </Link>
                 <Link href={`mailto:${person.email}`} className={styles.email}>
-                  <MdEmail size='1.5em' />
+                  <MdEmail size="1.5em" />
                 </Link>
               </div>
             </div>

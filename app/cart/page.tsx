@@ -23,7 +23,7 @@ const Cart = () => {
                 <h2>Already have an account?</h2>
                 <div>Sign in for a better experience.</div>
               </div>
-              <Link href='/sign-in' className={styles.signinbutton}>
+              <Link href="/sign-in" className={styles.signinbutton}>
                 SIGN IN
               </Link>
             </div>
@@ -57,7 +57,7 @@ const Cart = () => {
             )}
           </div>
         </div>
-        <PaymentDetails paymentMethod='ccdc' page='cart' />
+        <PaymentDetails paymentMethod="ccdc" page="cart" />
       </div>
     </>
   );

@@ -52,7 +52,7 @@ export default function Navbar() {
             <GiHamburgerMenu
               onClick={changelistVisibility}
               className={`${styles.icon} ${styles.ham}`}
-              size='1.8em'
+              size="1.8em"
             />
           )}
           {/* Cross icon when mobile menu is visible */}
@@ -60,7 +60,7 @@ export default function Navbar() {
             <RxCross1
               onClick={changelistVisibility}
               className={`${styles.icon} ${styles.cross}`}
-              size='1.8em'
+              size="1.8em"
             />
           )}
 
@@ -98,13 +98,13 @@ export default function Navbar() {
             <Link href={"/search"}>
               <AiOutlineSearch
                 className={`${styles.icon} ${styles.search}`}
-                size='2em'
+                size="2em"
               />
             </Link>
             {userId && <UserButton />}
             {!userId && (
               <Link href={"/sign-in"}>
-                <MdLogin className={styles.signIn} size='2em' type='login' />
+                <MdLogin className={styles.signIn} size="2em" type="login" />
               </Link>
             )}
             <Link href={"/cart"}>
