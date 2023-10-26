@@ -166,6 +166,8 @@ const PaymentDetails = ({
     }
   };
 
+  const isProductNotAvailable = totalMrp === 0;
+
   const disableOrder =
     deliveryAddress.firstName.length === 0 || totalMrp === 0 || isLoading;
 
@@ -216,7 +218,7 @@ const PaymentDetails = ({
         <button
           onClick={proceedToPayment}
           className={styles.paymentbutton}
-          disabled={disableOrder}
+          disabled={isProductNotAvailable}
         >
           Proceed to Checkout
         </button>

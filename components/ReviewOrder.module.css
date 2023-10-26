@@ -96,7 +96,8 @@
     flex-flow: column wrap;
   }
   .moreInfo {
-    padding: 10px;
+    padding: 20px 10px;
+    border-radius: 30px;
     border-top: 1px solid rgb(210, 210, 210);
   }
   .cartItems {
