@@ -9,6 +9,7 @@ import { clearCart, initializePaymentCart } from "@/redux/features/auth-slice";
 import { loadStripe } from "@stripe/stripe-js";
 import { stripepk } from "@/lib/stripe";
 import { useAuth } from "@clerk/nextjs";
+import Loader from "./Loader";
 
 const PaymentDetails = ({
   page,
@@ -125,7 +126,7 @@ const PaymentDetails = ({
   };
 
   const makePayment = async () => {
-    console.log("karo payment");
+    setIsLoading(true);
 
     // Assuming your cart data is stored in a variable named 'cartData'
     const requestPayload = {
@@ -213,6 +214,12 @@ const PaymentDetails = ({
         >
           Place Order
         </button>
+      )}
+      {isLoading && (
+        <div className={styles.loader}>
+          <Loader />
+          <div className={styles.loaderText}>Processing Order.</div>
+        </div>
       )}
       {page === "cart" && (
         <button

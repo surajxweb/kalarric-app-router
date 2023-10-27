@@ -93,6 +93,16 @@
   width: 100%;
 }
 
+.loader {
+  display: flex;
+  margin-top: 10px;
+  color: green;
+}
+
+.loaderText {
+  margin-left: 10px;
+}
+
 @media (min-width: 1000px) {
   .payment {
     position: sticky;
