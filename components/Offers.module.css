@@ -6,10 +6,16 @@
   font-size: 13px;
   padding: 5px;
   margin-top: 44px;
+  overflow: hidden; /* Hide overflowing content */
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .text {
   padding: 5px;
+  animation: marquee 20s linear infinite; /* Apply the marquee animation */
+  display: inline-block;
+  white-space: nowrap; /* Prevent text from wrapping within the text div */
+  animation-timing-function: linear;
 }
 
 /* Media queries for responsiveness */
@@ -50,5 +56,17 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+/* Marquee animation to move text from right to left */
+@keyframes marquee {
+  0% {
+    transform: translateX(170%);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateX(-170%);
+    animation-timing-function: linear;
   }
 }
