@@ -56,10 +56,10 @@ export async function POST(request: Request) {
     success_url: `${origin}/payment-success?success=true&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/checkout`,
     client_reference_id: userID, // A unique identifier for your customer
-    shipping_address_collection: {
-      allowed_countries: ["IN"],
-    },
-    billing_address_collection: "auto",
+    // shipping_address_collection: {
+    //   allowed_countries: ["IN"],
+    // },
+    // billing_address_collection: "auto",
   });
 
   return NextResponse.json(session);
