@@ -5,8 +5,7 @@ export default function Offers() {
   return (
     <div className={styles.nav2}>
       <div className={styles.text}>
-        <span className={styles.vibratingSpan}>⚡</span>Festival Extravaganza
-        Sale is now live. Free delivery on all prepaid orders over ₹ 999.
+        <span className={styles.vibratingSpan}>⚡</span>This is a test
         <span className={styles.vibratingSpan}>⚡</span>
       </div>
     </div>
