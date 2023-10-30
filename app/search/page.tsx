@@ -10,7 +10,7 @@ import Loader from "@/components/Loader";
 
 const SearchPage: NextPage = () => {
   const [formData, setFormData] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState<[]>([]);
 
   useEffect(() => {
