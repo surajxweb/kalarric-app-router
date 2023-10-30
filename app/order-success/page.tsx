@@ -1,12 +1,13 @@
+"use client"
+
 import Offers from "@/components/Offers";
 import Image from "next/image";
 import success from "@/resources/tick.png";
 import styles from "../payment-success/PaymentSuccess.module.css";
 import { clearCart } from "@/redux/features/auth-slice";
 import Link from "next/link";
-import { AppDispatch } from "@/redux/store";
 import { useDispatch } from "react-redux";
-
+import { AppDispatch } from "@/redux/store";
 
 interface Props {
   searchParams: {
@@ -15,7 +16,7 @@ interface Props {
   };
 }
 
-const OrderSuccess = async ({ searchParams }: Props) => {
+const OrderSuccess =  () => {
   const dispatch = useDispatch<AppDispatch>();
 
   dispatch(clearCart());

@@ -10,7 +10,8 @@
 }
 
 .imageContainer {
-  width: 30%;
+  width: 25%;
+  margin: 10px 0 25px 0;
 }
 
 .imageContainer img {

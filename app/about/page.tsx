@@ -2,7 +2,7 @@ import Offers from "@/components/Offers";
 import styles from "./About.module.css";
 import Image from "next/image";
 import headerImage from "@/resources/banner/3.webp";
-import biglogo from "@/resources/logo/logo_black.png";
+import biglogo from "@/resources/logo/colorlogo.png";
 import artisian from "@/resources/banner/artisian.webp";
 import { PiHoodieBold } from "react-icons/pi";
 import { PiBaseballCapFill } from "react-icons/pi";
