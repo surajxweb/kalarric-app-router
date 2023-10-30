@@ -9,7 +9,6 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 
-
 interface Props {
   searchParams: {
     session_id?: string;
