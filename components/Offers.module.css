@@ -18,24 +18,6 @@
   animation-timing-function: linear;
 }
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
-  .nav2 {
-    margin-top: 0;
-  }
-
-  .text {
-    font-size: 12px;
-  }
-}
-
-/* Adjust the font size for smaller screens */
-@media screen and (max-width: 480px) {
-  .text {
-    font-size: 11px;
-  }
-}
-
 .vibratingSpan {
   animation: vibrate 0.3s infinite;
   display: inline-block;
@@ -68,5 +50,35 @@
   100% {
     transform: translateX(-170%);
     animation-timing-function: linear;
+  }
+}
+
+@keyframes marqueeMobile {
+  0% {
+    transform: translateX(70%);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateX(-100%);
+    animation-timing-function: linear;
+  }
+}
+
+/* Adjust the font size for smaller screens */
+@media screen and (max-width: 480px) {
+  .text {
+    font-size: 11px;
+  }
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .nav2 {
+    margin-top: 0;
+  }
+
+  .text {
+    animation: marqueeMobile 20s linear infinite; /* Apply the marquee animation */
+    font-size: 12px;
   }
 }
