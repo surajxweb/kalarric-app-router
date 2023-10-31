@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Offers from "@/components/Offers";
 import Image from "next/image";
@@ -16,7 +16,7 @@ interface Props {
   };
 }
 
-const OrderSuccess =  () => {
+const OrderSuccess = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   dispatch(clearCart());
