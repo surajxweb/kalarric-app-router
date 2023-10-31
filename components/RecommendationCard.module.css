@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  padding-bottom: 10px;
+  margin: 20px 20px;
+  transition: 0.2s all;
+  cursor: pointer;
+  width: 200px;
+}
+
+.container:hover {
+  transform: scale(1.005);
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  margin: 5px 0px;
+}
+
+.name,
+.price {
+  font-size: 13px;
+}
+
+/* .imageContainer {
+    overflow: hidden;
+  }
+  
+  .imageContainer img {
+    transition: all 1s;
+  }
+  
+  .imageContainer img:hover {
+    transform: scale(1.02);
+  } */
+
+@media (max-width: 768px) {
+  .container {
+    width: 150px;
+  }
+}

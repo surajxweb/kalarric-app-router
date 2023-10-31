@@ -1,5 +1,6 @@
 import styles from "@/app/store/ProductPage.module.css";
 import Offers from "@/components/Offers";
+import OtherProducts from "@/components/OtherProducts";
 import ProductImage from "@/components/ProductImage";
 const { request } = require("graphql-request");
 import ProductInfo from "@/components/ProductInfo";
@@ -72,6 +73,7 @@ const TshirtProductPage = async ({ params }: { params: { id: string } }) => {
       ) : (
         <div>Product Not Found!</div>
       )}
+      <OtherProducts id={params.id} category={"tshirts"} />
     </>
   );
 };
