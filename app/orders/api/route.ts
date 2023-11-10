@@ -51,7 +51,7 @@ export async function GET(request: Request) {
 
   // Create a GraphQL client instance
   const client = new GraphQLClient(
-    "https://api-ap-south-1.hygraph.com/v2/clly5tupp1k4401un3qz75wbg/master"
+    "https://api-ap-south-1.hygraph.com/v2/clocesh8mnpyk01uk2coggptm/master"
   ); // Replace with your GraphQL API endpoint
 
   try {
