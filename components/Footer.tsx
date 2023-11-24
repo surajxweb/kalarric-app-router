@@ -32,7 +32,7 @@ export default function Footer() {
             <Link href="/shippingandreturns">
               <li>Shipping and Returns Policy</li>
             </Link>
-             <Link href="/paymentpolicy">
+            <Link href="/paymentpolicy">
               <li>Payment Policy</li>
             </Link>
             <Link href="/privacypolicy">
