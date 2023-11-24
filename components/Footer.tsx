@@ -30,7 +30,10 @@ export default function Footer() {
               <li>Our Story</li>
             </Link>
             <Link href="/shippingandreturns">
-              <li>Shipping and Returns</li>
+              <li>Shipping and Returns Policy</li>
+            </Link>
+             <Link href="/paymentpolicy">
+              <li>Payment Policy</li>
             </Link>
             <Link href="/privacypolicy">
               <li>Privacy Policy</li>

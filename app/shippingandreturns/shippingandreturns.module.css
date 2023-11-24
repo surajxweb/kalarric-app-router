@@ -37,3 +37,7 @@
 .button:hover {
   background-color: #6e0808;
 }
+
+.newLink {
+  color: red;
+}

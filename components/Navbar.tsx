@@ -7,7 +7,7 @@ import { LiaWalletSolid } from "react-icons/lia";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineHistory } from "react-icons/ai";
 import { BiLogInCircle } from "react-icons/bi";
-import { BiLogOutCircle } from "react-icons/bi";
+import { BiLogOutCircle } from "react-icons/bi";import { MdOutlinePayment } from "react-icons/md";
 import { SiStorybook } from "react-icons/si";
 import { FaBlog } from "react-icons/fa";
 import { BiSupport } from "react-icons/bi";
@@ -211,6 +211,15 @@ export default function Navbar() {
                   <div className={styles.mtext}>Privacy Policy</div>
                 </div>
               </Link>
+
+              
+              <Link href={"/paymentpolicy"}>
+                <div className={styles.mlist}>
+                  <MdOutlinePayment />
+                  <div className={styles.mtext}>Payment Policy</div>
+                </div>
+              </Link>
+
               <Link href={"/shippingandreturns"}>
                 <div className={styles.mlist}>
                   <FaShippingFast />

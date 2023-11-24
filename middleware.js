@@ -12,6 +12,7 @@ export default authMiddleware({
     "/blog",
     "/about",
     "/privacypolicy",
+    "/paymentpolicy",
     "/shippingandreturns",
     "/search",
     "/search/api",

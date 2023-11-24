@@ -54,7 +54,6 @@ export default function ProductCard({
           <h3 className={styles.name}>{name}</h3>
           <div className={styles.info}>
             <div className={styles.price}>{`₹ ${price}`}</div>
-            
           </div>
         </div>
       </Link>

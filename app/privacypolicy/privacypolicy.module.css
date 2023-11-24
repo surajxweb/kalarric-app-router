@@ -46,6 +46,7 @@
   margin-bottom: 15px;
 }
 
-.email {
+.email,
+.newLinks {
   color: red;
 }
