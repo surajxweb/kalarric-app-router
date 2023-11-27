@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import MoreProductInfo from "./MoreProductInfo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SizeChart from "./SizeChart";
 
 const ProductInfo = ({ product }: { product: Product }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
@@ -87,7 +88,10 @@ const ProductInfo = ({ product }: { product: Product }) => {
       </Link>
       <h1 className={styles.productTitle}>{product.productName}</h1>
       <div className={styles.sizesRow}>
-        <div className={styles.select}>Select Size</div>
+        <div className={styles.select}>
+          <div>Select Size</div>
+          {product.category.categoryName === "tshirts" && <div><SizeChart /></div>}
+        </div>
         <div className={styles.sizes}>
           {sizeWithStocks?.map((size) => (
             <button

@@ -6,7 +6,7 @@ const PaymentPolicy = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Payment Policy at Kalarric</h1>
 
-      <p className={styles.date}>Effective Date: 1st August, 2023</p>
+      <p className={styles.date}>Effective Date: 1st December, 2023</p>
 
       <p>
         Thank you for choosing Kalarric for your online shopping needs. This
@@ -28,7 +28,7 @@ const PaymentPolicy = () => {
 
       <h2>2. Payment Processing</h2>
       <p>
-        Payments made through Stripe and PhonePay are securely processed on our
+        Payments made through Stripe and PhonePe are securely processed on our
         platform. For Cash on Delivery orders, payment will be collected by the
         delivery personnel at the time of order delivery.
       </p>

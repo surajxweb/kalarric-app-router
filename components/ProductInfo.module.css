@@ -18,6 +18,11 @@
   margin: 10px 0;
 }
 
+.select {
+  display: flex;
+  gap: 15px;
+}
+
 .sizesRow {
   margin: 30px 0;
 }

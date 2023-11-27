@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Privacy Policy at Kalarric</h1>
 
-      <p className={styles.date}>Effective Date: 1st August, 2023</p>
+      <p className={styles.date}>Effective Date: 1st December, 2023</p>
 
       <p>
         Welcome to Kalarric! This Privacy Policy outlines how we collect, use,
@@ -76,7 +76,19 @@ const PrivacyPolicy = () => {
         </li>
       </ul>
 
-      <h2>4. Security</h2>
+      <h2>4. Payment Processing and Shipping</h2>
+      <p>
+        For payment processing, we use third-party services such as PhonePe and
+        Stripe. Your payment information is processed by them, and you are
+        subject to their respective privacy policies.
+      </p>
+      <p>
+        Additionally, for order fulfillment, we use Amazon Shipping. Necessary
+        information, including shipping details, may be shared with Amazon
+        Shipping to complete your order.
+      </p>
+
+      <h2>5. Security</h2>
       <p>
         We take reasonable measures to protect your personal information from
         unauthorized access, use, or disclosure. However, no method of data
@@ -84,21 +96,21 @@ const PrivacyPolicy = () => {
         secure, and we cannot guarantee absolute security.
       </p>
 
-      <h2>5. Your Choices and Rights</h2>
+      <h2>6. Your Choices and Rights</h2>
       <p>
         You have the right to access, correct, and delete your personal
         information. You can also opt-out of receiving marketing communications
         from us at any time.
       </p>
 
-      <h2>6. Changes to this Privacy Policy</h2>
+      <h2>7. Changes to this Privacy Policy</h2>
       <p>
         We may update this Privacy Policy from time to time to reflect changes
         in our practices or legal requirements. Please review this page
         periodically for any updates.
       </p>
 
-      <h2>7. Contact Us</h2>
+      <h2>8. Contact Us</h2>
       <p>
         If you have any questions, concerns, or requests regarding this Privacy
         Policy or our data practices, please contact us at:

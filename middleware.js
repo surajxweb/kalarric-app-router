@@ -20,6 +20,7 @@ export default authMiddleware({
     "/jobs",
     "/api/create-user",
     "/api/session",
+    "/terms-and-conditions"
   ],
 });
 

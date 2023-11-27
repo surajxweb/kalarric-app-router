@@ -24,6 +24,16 @@ const ShippingReturns = () => {
           not satisfied with your order, we offer a 30-day return policy, no
           questions asked.
         </p>
+        <h3 className={styles.subSectionTitle}>Return Criteria</h3>
+        <p>
+          For a product to be accepted for return, it must meet the following criteria:
+        </p>
+        <ul className={styles.subList}>
+          <li>Product must be unused.</li>
+          <li>Product tags must be intact.</li>
+          <li>There should be no damage from the customer&#39;s end.</li>
+        </ul>
+        <p> </p>
         <p>
           To initiate a return, please contact our customer support team with
           your order details. Once your return is approved, you will receive

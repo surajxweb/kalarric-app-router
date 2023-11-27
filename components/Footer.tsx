@@ -20,8 +20,12 @@ export default function Footer() {
             <Link href="/store/wallets">
               <li>Wallets</li>
             </Link>
-
             <li>Caps (Coming Soon!)</li>
+
+            <Link href="https://www.kalarric.art/" target="_blank">
+              <li>Design @ Kalarric</li>
+            </Link>
+
           </ul>
         </div>
         <div className={styles.company}>
@@ -38,8 +42,8 @@ export default function Footer() {
             <Link href="/privacypolicy">
               <li>Privacy Policy</li>
             </Link>
-            <Link href="https://www.kalarric.art/" target="_blank">
-              <li>Design @ Kalarric</li>
+            <Link href="/terms-and-conditions">
+              <li>Terms and Conditions</li>
             </Link>
           </ul>
         </div>
