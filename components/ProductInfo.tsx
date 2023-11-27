@@ -90,7 +90,11 @@ const ProductInfo = ({ product }: { product: Product }) => {
       <div className={styles.sizesRow}>
         <div className={styles.select}>
           <div>Select Size</div>
-          {product.category.categoryName === "tshirts" && <div><SizeChart /></div>}
+          {product.category.categoryName === "tshirts" && (
+            <div>
+              <SizeChart />
+            </div>
+          )}
         </div>
         <div className={styles.sizes}>
           {sizeWithStocks?.map((size) => (

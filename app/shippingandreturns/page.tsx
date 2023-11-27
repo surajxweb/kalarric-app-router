@@ -26,7 +26,8 @@ const ShippingReturns = () => {
         </p>
         <h3 className={styles.subSectionTitle}>Return Criteria</h3>
         <p>
-          For a product to be accepted for return, it must meet the following criteria:
+          For a product to be accepted for return, it must meet the following
+          criteria:
         </p>
         <ul className={styles.subList}>
           <li>Product must be unused.</li>

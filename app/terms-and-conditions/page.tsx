@@ -15,9 +15,9 @@ const TermsAndConditions = () => {
 
       <h2>1. Acceptance of Terms</h2>
       <p>
-        By using this site, you agree to abide by these Terms and Conditions.
-        If you do not agree to these terms, please refrain from using our
-        website and services.
+        By using this site, you agree to abide by these Terms and Conditions. If
+        you do not agree to these terms, please refrain from using our website
+        and services.
       </p>
 
       <h2>2. Intellectual Property Rights</h2>
@@ -42,8 +42,8 @@ const TermsAndConditions = () => {
       <h2>5. Changes to Terms and Conditions</h2>
       <p>
         We reserve the right to update and modify these Terms and Conditions at
-        any time. Changes will be effective immediately upon posting. Users
-        will be notified of changes through prominent notices on the website.
+        any time. Changes will be effective immediately upon posting. Users will
+        be notified of changes through prominent notices on the website.
       </p>
 
       <h2>6. Contact Us</h2>

@@ -25,7 +25,6 @@ export default function Footer() {
             <Link href="https://www.kalarric.art/" target="_blank">
               <li>Design @ Kalarric</li>
             </Link>
-
           </ul>
         </div>
         <div className={styles.company}>
