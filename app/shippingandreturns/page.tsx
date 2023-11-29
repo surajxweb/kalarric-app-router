@@ -57,6 +57,33 @@ const ShippingReturns = () => {
           .
         </p>
       </div>
+
+      <div className={styles.section}>
+        <h2 className={styles.sectionTitle}>Refunds Policy</h2>
+        <p>
+          <strong>1. If you cancel the Order:</strong> The full amount will be
+          refunded to you, including shipping charges and COD charges if any.
+        </p>
+        <p>
+          <strong>2. If you return the product:</strong> Shipping charges and
+          COD charges charged at the time while placing the order will be
+          deducted. Additionally, a Reverse Shipping charge of Rs.100 will be
+          charged, and the balance amount will be refunded to you.
+        </p>
+        <h3 className={styles.subSectionTitle}>Mode of Refund:</h3>
+        <p>
+          <strong>1. Prepaid Orders:</strong> The amount will be refunded to
+          the same account from which the order has been placed. Once we receive
+          the product, the amount will be processed in 1-2 working days. Your
+          money will be reflected in your account in 5-7 working days.
+        </p>
+        <p>
+          <strong>2. COD Orders:</strong> The amount will be transferred to the
+          Bank Account mentioned while placing the Return Request, and your
+          amount will be reflected in your account within 7 working days of the
+          details.
+        </p>
+      </div>
     </div>
   );
 };
